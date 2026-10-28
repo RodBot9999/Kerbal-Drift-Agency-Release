@@ -1,0 +1,1687 @@
+{
+  "Game Systems": [
+    [
+      "Vehicle architecture",
+      [
+        [
+          "p",
+          "Kerbal Drift Agency V1.0 - documentation updated 2026-10-29 for runtime kda25 and Converter V2.0 kda12. This release packages the tested KDA vehicle framework with two included Automation cars, Lizard GT and Rabbit Rally x. The runtime uses KDA module names and KDAVehicles.dll."
+        ],
+        [
+          "map",
+          [
+            "Body + engine",
+            "Four wheel|parts",
+            "Real seat +|door marker"
+          ]
+        ],
+        [
+          "table",
+          [
+            [
+              "Component",
+              "Purpose"
+            ],
+            [
+              "Body",
+              "Rigid exterior, fixtures, chassis/engine/exhaust art; engine, aero, controller, protection and HUD modules."
+            ],
+            [
+              "Four corner parts",
+              "Independent native KSP wheel contact, motor torque, steering, springs, dampers, grip and selection colliders."
+            ],
+            [
+              "Race seat",
+              "One real crew slot, command, IVA portrait and driver view. An occupied seat supplies control."
+            ],
+            [
+              "Doorway marker",
+              "A safe outward exit and stock B boarding trigger linked to a seat channel."
+            ]
+          ]
+        ],
+        [
+          "h",
+          "Clean installation"
+        ],
+        [
+          "p",
+          "Download ModuleManager and HarmonyKSP separately using the main README; both are required for KDA crew/mass patches. Shabby and Resurfaced add optional PBR visuals. Then copy GameData/KDAVehicles into KSP 1.12.5 GameData. No third-party KSP mod is bundled. Keep one copy of each mod. Lizard GT is the only included car."
+        ],
+        [
+          "p",
+          "Optional: copy Ships/SPH/Lizard GT - KDA.craft into your save's Ships/SPH folder. Assign a Kerbal to its physical seat before launch. FAR and AtmosphereAutopilot are optional and are not bundled; additional mods and terrain can change handling."
+        ],
+        [
+          "p",
+          "source/plugin contains the C# runtime; source/converter contains the converter. The top-level GameData is the sole installable asset tree. Builds stage into ignored source/.build/runtime and do not create duplicate release resources."
+        ]
+      ]
+    ],
+    [
+      "Included Lizard GT",
+      [
+        [
+          "p",
+          "This is the Lizard GT export, not Lizard GTR. Values come from the selected BeamNG configuration and embedded Automation metadata. They describe the exported engine and chassis, not a preset chosen from appearance."
+        ],
+        [
+          "table",
+          [
+            [
+              "Property",
+              "Imported value"
+            ],
+            [
+              "Engine",
+              "Buddy mk1; naturally aspirated V8, approximately 5.251 L; idle 1,400 rpm, limit 8,400 rpm."
+            ],
+            [
+              "Peak engine output",
+              "Approximately 514.82 Nm; exported torque curve produces approximately 385.36 kW peak. Actual applied torque varies with rpm, throttle, shifting and aids."
+            ],
+            [
+              "Transmission",
+              "Manual; five forward ratios 2.59 / 1.65 / 1.13 / 0.84 / 0.66; final drive 5.74; reverse 2.72."
+            ],
+            [
+              "Drive",
+              "Rear wheel drive; front drive weights zero, rear nominal weights 0.5 per wheel before differential adjustment."
+            ],
+            [
+              "Tires",
+              "Front radius 0.305 m, width 0.215 m; rear radius 0.330 m, width 0.305 m. Imported base grip calibration about 1.578 front and 1.600 rear."
+            ],
+            [
+              "Reference mass",
+              "1,033 kg for generated body, four wheels and full fuel; attached KDA seats, doorway markers and their crew are weightless in the car."
+            ],
+            [
+              "Aerodynamics",
+              "At 200 km/h and 1.2041 kg/m3: front -89.51 N and rear -7.39 N. Negative downforce means lift, not ground adhesion."
+            ]
+          ]
+        ],
+        [
+          "p",
+          "The export includes independent front suspension anchors. Rear suspension art is retained rigidly because the adapter does not have independent rear articulation anchors for this layout. Its physics still uses the same four native wheel contacts."
+        ],
+        [
+          "p",
+          "Engine and induction type are locked for imports. The export is naturally aspirated; selecting a turbo conversion is deliberately unavailable. The imported manual gearbox is likewise fixed."
+        ]
+      ]
+    ],
+    [
+      "Suspension and tire calibration",
+      [
+        [
+          "p",
+          "KDASuspension owns the native wheel spring, damper and anti-roll settings. It replaces stock automatic spring updates so the selected coilover settings persist. Suspension is real native wheel contact physics; visual arm motion adds no extra forces."
+        ],
+        [
+          "table",
+          [
+            [
+              "Chassis preset",
+              "Front / rear spring (N/mm)",
+              "Ride height",
+              "Grip multiplier"
+            ],
+            [
+              "Road",
+              "112.50 / 103.125",
+              "+14 mm",
+              "0.75"
+            ],
+            [
+              "Sport",
+              "168.75 / 150.00",
+              "0 mm",
+              "1.15"
+            ],
+            [
+              "Race",
+              "263.25 / 234.00",
+              "-12 mm",
+              "2.00"
+            ]
+          ]
+        ],
+        [
+          "p",
+          "Presets are editor-only. They are distinct from the flight SC mode. Manual spring range is 93.75-280 N/mm; ride height is -20 to +30 mm; grip multiplier maximum is 3x. Multipliers act on the converted compound/dimension calibration, not on an identical base tire for every car."
+        ],
+        [
+          "h",
+          "Damping and support"
+        ],
+        [
+          "p",
+          "Critical damping is 2 * sqrt(spring stiffness * supported mass). Compression/rebound and low/fast shaft-speed ratios scale that reference. Preset stiffness raises spring and anti-roll rates together; damping ratios rise with the square root of the stiffness factor to keep effective damping proportional."
+        ],
+        [
+          "p",
+          "Anti-roll force compares paired axle compression and is capped by the available grounded normal load. Static spring sag participates in the anchor offset so changing ride height does not silently change the target spring rate. Toe is independently configurable."
+        ],
+        [
+          "p",
+          "Standard hardware uses 0.16 m travel. Optional Rally and Desert kits add adjustable wheel travel, sag, progressive bump stops, damping and visual articulation; ride height remains a separate setting. Compound grip and width are approximations of BeamNG data; this is not an identical contact-patch simulation."
+        ]
+      ]
+    ],
+    [
+      "Engine, gearbox and differential",
+      [
+        [
+          "map",
+          [
+            "Keyboard|pedal",
+            "Engine +|induction",
+            "Gearbox +|differential",
+            "Wheel|torque"
+          ]
+        ],
+        [
+          "p",
+          "EngineCore evaluates the torque curve at engine rpm. KDAEngine applies progressive keyboard throttle, selected induction, shifting and aid scales, then distributes torque to driven wheels through gearbox ratio and final drive. Engine torque in the PAW is a current operating value, not the engine's rated peak."
+        ],
+        [
+          "h",
+          "Turbo response"
+        ],
+        [
+          "p",
+          "Imported turbo engines carry a pressure-versus-rpm curve and a peak boost calibration. The adapter separates the exported boosted curve from the base torque to avoid multiplying boost twice. Rotor and manifold response create spool delay and lift-off decay. Exported inertia, turbo sizing and pressure response help estimate timing; this is an approximation, not BeamNG Lua execution."
+        ],
+        [
+          "h",
+          "Transmission"
+        ],
+        [
+          "p",
+          "Imported type and ratios remain authoritative. Manual shift actions are available to KSP action groups; automatic mode uses the current shift scheduler. Gear changes have a short finite shift interval and limiter/shift sound modulation. Wheel radius changes the speed represented by a ratio. A metadata top-speed number is not a speed cap."
+        ],
+        [
+          "h",
+          "Differential / AWD"
+        ],
+        [
+          "p",
+          "Open, Mild LSD, Sport LSD and Drift LSD adjust axle torque sharing from wheel speed/slip. The total remains normalized. On an AWD export, front/rear weights encode the selected split; a 40% front / 60% rear car nominally allocates 20% to each front and 30% to each rear wheel before differential redistribution. A wheel's 100% motor limiter is its local allowance, not 100% of total engine power."
+        ],
+        [
+          "p",
+          "Imported active center redistribution and electronic axle vectoring are enabled only for the selected export hardware. AWD modes add their own assistance profile without changing RWD behavior. Holding the rear handbrake temporarily decouples the AWD rear drive path, then reconnects on release."
+        ],
+        [
+          "p",
+          "Current engine braking is implemented as a wheel drag request through the native brake-input path. This is a known engineering approximation. It has not yet been replaced with a physically complete negative driveline-torque model, and this release does not retune it."
+        ]
+      ]
+    ],
+    [
+      "Brakes, aero, sound and effects",
+      [
+        [
+          "table",
+          [
+            [
+              "System",
+              "Runtime behavior"
+            ],
+            [
+              "Service brake",
+              "Normal B braking reaches both axles in Road/Sport/Race. In Drift it uses front brakes only."
+            ],
+            [
+              "Rear handbrake",
+              "Bind Rear handbrake (hold key) to a custom action group. The configured group key applies rear-only lock while physically held; release clears it. It is applied after ABS."
+            ],
+            [
+              "ABS",
+              "Modulates wheel pressure to reduce wheel lock. Independently enabled/disabled through HUD/PAW."
+            ],
+            [
+              "TCS",
+              "Reduces spinning-wheel torque and requests selective traction braking. Disabled and locked off in Drift."
+            ],
+            [
+              "SC yaw brakes",
+              "Support stability correction independently of TCS in non-Drift modes. Disabling SC removes these requests. No separate yaw-brake-only toggle is present."
+            ],
+            [
+              "Invincibility",
+              "KDAProtection supplies the car protection toggle. It does not make every unrelated vessel part universally indestructible."
+            ]
+          ]
+        ],
+        [
+          "h",
+          "Aerodynamics"
+        ],
+        [
+          "p",
+          "KDAAero scales signed front/rear reference forces by air density and forward speed squared. It applies force at the imported axle/aero points, with N converted to KSP rigidbody kN. Reversing and inverted attitude reduce downforce. Lift remains lift. Drag acts along local axes and consumes power at speed; downforce cannot guarantee contact over a jump or crest."
+        ],
+        [
+          "h",
+          "Sound and visuals"
+        ],
+        [
+          "p",
+          "Original generated coast/load banks at eight RPM anchors are shared across cars. Only neighboring bands play: at most twelve combustion layers per audible car and four audible hybrid cars. Clips are calibrated offline; no per-car PCM copying or startup normalization is performed. Close-range engine distance is 20 m. KSP ship/master volume still apply."
+        ],
+        [
+          "p",
+          "Original hybrid combustion banks and live intake/boost/shift layers replace exported engine samples. Engine-family selection follows the import. Player audio controls are Engine volume and Exhaust in Garage / Tune / Sound / FX; Engine volume is also available in flight. Advanced voice/tone/pulse/body controls are hidden; saved mix parameters are preserved. Tire smoke follows wheel slip and ground contact; integrated exhaust flame outlets use detected exhaust-tip positions, including multiple outlets when detected. Physics wheel transforms drive cosmetic suspension arms; unsupported layouts remain rigid."
+        ]
+      ]
+    ],
+    [
+      "Crew, materials and maintenance",
+      [
+        [
+          "h",
+          "Seat and doorway workflow"
+        ],
+        [
+          "p",
+          "Place the race seat inside the car, rails down and facing forward. Put a matching-channel doorway marker beside a usable exterior door. Move it clear of the body. Assign crew in SPH/VAB. Portrait EVA exits at the linked marker; approaching the airlock supports stock B boarding. Obstruction checks remain active, and a missing/blocked marker prevents exit."
+        ],
+        [
+          "p",
+          "Imported bodies have zero crew capacity and no ModuleCommand after the supplied ModuleManager patch. Empty command seats cannot drive. Native IVA portraits, driver view and the external occupant share the lowered seat position. The seat mesh has 4,880 triangles; external occupant geometry is visual only."
+        ],
+        [
+          "h",
+          "Interior and paint"
+        ],
+        [
+          "p",
+          "Converted materials preserve fixture layers and alpha cutouts. The Resurfaced/Shabby backend translates albedo, metalness, roughness and normals to KSP PBR materials. A legacy shader fallback remains available. Per-material classification avoids treating transmission castings as mirror paint. Material output is a translation, not exact Automation rendering."
+        ],
+        [
+          "p",
+          "The driver-view shell renders selected original surfaces from inside, preserves cutout masks, skips window groups and adds matte-black floor/firewall coverage. It has no colliders and is hidden outside IVA. It cannot invent a fully modeled cockpit from absent source geometry. FreeIVA/ThroughTheEyes compatibility is not certified."
+        ],
+        [
+          "h",
+          "Telemetry and diagnostics"
+        ],
+        [
+          "p",
+          "HUD Record starts a folder under the installation's KDATelemetry directory; Stop flushes it and Mark adds a timestamped event. setup.cfg stores part definitions and current module fields; vehicle.csv and wheels.csv join by sample/time; settings.csv tracks changes; events.csv and summary.txt report stops, markers, errors and dropped packets."
+        ],
+        [
+          "p",
+          "For a reproducible test record car/build hash, surface, mode, chassis, grip, differential, aid state and speed. Compare turn-in, recovery and airborne periods separately. See SC.pdf for interpretation and Prompts.pdf for safe changes."
+        ],
+        [
+          "p",
+          "Implementation sources: source/plugin/KDAModules.cs, KDASuspension.cs, KDAWheelBrakes.cs, KDAAero.cs, KDAAudio.cs, KDASampleAudio.cs, KDACrew.cs and KDAInteriorShell.cs. License status and public-release blockers are documented in CREDITS.md."
+        ]
+      ]
+    ],
+    [
+      "Garage tuning, nitrous and effects",
+      [
+        [
+          "p",
+          "Use the KDA badge in the mod toolbar, then Go to KDA Garage. A placed KK garage opens its workshop; without a placed garage the editor overlay is available. Cars selects or prebuilds craft; Build retains native placement tools, WASDQE rotation and right-drag camera orbit; Tune edits suspension, brakes, sound/FX, travel, nitrous and tires. Preview, Apply, then Save Car. Choose a chassis preset before fine tuning."
+        ],
+        [
+          "p",
+          "Nitrous is an opt-in kit with 25-300 hp shot strength, three bottles and a held activation key (N by default, rebindable in Tune). Release to recharge; sustained grounded drifting replenishes charge three times faster. It respects gearbox, limiter and input interlocks. Blue flames and an original spray sound accompany activation."
+        ],
+        [
+          "p",
+          "Stock and Crackle exhaust tunes use varied short original pressure/noise sounds. Flame emphasizes a smooth orange plume during hard acceleration with brief lift/shift tails and very quiet pops. Existing flame size/duration controls remain active. Nitrous takes blue-plume priority; ordinary flame tunes do not alter power or fuel."
+        ],
+        [
+          "p",
+          "Prebuild Car uses complete supplied Lizard GT and Rabbit Rally x templates, with saved seat and outward doorway positions. Other imports get wheels and a doorway marker to check; add a seat. Existing saved cars are offered instead of duplicate prebuilds. Return to SPH/VAB keeps the car in the stock editor. With the world workshop, Drive Out launches at the garage; stop near its entrance and press F8 to return."
+        ]
+      ]
+    ],
+    [
+      "Optional rover ECU and world garage",
+      [
+        [
+          "p",
+          "The optional ECU is a separate Control-category rover part. Unstable uses conservative Road-like aids and anticipatory pitch-under-braking protection. Normal allows limited oversteer and reactive pitch help when wheels unload. Only two front wheels steer while enabled; toggling off restores native steering settings. It does not replace rover power, suspension or grip. See Rover ECU.md for setup."
+        ],
+        [
+          "p",
+          "The optional KK garage now appears automatically at the supplied location near KSC when Kerbal Konstructs and Custom Pre Launch Checks are installed. Move it with Ctrl+K in KK. Omit Garage/Garage-instances.cfg to disable the default position or avoid a duplicate of a manually placed garage. SPH/VAB garage mode works without KK."
+        ]
+      ]
+    ],
+    [
+      "Version, credits and licenses",
+      [
+        [
+          "p",
+          "Current runtime: V1.0 / 2026-10-28-kda25. Converter: V2.0 / 2026-10-26-kda12. Their build numbers are independent. Runtime behavior, audio controls and KK placement described here are supplied by the base GameData; the car-only converter does not upgrade that base."
+        ],
+        [
+          "p",
+          "Kerbal Drift Agency by Roderic Systems. Original KDA synthesized audio and manual text: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/. Retain credit, link the license and indicate changes. Third-party artwork visible in images is excluded. See ASSET-LICENSES.md for exact scope. Runtime code is MIT; converter code is GPL-3.0-only."
+        ],
+        [
+          "p",
+          "Sparky is the Roderic Systems mascot, created with AI assistance. KDA/Roderic Systems/Sparky branding rights are reserved, with permission for unmodified inclusion with KDA and display in screenshots/videos. No endorsement of unrelated products is implied."
+        ]
+      ]
+    ]
+  ],
+  "SC": [
+    [
+      "Drive-by-wire model",
+      [
+        [
+          "p",
+          "Kerbal Drift Agency V1.0 - SC technical guide. SC means Stability Control; the implementation is also a keyboard drive-by-wire controller. It requests steering, engine authority and selective wheel braking. It does not add artificial sideways body forces or rotate the vehicle directly."
+        ],
+        [
+          "map",
+          [
+            "Driver keys +|vehicle state",
+            "Observer +|intent",
+            "Turn / recovery|controller",
+            "Native wheel|actuation"
+          ]
+        ],
+        [
+          "p",
+          "Flight SC mode is independent of the editor chassis preset. The user may switch Road/Sport/Race/Drift from the HUD while driving. A Race chassis does not force Race SC. Suspension and grip remain editor settings."
+        ],
+        [
+          "table",
+          [
+            [
+              "Profile",
+              "Intended behavior"
+            ],
+            [
+              "Road",
+              "Race-derived predictive recovery with lower corner demand, faster traction suppression and slower throttle buildup. With SC and TCS on, engine authority is capped at 60%."
+            ],
+            [
+              "Sport",
+              "Race-derived recovery with a moderate corner budget and at least 0.35 s throttle rise. Allows more wheel spin than Road."
+            ],
+            [
+              "Race",
+              "Fast turn-in, predictive yaw/slip recovery, neutral settling and driver intent blending. TCS may permit controlled slip; it is not a guarantee against oversteer."
+            ],
+            [
+              "Drift",
+              "Natural oversteer, predictive yaw damping, progressive keyboard trim and adjustable SC lock. TCS is forced off; automatic SC yaw brakes are disabled."
+            ]
+          ]
+        ],
+        [
+          "p",
+          "Race and Drift tuning in this package are the tested baseline. Road/Sport derive the Race recovery law through separate state objects, so changing modes does not reuse stale recovery state blindly. The suggested GT3 1-10 intervention HUD feature is not implemented."
+        ]
+      ]
+    ],
+    [
+      "Observer, intent and activation",
+      [
+        [
+          "p",
+          "Raw wheel steering and trim are captured before SC output. The controller reads local forward/lateral velocity, slip angle, yaw about vehicle up, yaw/slip derivatives, roll, wheel contact and axle load imbalance. Wheelbase, tire capacity and imported aerodynamic force contribute to the ordinary cornering budget."
+        ],
+        [
+          "h",
+          "Conventions"
+        ],
+        [
+          "p",
+          "Telemetry local x is right, y is forward and z is down. Slip is atan2(lateral, forward), in degrees; yaw is rad/s. A key sign alone does not prove corrective steering: compare it with velocity/slip and the rig's steering convention. Vehicle orientation and movement direction differ during a drift."
+        ],
+        [
+          "h",
+          "Filtering and confirmation"
+        ],
+        [
+          "p",
+          "The state observer uses about 0.08 s smoothing for slip/yaw and 0.04 s for derivative estimates. Slide evidence is confirmed for roughly 0.10 s unless urgent instability needs immediate attention. Settling includes a roughly 0.20 s confirmation window. These delays are accounted for by prediction, rather than waiting for a large filtered body angle."
+        ],
+        [
+          "p",
+          "The recovery law anticipates increasing slip and excessive yaw, while clamping predicted sign changes so it does not initiate an opposite slide before the measured slide crosses zero. Neutral settling increases damping as the driver releases steering. The approach is a bounded predictive controller, not a classic integral PID or a heading-lock autopilot."
+        ],
+        [
+          "h",
+          "Validity gates"
+        ],
+        [
+          "p",
+          "Packed vessels, reverse/very low forward speed and insufficient grounded wheels suspend forward stability correction. Loss of contact resets or holds appropriate recovery states. Logs with jumps should be evaluated in grounded segments; contact forces and visual states can lag a newly issued command by one physics step."
+        ]
+      ]
+    ],
+    [
+      "Turn-in budget and recovery authority",
+      [
+        [
+          "p",
+          "This page describes ordinary recovery. For assisted imported Race/Sport above 234 km/h, the final kda25 guard progressively overrides this path; see Extreme-speed Race/Sport guard."
+        ],
+        [
+          "p",
+          "The speed limit applies to ordinary requested cornering. It must not also starve recovery countersteer. These paths have separate bounds, and the runtime bypasses stock KSP automatic steering reduction to control the limit itself."
+        ],
+        [
+          "h",
+          "Ordinary steering"
+        ],
+        [
+          "p",
+          "The approximate target wheel angle is atan(lateral_budget * gravity * wheelbase / speed^2). Baseline lateral budgets are 0.48 g Road, 0.70 g Sport and 0.95 g Race/Drift before per-car scaling. Roll and unloading further reduce turn-in demand."
+        ],
+        [
+          "p",
+          "Imported capacity uses calibrated front tire peak and aerodynamic support relative to weight, with clamps. Imported Race applies a 1.25 preset factor; Sport applies 1.10. Cornering allowance, -40% to +60%, multiplies that capacity. It still affects ordinary turn-in demand. It is a tuning allowance, not a measured friction ellipse or a promise of maximum possible lap speed."
+        ],
+        [
+          "h",
+          "Recovering a slide"
+        ],
+        [
+          "p",
+          "Race recovery cap is 32 degrees. Road/Sport call the Race recovery law and also use its 32-degree recovery cap, scaled by assistance and physical angle. Drift uses its 25-75 degree SC steering-lock setting, default 50 degrees."
+        ],
+        [
+          "p",
+          "A driver countersteering against a confirmed slide can use recovery authority rather than only the normal speed limit. Direct recovery wheel actuation is faster; ordinary turn-in retains normal geometry. During confirmed recovery the geometry limit is bypassed where necessary so high-speed correction does not collapse to a tiny angle."
+        ],
+        [
+          "p",
+          "Drift reserves up to 15 extra degrees for keyboard input beyond the SC lock, within the physical steering range. Therefore an SC lock of 50 degrees may reach 65 degrees with driver assistance; SC alone still has the selected 50-degree limit. Physical saturation always remains a final bound."
+        ]
+      ]
+    ],
+    [
+      "Progressive Drift keyboard control",
+      [
+        [
+          "p",
+          "The driver input is a progressive bias around the controller's stabilizing steering. Pressing a key no longer immediately replaces all SC output with full opposite lock. This preserves usable slide angle while allowing precise donuts and weight transfer."
+        ],
+        [
+          "map",
+          [
+            "Taps / hold",
+            "Bias integrates|and releases",
+            "SC + driver|blend",
+            "Physical lock|and servo"
+          ]
+        ],
+        [
+          "h",
+          "Tapping and holding"
+        ],
+        [
+          "p",
+          "Tap duration and frequency build the bias. Repeated taps converge toward a held-key effect; release smoothly unwinds it. Holding a key builds more authority. Changing to the opposite key reverses the bias quickly but progressively. The bias is bounded, so it cannot accumulate without limit."
+        ],
+        [
+          "p",
+          "Countersteering less is also meaningful: driver intent can reduce the controller's countersteer to tighten the drift instead of snapping straight into understeer. A separate extra-lock reserve lets the driver countersteer more at saturation. Neither direction should discard predictive yaw damping."
+        ],
+        [
+          "h",
+          "Natural transitions"
+        ],
+        [
+          "p",
+          "When the driver releases steering during a weight transfer, the controller follows evolving slide/yaw rather than locking the old heading. Returning to a key adjusts the new slide. Drift prediction damps excessive yaw without applying the non-Drift straightening goal."
+        ],
+        [
+          "p",
+          "Direction-change smoothing can be as short as 0.035 s in Drift, with a slower bounded bias ramp and release layered above it. A fast servo does not mean every press instantly produces maximum angle."
+        ],
+        [
+          "h",
+          "Braking while drifting"
+        ],
+        [
+          "p",
+          "B is front-only in Drift, allowing speed/angle adjustment without a rear service-brake lock. The separately bound hold-key handbrake locks rear wheels, including when ABS is enabled. TCS cannot be enabled in this mode. Engine braking remains the pre-existing drag approximation; it was not changed for these steering updates."
+        ]
+      ]
+    ],
+    [
+      "TCS, ABS and flight controls",
+      [
+        [
+          "table",
+          [
+            [
+              "Control",
+              "Effect"
+            ],
+            [
+              "SC enabled / assistance",
+              "SC controls steering recovery, turn-in budget and selective yaw brakes. Assistance scales intervention. At zero assistance correction ceases."
+            ],
+            [
+              "Allowed oversteer",
+              "Defines the slip tolerance before recovery grows. Larger values allow more slide and can worsen delayed transitions; this is not identical to the actual instantaneous slip angle."
+            ],
+            [
+              "Cornering allowance",
+              "Changes ordinary lateral demand per vehicle. Raising it can expose instability that a lower turn budget masks. Recovery lock has its own bound."
+            ],
+            [
+              "Stability throttle aid",
+              "Scales allowed SC engine intervention. TCS off removes the SC throttle-cut path; severe roll protection is handled conservatively."
+            ],
+            [
+              "Keyboard steering smoothing",
+              "Controls command progression within mode-specific fast reversal/release rules."
+            ],
+            [
+              "Drift steering lock",
+              "HUD quick access to SC lock; keyboard reserve adds up to 15 degrees within physical range."
+            ],
+            [
+              "TCS / ABS / All off",
+              "Independent traction and anti-lock switches; All off disables those and SC. All on in Drift still leaves TCS forced off."
+            ]
+          ]
+        ],
+        [
+          "p",
+          "Traction braking handles longitudinal wheel spin on driven wheels. SC yaw braking supports a different task: suppressing excessive rotation in non-Drift modes. Turning off TCS does not automatically turn off SC yaw brakes. There is no independent yaw-brake-only UI switch yet."
+        ],
+        [
+          "p",
+          "Road is more restrictive, including its 60% engine cap only when SC and TCS are enabled. Sport retains full engine authority with a slower pedal buildup. No mode guarantees that a sufficiently powerful car, abrupt input, a jump or low-grip terrain cannot spin."
+        ],
+        [
+          "p",
+          "Sources: source/plugin/KDAController.cs, KDACore.cs, RoadSportCore.cs, DriverAidsCore.cs, KDAWheelBrakes.cs and KDACarControls.cs. Flight-adjustable settings are exposed in PAW; mode, aids, Drift lock and telemetry are accessible from the HUD."
+        ]
+      ]
+    ],
+    [
+      "Telemetry-led tuning and diagnosis",
+      [
+        [
+          "p",
+          "Record a short straight baseline, repeatable turn with held input, release-to-recovery, then corrective taps. Repeat with the same car, surface and speed, changing only one setting. Mark each attempt when practical; describe what happened afterward if precise event marking is difficult. Runs on grass and runway should be compared separately."
+        ],
+        [
+          "table",
+          [
+            [
+              "Question",
+              "Values to inspect"
+            ],
+            [
+              "Late opposite kick?",
+              "Raw steering, filtered/measured slip, slip rate, yaw/yaw acceleration, recovery bias, settling weight and issued output. Look for correction persisting after convergence."
+            ],
+            [
+              "Insufficient steering?",
+              "Turn limit vs recovery limit, SC correction, driver bias, wheel steer state and actual angle. Compare the requested sign/angle with physical saturation."
+            ],
+            [
+              "Power cut upsets balance?",
+              "Requested vs engine throttle, SC throttle scale, TCS torque scale, gear/shift state, wheel slip and load transfer."
+            ],
+            [
+              "Airtime or rollover?",
+              "Grounded wheel count, vertical speed, roll, per-wheel normalized load, suspension compression and aero force."
+            ],
+            [
+              "Setting changed mid-run?",
+              "Per-sample SC values and settings.csv. setup.cfg includes initial native grip, ratios, aero coefficients and module fields."
+            ]
+          ]
+        ],
+        [
+          "p",
+          "vehicle.csv and wheels.csv share sample/time keys; wheels carry part IDs linked in setup.cfg. Markers do not alter physics. Recording uses a background writer and reports dropped packets/errors in summary.txt. Settings change detection runs at 1 Hz, while key SC flight values appear every sample."
+        ],
+        [
+          "p",
+          "Engine torque at high rpm should be compared with the curve at that rpm and actual applied throttle, not the peak rating. High aero force does not rule out wheel unloading over rough ground. Analyze grounded intervals before attributing oscillation to the controller."
+        ],
+        [
+          "p",
+          "Regression requirements: hold/release and tapping at high speed; neutral settling without an opposite kick; airborne recontact; Drift transition and keyboard reserve; Road/Sport behavior; and unchanged Race/Drift traces when modifying other modes. See Prompts.pdf for scoped modification requests."
+        ]
+      ]
+    ],
+    [
+      "Extreme-speed Race/Sport guard",
+      [
+        [
+          "p",
+          "Runtime kda25 adds ExtremeSpeedGovernor for assisted imported Race/Sport cars, fading in from 65 to 80 m/s (234-288 km/h). At full weight, driver turn-in remains within the cornering budget and automatic yaw correction is capped at half that limit. Large slip-alignment recovery and automatic yaw-brake feedback fade out; electronic axle vectoring offsets are limited to three percentage points and yaw feedback fades out. Total drive allocation is conserved. Road, Drift, ordinary-speed calibration, suspension, grip and the separate rover ECU are unchanged. This trades large-slide automatic recovery for bounded intervention at extreme speed."
+        ],
+        [
+          "p",
+          "At extreme speed and fewer than two wheel contacts, steering retains a bounded command instead of raw full lock. This is a controller guard, not an artificial body force, traction increase or guarantee against rollover. SC OFF and intentional-slip paths retain their separate behavior."
+        ]
+      ]
+    ],
+    [
+      "Version, credits and licenses",
+      [
+        [
+          "p",
+          "Current runtime: V1.0 / 2026-10-28-kda25. Converter: V2.0 / 2026-10-26-kda12. Their build numbers are independent. Runtime behavior, audio controls and KK placement described here are supplied by the base GameData; the car-only converter does not upgrade that base."
+        ],
+        [
+          "p",
+          "Kerbal Drift Agency by Roderic Systems. Original KDA synthesized audio and manual text: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/. Retain credit, link the license and indicate changes. Third-party artwork visible in images is excluded. See ASSET-LICENSES.md for exact scope. Runtime code is MIT; converter code is GPL-3.0-only."
+        ],
+        [
+          "p",
+          "Sparky is the Roderic Systems mascot, created with AI assistance. KDA/Roderic Systems/Sparky branding rights are reserved, with permission for unmodified inclusion with KDA and display in screenshots/videos. No endorsement of unrelated products is implied."
+        ]
+      ]
+    ]
+  ],
+  "Converter": [
+    [
+      "Offline workflow and inputs",
+      [
+        [
+          "p",
+          "KDA Vehicle Converter V2.0, build 2026-10-26-kda12. This version performs conversion locally without AI, tokens or an internet connection. It uses source/converter/kdaconvert with bundled Python/native dependencies and requires a compatible base (minimum kda14); install current kda25 for these manuals."
+        ],
+        [
+          "map",
+          [
+            "Automation|BeamNG ZIP",
+            "Inspect selected|configuration",
+            "Mesh / data|translation",
+            "KSP package +|validation"
+          ]
+        ],
+        [
+          "h",
+          "Recommended export"
+        ],
+        [
+          "p",
+          "Use Automation's BeamNG exporter with ZIP packing enabled. Disable Merge All Fixtures to preserve separate trim, grille, lamps, canards and exhaust components. Merged fixtures also work but reduce component-level identification. Collapse Livery may simplify texture layers. High-resolution input is optional because the converter has its own output quality choices."
+        ],
+        [
+          "p",
+          "A native .car file carries useful engine/family metadata but does not contain the complete ready-to-convert visual model. The supported input is the BeamNG ZIP, which may already embed the .car. A standalone .car is deliberately rejected."
+        ],
+        [
+          "h",
+          "Desktop controls"
+        ],
+        [
+          "p",
+          "Select export ZIP, output parent folder, texture quality, KSP folder and optional save. Convert only writes a validated package; Convert and install also copies it to KSP. Install last conversion retries a ready package later. High / Balanced / Light cap texture dimensions at 2048 / 1024 / 512 respectively."
+        ],
+        [
+          "p",
+          "Planned seats is metadata only. The generated craft has five chassis parts. Add physical KDA race seats and doorway markers in SPH, then assign Kerbals. The separately installed KDA crew addon removes hidden body command/crew slots. The supplied Lizard demo craft already has one positioned seat and marker."
+        ]
+      ]
+    ],
+    [
+      "Import data and provenance",
+      [
+        [
+          "table",
+          [
+            [
+              "Input",
+              "Translation"
+            ],
+            [
+              "Selected .pc / JBeam slots",
+              "Resolves the actual engine, transmission, drive split, aero, tires and fixtures selected by that car configuration."
+            ],
+            [
+              "Torque / boost curves",
+              "Imports rpm-dependent torque; separates boosted calibration to avoid double-counting; imports reference boost and approximated transient spool."
+            ],
+            [
+              "Embedded .car",
+              "Reads engine layout, name, bore, stroke and displacement when available. Audio names are a marked fallback for layout, not a displacement estimate."
+            ],
+            [
+              "Gearbox / differential",
+              "Forward and reverse ratios, final drive, locked imported gearbox type, drive axle weights and configurable runtime LSD behavior."
+            ],
+            [
+              "Tires",
+              "Corner position, radius, width, compound/friction calibration and normalized driven-wheel shares."
+            ],
+            [
+              "Aero",
+              "Signed front/rear cefaero forces, reference speed/density, points, drag area and axis multipliers."
+            ],
+            [
+              "Audio",
+              "Original shared coast/load banks at eight RPM anchors; live intake/boost/shift detail. Four combustion layers per audible car and four audible cars maximum. No exported engine WAVs copied."
+            ]
+          ]
+        ],
+        [
+          "p",
+          "vehicle.json stores the input ZIP SHA-256, selected configuration, imported values, warnings, visual translations and runtime part IDs. converter version/build and required framework ABI/minimum build are recorded. Do not hide a fallback behind a plausible-looking value; warnings identify missing or approximate data."
+        ],
+        [
+          "p",
+          "Current adapter targets four-wheel Automation vehicles and supported engine/gearbox schemas. Unsupported source structures should produce useful failures or retain rigid art; arbitrary BeamNG native vehicles are not guaranteed. Audio and licensing are separate concerns: technical access to a WAV is not permission to publish it."
+        ]
+      ]
+    ],
+    [
+      "Meshes, materials and articulation",
+      [
+        [
+          "h",
+          "Independent wheel configuration"
+        ],
+        [
+          "p",
+          "The converter writes each wheel configuration directly from the KDA wheel contract, without loading a external CFG template. It preserves tested mass, grip, suspension, geometry, brakes, drive shares and module order. A neutral native motor curve supplies setup normalization; the vehicle engine controls actual torque. Stock automatic steering reduction remains disabled."
+        ],
+        [
+          "h",
+          "Geometry pipeline"
+        ],
+        [
+          "p",
+          "COLLADA geometry and selected fixtures become KSP .mu models through the vendored MU writer. Coordinates, outward rim orientation and wheel-centered rotation pivots are normalized for the existing wheel rig. Meshes are split below the 65,535 vertex limit. Models are rigid; JBeam deformation and BeamNG Lua are not imported."
+        ],
+        [
+          "p",
+          "Body and wheels are independent parts. Wheel selection box colliders make them selectable after attachment. Cosmetic meshes do not add independent masses or physics joints. Underframe, engine and exhaust are retained as rigid visual geometry."
+        ],
+        [
+          "h",
+          "Paint and transparency"
+        ],
+        [
+          "p",
+          "Albedo/livery/fixture masks preserve holes and trim overlays. Roughness, metalness and normals are translated to a stock KSP fallback and optional Resurfaced PBR definitions. Material category heuristics reduce over-shiny cast components. Multiple surfaces must not collapse into one opaque body material that covers exported cutouts."
+        ],
+        [
+          "p",
+          "External PBR mods are not included. Download HarmonyKSP, Shabby and Resurfaced separately using the main README. ModuleManager is required for KDA part patches. The converter writes PBR definitions but does not install those external mods. Add converted cars beneath KDAVehicles/Vehicles after installing KDA and the external dependencies."
+        ],
+        [
+          "h",
+          "Suspension and exhaust"
+        ],
+        [
+          "p",
+          "Supported independent suspension arms use JBeam fixed/moving anchors and native wheel travel for a cosmetic rig. The converter retains unsupported live-axle/missing-anchor hardware rigidly and records the reason. Exhaust tips are detected and generate integrated effect outlets; multiple outlets are supported. Detection remains heuristic and should be checked visually."
+        ],
+        [
+          "p",
+          "Interior shell rendering is supplied by the crew runtime, not by generating a conventional bespoke cockpit IVA for every exported vehicle. Source geometry and masks determine the available detail."
+        ]
+      ]
+    ],
+    [
+      "Output, installation and safeguards",
+      [
+        [
+          "table",
+          [
+            [
+              "Output path",
+              "Contents"
+            ],
+            [
+              "GameData/KDAVehicles/Vehicles/<id>",
+              "Parts/body.cfg, four corner cfg files, five MU models, textures, Sounds, PBR definitions, vehicle.json and source license."
+            ],
+            [
+              "Ships/SPH/<id>.craft",
+              "Assembled body and four wheels; manual seats/doorways still required."
+            ],
+            [
+              "validation.json / desktop-session.log",
+              "Package checks and export warnings. Not a certification of live driving behavior."
+            ]
+          ]
+        ],
+        [
+          "p",
+          "Conversion rejects path traversal/symlinks and stages output before a final move. Existing output folders are not overwritten. Validation checks required model/part files, texture references, finite mesh geometry, selection collider structure, audio format and runtime consistency."
+        ],
+        [
+          "p",
+          "Installer refuses a running KSP, duplicate runtimes, invalid base ABI/build/hash, missing crew files, conflicting part IDs and redirected paths. It installs only the car and craft, with scoped backups and rollback. Base runtime, crew and garage files are installed separately and are never replaced by the converter."
+        ],
+        [
+          "p",
+          "Selecting a save writes one generated craft there and archives an older stock copy to avoid duplicate load-menu entries. It does not delete unrelated craft or remove every older manually imported vehicle."
+        ],
+        [
+          "p",
+          "Manual copy installation must likewise preserve one runtime and dependency copy. Do not paste multiple old converter packages over each other without examining version/hash and vehicle IDs."
+        ]
+      ]
+    ],
+    [
+      "Build and verification",
+      [
+        [
+          "h",
+          "Rebuild from source"
+        ],
+        [
+          "p",
+          "Use Windows, Python 3.12, NumPy/Pillow and PyInstaller. From the repository's source directory, install converter/requirements.txt and PyInstaller, then run tools/build_converter.ps1 -Python <python.exe> -OutputDirectory ../Converter. The vendored MU writer and conversion dependencies are included; no framework/garage payload or Blender installation is required."
+        ],
+        [
+          "p",
+          "GameData is the only release asset tree. Runtime/crew builds stage into source/.build/runtime. build_plugin.ps1 and build_crew_plugin.ps1 require -KspRoot pointing to a legally installed KSP. KSP/Unity assemblies are external and are not redistributed. The converter build does not use a runtime-resource snapshot."
+        ],
+        [
+          "h",
+          "Headless conversion"
+        ],
+        [
+          "p",
+          "KDAVehicleConverter.exe --convert \"export.zip\" --output \"new-package-folder\" --quality balanced. Optional --ksp and --save request installation. Native CLI inspect-only is available through python -m kdaconvert for metadata investigation; the desktop entry point is the recommended conversion/install path."
+        ],
+        [
+          "h",
+          "Release verification"
+        ],
+        [
+          "p",
+          "Check GUI build text, actual runtime SHA and fresh package validation. Inspect rim faces, spinning pivots, alpha holes, paint/metal roughness, underbody/exhaust and rear suspension warnings in native KSP. Run installer failure tests against disposable directories. Confirm no second runtime and no personal telemetry/save files are in the release."
+        ],
+        [
+          "p",
+          "The source includes targeted parser/material/installation tests. Some tests require external car ZIPs and historical fixtures and are not a self-contained universal test suite. The repository contains Lizard GT and Rabbit Rally x as playable cars; source testing support does not add other car parts to GameData."
+        ],
+        [
+          "p",
+          "This version includes original hybrid engine audio with shared generated banks and bounded playback. Standard/Rally/Desert travel remains implemented; a direct Automation plugin is future work. Original audio and manual text are CC BY 4.0; KDA/Sparky branding has separate limited permission in ASSET-LICENSES.md. Third-party vehicle/artwork rights require their own review."
+        ]
+      ]
+    ],
+    [
+      "Current base mod and garage",
+      [
+        [
+          "p",
+          "Install the current base GameData separately. The converter produces only a car folder, craft and validation/metadata files. It neither bundles nor upgrades runtime DLLs, crew resources, garage assets or dependency mods."
+        ],
+        [
+          "p",
+          "The base runtime provides Standard/Rally/Desert suspension, axle travel/height/track tuning, compression/rebound and roll graphs, independent tire grip, brake power, driving modes, AWD hardware behavior and telemetry. Existing cars use their saved settings until edited."
+        ],
+        [
+          "p",
+          "Garage Cars / Build / Tune includes camera views, continuous loading, confirmed car deletion, protected input, physical seat/door placement, exhaust tunes and opt-in rechargeable nitrous. The flight HUD can be reopened through its KDA mod-toolbar button."
+        ],
+        [
+          "p",
+          "The optional world garage uses original procedural KDA artwork, catalog KDAGarage and model Garage/garage.mu. Install Kerbal Konstructs and Custom Pre Launch Checks separately. A named KDAEntrance controls the front-only F8 zone and door-facing driveway launch. An optional default KSC placement is included under Garage/Garage-instances.cfg. It uses KSC_Builtin on Kerbin, position -396.634735,24.5667,372.811676, orientation 0,150.000214,0 and scale 2. Press Ctrl+K in KK to move it; omit this instance file to retain an existing manual placement without a duplicate. Player sessions are not packaged."
+        ],
+        [
+          "p",
+          "The Python CLI and desktop app share conversion/installation services. Output folders must be new. Imported fixtures, articulation and materials have limits documented in Converter.md. Current package hashes and completed check scope are in release-manifest.json and documentation/release-manifest.json."
+        ]
+      ]
+    ],
+    [
+      "Version, credits and licenses",
+      [
+        [
+          "p",
+          "Current runtime: V1.0 / 2026-10-28-kda25. Converter: V2.0 / 2026-10-26-kda12. Their build numbers are independent. Runtime behavior, audio controls and KK placement described here are supplied by the base GameData; the car-only converter does not upgrade that base."
+        ],
+        [
+          "p",
+          "Kerbal Drift Agency by Roderic Systems. Original KDA synthesized audio and manual text: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/. Retain credit, link the license and indicate changes. Third-party artwork visible in images is excluded. See ASSET-LICENSES.md for exact scope. Runtime code is MIT; converter code is GPL-3.0-only."
+        ],
+        [
+          "p",
+          "Sparky is the Roderic Systems mascot, created with AI assistance. KDA/Roderic Systems/Sparky branding rights are reserved, with permission for unmodified inclusion with KDA and display in screenshots/videos. No endorsement of unrelated products is implied."
+        ]
+      ]
+    ]
+  ],
+  "Prompts": [
+    [
+      "Start here: give the AI context",
+      [
+        [
+          "p",
+          "You do not need to understand the code. Set up the AI once, then describe what you want in normal language. The separate AI Context guide is for the AI to read."
+        ],
+        [
+          "h",
+          "Step 1 - give it the project"
+        ],
+        [
+          "p",
+          "Open the KDA source folder in your coding AI, or attach a ZIP of the repository. For a chat-only AI, attach AI Context.pdf or AI Context.md first; it will also need relevant source files to make actual code changes. A private GitHub link alone may not give it access."
+        ],
+        [
+          "h",
+          "Step 2 - paste this setup prompt"
+        ],
+        [
+          "prompt",
+          "Help me work on Kerbal Drift Agency (KDA). First read documentation/AI Context.md or AI Context.pdf, then the project README and AGENTS.md if available. Use that context to understand the cars, controller, converter and driving logs. Tell me briefly what files you can actually read. Ask only for anything essential that is missing. Explain things simply and help me collect the right screenshots or driving logs when needed. Do not change anything yet. I will send an easy request from the guide next."
+        ],
+        [
+          "h",
+          "Step 3 - choose a request"
+        ],
+        [
+          "p",
+          "Choose New features, Improve something, or Troubleshooting on the following pages. Copy a prompt and replace anything in [brackets]. You can also describe your request in your own words."
+        ],
+        [
+          "h",
+          "Step 4 - let it guide you"
+        ],
+        [
+          "p",
+          "Say which car and KSP copy you are using. For handling problems, the AI should help you record a short test. For appearance problems, send a screenshot and the original Automation BeamNG ZIP. If the AI cannot edit files, it should explain the next step."
+        ],
+        [
+          "note",
+          "Starting a new AI conversation? Provide the context document and setup prompt again. A new AI does not automatically remember this project."
+        ]
+      ]
+    ],
+    [
+      "1. New features",
+      [
+        [
+          "p",
+          "Use these when you want the mod to do something new. Change the examples to suit your idea."
+        ],
+        [
+          "h",
+          "Long-travel suspension for jumps"
+        ],
+        [
+          "prompt",
+          "Add adjustable long-travel suspension for [car] so it can handle off-road bumps and land jumps. Keep normal cars working as they do now. Explain the plan simply, implement it, and tell me how to test it."
+        ],
+        [
+          "h",
+          "Working lights"
+        ],
+        [
+          "prompt",
+          "Add working headlights and brake lights to [car], using its existing lamp fixtures where possible. Let me switch the headlights on and make the brake lights react to braking. Keep the driving behavior the same."
+        ],
+        [
+          "h",
+          "Save my car setup"
+        ],
+        [
+          "prompt",
+          "Let me save and load named setups for [car], such as Road, Track and Drift. Include the settings that already exist. Explain which settings need the editor and which I can change while driving."
+        ],
+        [
+          "h",
+          "Your own idea"
+        ],
+        [
+          "prompt",
+          "I want [describe the feature] for [one car / all cars]. The result should feel or look like [describe it]. Use the project context to work out what is needed, explain the plan simply, and help me test it."
+        ],
+        [
+          "note",
+          "You do not need to name code files or invent technical settings. Describe the result you want. The AI should find the right part of the project."
+        ]
+      ]
+    ],
+    [
+      "2. Improve something",
+      [
+        [
+          "p",
+          "Describe what feels wrong and what you want instead. The AI should use a useful test before changing behavior."
+        ],
+        [
+          "h",
+          "The car swings from side to side"
+        ],
+        [
+          "prompt",
+          "In [mode], [car] swings from side to side after I release the steering key. Help me record a useful test, find out why, and make the recovery smoother. Keep the other driving modes unchanged."
+        ],
+        [
+          "h",
+          "Make drifting easier to control"
+        ],
+        [
+          "prompt",
+          "I like the drifting in [car], but [I cannot tighten a donut / transitions are too abrupt / the keys do not give enough control]. Help me record this and improve that part without removing the natural slide."
+        ],
+        [
+          "h",
+          "Improve Road or Sport"
+        ],
+        [
+          "prompt",
+          "Make [Road / Sport] feel [calmer / smoother / more responsive] in [car]. Help me compare it at a similar speed before and after. Do not change Race or Drift."
+        ],
+        [
+          "h",
+          "Fix the engine sound"
+        ],
+        [
+          "prompt",
+          "The engine sound in [car] is [too quiet / cutting out / harsh near the limiter]. Help me compare idle, acceleration and high rpm, then improve the sound without changing engine power."
+        ],
+        [
+          "h",
+          "Not sure what to improve?"
+        ],
+        [
+          "prompt",
+          "Here is a driving log from [car]. Explain what the car and controller are doing. Point out the main issue, if any, and suggest one useful improvement. Ask about my intended behavior before making an unclear change."
+        ],
+        [
+          "note",
+          "Use the recording steps on the next page for handling. For sound, include a short video with audio if possible; a driving log cannot show exactly what you heard."
+        ]
+      ]
+    ],
+    [
+      "How to record a useful driving test",
+      [
+        [
+          "step",
+          "1. Launch the car in the KSP copy you want to test. Open its driving HUD. If hidden, use Show/hide driving HUD in the body part menu."
+        ],
+        [
+          "step",
+          "2. Tell the AI the car, surface and mode. Mention unusual tire grip, chassis, differential or aid settings. You do not need to type every setting; the log captures many of them."
+        ],
+        [
+          "step",
+          "3. Click RECORD and check for REC and a growing sample count. Drive normally for a few seconds, then reproduce the issue. A focused 20-60 second run is often easier to compare than a long session."
+        ],
+        [
+          "step",
+          "4. Click MARK around the moment you want examined. It adds a timestamp, not video or a written description. If you miss it, give an approximate time and explain what you did."
+        ],
+        [
+          "step",
+          "5. Click STOP RECORDING and allow the writer to finish. Find the newest run inside KDATelemetry, beside KSP_x64.exe in that same KSP installation. Main and test copies have separate log folders."
+        ],
+        [
+          "step",
+          "6. ZIP the whole run folder and attach it, or give a local coding AI access to it. Keep setup.cfg, all CSVs, README.txt and summary.txt together. Explain jumps, crashes, mode changes and deliberate handbrake use."
+        ],
+        [
+          "h",
+          "Paste this with the recording"
+        ],
+        [
+          "prompt",
+          "This is [car] on [runway / grass / other surface], in [mode]. I was trying to [maneuver]. Near [MARK / approximate time], I pressed [keys] and the car did [what happened]. I wanted it to [expected result]. Check that the log is complete, explain the evidence simply, and guide me through the next useful test or fix."
+        ],
+        [
+          "note",
+          "Keep the same car, surface and settings for a comparison run. Change one thing at a time when practical. The AI should separate jumps and crashes from normal grounded cornering."
+        ]
+      ]
+    ],
+    [
+      "3. Troubleshooting: imports and appearance",
+      [
+        [
+          "p",
+          "For an import problem, send the original Automation BeamNG ZIP. Add a screenshot of the issue and, if possible, the look you expected."
+        ],
+        [
+          "h",
+          "A new export will not convert"
+        ],
+        [
+          "prompt",
+          "Update the converter so it supports this Automation BeamNG ZIP. Here is the export and full error message. Find what is different, keep the correct car data, and explain any remaining limitations simply."
+        ],
+        [
+          "h",
+          "A texture or grille looks wrong"
+        ],
+        [
+          "prompt",
+          "The [grille / body / window / trim] on [car] should look like [describe it], but it looks like this screenshot. Find the cause and fix this car while keeping its cutouts and small details."
+        ],
+        [
+          "h",
+          "Make a material shinier or more matte"
+        ],
+        [
+          "prompt",
+          "Make the [paint / wheel / exhaust / interior] on [car] look [shinier / more matte / less metallic]. Keep the color, texture details and transparency. Use the screenshot to identify the right surface."
+        ],
+        [
+          "h",
+          "A suspension component is missing or static"
+        ],
+        [
+          "prompt",
+          "The [front / rear] [suspension arm / spring / other component] on [car] is missing or does not move correctly. Check the original export and fix its appearance or visual animation. Keep wheel physics unchanged unless a physics change is actually needed."
+        ],
+        [
+          "note",
+          "Want the fix applied automatically to future imports too? Add: \"Also update the converter and test a fresh import.\" Otherwise the AI should keep the request focused on this car."
+        ]
+      ]
+    ],
+    [
+      "3. Troubleshooting: the game and next steps",
+      [
+        [
+          "h",
+          "The car does not drive"
+        ],
+        [
+          "prompt",
+          "[Car] loads but will not drive in [main / test] KSP. Help me check the seat and crew, engine, gear, brakes and missing modules first. Tell me what screenshots or log files you need before changing code."
+        ],
+        [
+          "h",
+          "An error or missing dependency"
+        ],
+        [
+          "prompt",
+          "KSP or the converter shows this error: [paste the full message]. I am using [KSP copy / converter build]. Help me find the cause and give me simple steps to fix it. Use the README download links for external mods."
+        ],
+        [
+          "h",
+          "Step 5 - test the result"
+        ],
+        [
+          "p",
+          "A built update is not automatically installed. Ask where the new files are and which KSP copy they target. When a game update is ready, request installation; the AI should verify KSP is closed, install with a backup and verify hashes without another closure confirmation. If running or unverifiable, leave it ready."
+        ],
+        [
+          "prompt",
+          "I tested the change. [Describe what improved and what is still wrong.] Here is the new log or screenshot. Compare it with the previous test and help me with the remaining issue."
+        ],
+        [
+          "h",
+          "If the AI loses context"
+        ],
+        [
+          "prompt",
+          "Please reread AI Context and the notes from this conversation. Our current goal is [goal]. We already changed [what changed], and the remaining issue is [issue]. Check the current files before continuing."
+        ],
+        [
+          "note",
+          "Keep your original export and before/after logs. Reuse the same AI conversation for related improvements; it should already know how to collect and interpret the evidence."
+        ]
+      ]
+    ]
+  ],
+  "AI Context": [
+    [
+      "Read first: role and working contract",
+      [
+        [
+          "p",
+          "For the AI assisting a KDA user. This technical companion supports the beginner Prompts guide; its examples are not requests to implement every feature. Current version: runtime V1.0 / 2026-10-28-kda25; car-only converter V2.0 / 2026-10-26-kda12 with original hybrid audio.  Check actual source, hashes and the current user request before relying on a historical description."
+        ],
+        [
+          "h",
+          "Establish access and intent"
+        ],
+        [
+          "p",
+          "State what repository/files you can actually read. A private GitHub URL or a local path in chat does not itself grant access. With only PDFs you can explain design, but need relevant source to edit it. Ask only for essential missing inputs, and do useful inspection meanwhile. Read README.md and applicable AGENTS.md. Establish car, intended behavior and target KSP installation."
+        ],
+        [
+          "p",
+          "Translate simple requests into a narrow subsystem change. Do not ask beginners to select algorithms, source classes or telemetry columns. Explain the plan and next action in plain language. If access is limited, say so rather than pretending to inspect or modify files."
+        ],
+        [
+          "h",
+          "Respect explicit scope"
+        ],
+        [
+          "p",
+          "Update converter code, EXE, source snapshots or portable packages only when explicitly requested. A game runtime/material request alone does not authorize a converter rebuild. Diagnose first, then clarify any necessary converter change. Do not retune Race, Drift or engine braking unless the request actually targets that behavior."
+        ],
+        [
+          "p",
+          "Build and check a game update first. Do not ask the user to close KSP. Report ready. When installation is requested, verify KSP is closed and install with backup/hash verification without a second closure confirmation. If KSP is running or cannot be verified, leave the update ready. Establish target installations rather than assuming everyone has both main and test copies. Preserve exports, craft and saves."
+        ],
+        [
+          "h",
+          "Report evidence honestly"
+        ],
+        [
+          "p",
+          "Distinguish observed facts from hypotheses, built from installed, and static validation from native driving. A screenshot or one run rarely proves a unique cause. Proceed with clear, authorized work without unnecessary approval loops. Return what changed, what was checked, remaining uncertainty and a short next test."
+        ]
+      ]
+    ],
+    [
+      "Repository, dependencies and build inputs",
+      [
+        [
+          "table",
+          [
+            [
+              "Location",
+              "Purpose"
+            ],
+            [
+              "GameData/KDAVehicles",
+              "KDA runtime, crew, effects and Lizard GT and Rabbit Rally x as an included car."
+            ],
+            [
+              "Converter/KDAVehicleConverter.exe",
+              "Offline Windows converter with black UI and visible build indicator."
+            ],
+            [
+              "source/plugin",
+              "C# modules, pure cores and focused regression/replay tests."
+            ],
+            [
+              "source/converter/kdaconvert",
+              "Parsing, calibration, geometry/material/audio conversion, validation and installation."
+            ],
+            [
+              "source/.build/runtime/GameData/KDAVehicles",
+              "Ignored staged build output; release assets exist only in the top-level GameData."
+            ],
+            [
+              "source/tools",
+              "Build, model and documentation tools; vendored MU writer is a converter library."
+            ],
+            [
+              "documentation",
+              "Game Systems, SC, Converter, beginner Prompts, this AI Context and scoped update supplements."
+            ]
+          ]
+        ],
+        [
+          "p",
+          "External KSP mods are not bundled. ModuleManager 4.2.3 and HarmonyKSP 2.2.1.0 are required for KDA part/crew mass patches. Optional PBR visuals use Shabby 0.4.2 and Resurfaced 1.2. Download links/tested versions are in README.md and dependencies.json. FAR, AtmosphereAutopilot and KSP Community Fixes may affect a user installation but are not KDA dependencies."
+        ],
+        [
+          "p",
+          "Use the current repository as source of truth. GameData is the sole installable runtime tree, source/plugin is runtime code, and source/converter is the independent car-only converter. Build output belongs under ignored .build directories."
+        ],
+        [
+          "p",
+          "See source/README.md for builds. C# requires the user's installed KSP/Unity references; do not distribute them. The converter contains Python libraries and the GPL MU writer, not other KSP mods. Preserve retained asset/library notices, KDA-only GameData and only the requested demo car. Packaging uses release-manifest.json and source/tools/package_kda.py."
+        ]
+      ]
+    ],
+    [
+      "Native wheels, suspension and limits",
+      [
+        [
+          "p",
+          "A generated chassis has one rigid body and four independently selectable corner wheel parts. Native KSP wheel contacts provide physical suspension, tire/contact forces, steering, motor and brakes. The body owns engine/controller/aero/HUD modules. Decorative spinning meshes are not substitutes for wheel contact, and cosmetic art must not introduce duplicate physical contacts."
+        ],
+        [
+          "p",
+          "KDAModules.cs defines KDAEngine, KDAWheelMotor and KDAGrip. KDASuspension.cs and SuspensionCore.cs own springs/dampers/anti-roll; KDAAxle.cs links axle settings; KDAWheelSelection.cs provides editor selection. Verify class definitions before editing, rather than deriving file paths from class names."
+        ],
+        [
+          "p",
+          "Standard hardware retains 0.16 m travel. Rally/Desert kits implement extended travel with compression/droop, rest sag, progressive springs, damping limits, track geometry and visual anchors. Ride height alone is not additional travel. Preserve Standard behavior when modifying these systems and test rest, full compression, droop and landings."
+        ],
+        [
+          "p",
+          "Editor chassis presets and flight SC modes are separate. Road/Sport/Race chassis grip multipliers are 0.75 / 1.15 / 2.00 atop imported calibration; the slider caps at 3x. Source compound/width mapping is approximate, not BeamNG contact-patch simulation. Do not infer identical base grip across cars or translate a slider directly into measured tire friction."
+        ],
+        [
+          "p",
+          "Engine braking currently requests wheel drag through the native brake-input path. It is not a complete negative driveline-torque model. Preserve this behavior unless it is explicitly in scope. engine_drag, brake_input and aid demand can help separate causes, but native timing and source paths must be checked."
+        ],
+        [
+          "p",
+          "Spinning wheel geometry removes imported camber/toe to avoid wobble, preserves axle roll and mirrors rims outward. Keep tire radius, transforms, native steering ranges and selection ownership intact. Visual-only changes must not silently change mass, contact geometry or physics calibration."
+        ]
+      ]
+    ],
+    [
+      "Drive-by-wire modes and driver intent",
+      [
+        [
+          "p",
+          "Read KDAController.cs, KDACore.cs, RoadSportCore.cs, the SC manual and relevant replay tests. Mode IDs are 0 Road, 1 Sport, 2 Race, 3 Drift. SC is predictive keyboard drive-by-wire with slip/yaw recovery; it is not a heading autopilot, artificial sideways force or simply an integral PID."
+        ],
+        [
+          "p",
+          "Ordinary turn-in has a speed-dependent lateral budget. Recovery countersteer has separate authority so stock geometry reduction cannot starve high-speed correction. The runtime bypasses stock automatic steering reduction where needed. Compare command, normalized limits, actual wheel angle, native servo state and response; later actuation saturation can resemble weak SC."
+        ],
+        [
+          "p",
+          "Road/Sport use Race-derived predictive recovery with separate state and more conservative corner/throttle profiles. Race permits some slip; TCS does not guarantee zero oversteer. Drift preserves natural oversteer and integrates tap frequency/held-key trim progressively instead of instant full override. Neutral settling, sign transitions and release behavior matter to opposite-side oscillation."
+        ],
+        [
+          "p",
+          "Cornering allowance remains active for ordinary corner demand. It is not a measurement of unused grip and reducing it can hide a recovery defect. SC assistance, allowed oversteer, cornering allowance and chassis grip are separate controls. Track changes and output, not slider labels alone."
+        ],
+        [
+          "p",
+          "Drift SC lock is 25-75 degrees, default 50, with up to 15 extra degrees for keyboard input within physical steering range. TCS is forced off in Drift; automatic SC yaw brakes are disabled there. B uses front service brakes in Drift, both axles otherwise. Rear handbrake is a separate custom action-group hold binding; releasing the physical key clears it."
+        ],
+        [
+          "p",
+          "SC and TCS are separate. Outside Drift, SC can request yaw brakes and TCS can cut torque/request traction braking. There is no separate yaw-brake-only switch and no implemented GT3 1-10 Race intervention HUD control. Do not invent these as existing features. An explicit request for a new control may authorize adding it; document the changed behavior."
+        ]
+      ]
+    ],
+    [
+      "Engine, AWD, aero and audio contracts",
+      [
+        [
+          "p",
+          "Read EngineCore.cs, GearboxCore.cs, InductionCore.cs, DrivelineCore.cs and KDAModules.cs alongside export calibration. Imported transmission and induction types are fixed to the export. Gear ratios, final drive, torque curve and tire radius determine behavior; metadata top speed is not a hard speed cap."
+        ],
+        [
+          "p",
+          "Boost calibration separates base torque from source pressure ratio and reapplies boost once. Do not multiply an already boosted curve again. Turbo lag estimates use exported pressure/rotor/inertia data, not BeamNG Lua execution. Imported superchargers use calibrated boost without turbo lag. TwinCharged uses combined full-load output plus a bounded mechanical share and handoff; read Twincharged Imports.md/tests."
+        ],
+        [
+          "p",
+          "AWD source axle shares normalize across driven wheels before differential redistribution. A 40% front / 60% rear car nominally allocates 20% per front wheel and 30% per rear. A wheel's 100% motor limiter is its local allowance, not total engine torque applied independently four times. Open/Mild/Sport/Drift LSD change sharing; compare wheel speeds, slip, load and torque."
+        ],
+        [
+          "p",
+          "KDAAero scales signed axle reference forces by density and forward-speed squared, applies them at imported points and converts N to KSP rigidbody kN. Reverse/inverted attitude reduces downforce. Negative downforce means lift. Aero does not guarantee contact over a jump or rough ground. Check load, contact and surface before proposing artificial adhesion."
+        ],
+        [
+          "p",
+          "HybridAudioCore.cs and KDAHybridAudio.cs implement original shared RPM/load banks, live intake/boost/shift layers and bounded playback. KDAAudio.cs and KDASampleAudio.cs preserve saved module names and route to that backend. No exported engine recordings are used. Voice Auto resolves engine layout. Revision 5 uses deeper, family-specific generated banks and baked cycle variation. Saved tone/mix values remain internal; only volume/exhaust are exposed in the garage, and volume in flight. Maximum twelve combustion layers/car and four audible hybrid cars; paused, packed, muted, map and warp states stop playback. Managed tests do not prove native FPS or audio quality. Request a short recording for audible faults; telemetry records engine states, not sound waveforms."
+        ]
+      ]
+    ],
+    [
+      "Converter, materials and visual articulation",
+      [
+        [
+          "p",
+          "Input is an Automation BeamNG ZIP export, not a standalone .car, arbitrary BeamNG car or official Automation plugin. Disable Merge All Fixtures for separately identifiable details; merged exports can still convert with reduced separation. Embedded .car metadata may supply engine information. Inspect the selected config, JBeam slots/variables, DAE, material JSON and DDS maps; do not infer engine or paint from names."
+        ],
+        [
+          "p",
+          "In source/converter/kdaconvert: service.py orchestrates atomic output; automation.py/characteristics.py/engine_metadata.py inspect and calibrate; mesh.py writes geometry through the MU library; materials.py/resurfaced.py translate materials; suspension_visual.py/exhaust_visual.py find visual bindings/outlets; ksp.py writes config/craft/audio; wheel_config.py generates independent wheel configs; validation.py/installer.py check and install packages."
+        ],
+        [
+          "p",
+          "Use safe extraction and the restricted numeric JBeam expression adapter; do not execute untrusted source expressions or Lua. Preserve torque/pressure/ratio/drivetrain/aero data where supported and report missing data honestly. An unsupported export error should lead to inspection of that ZIP, not a fabricated default engine or silent omission."
+        ],
+        [
+          "p",
+          "Material pipeline 7 handles DAE inputs both labeled set=\"0\" despite distinct -UV0/-UV1 source IDs. Repeating detail UVs and opacity stamps remain separate. Keep body/fixture alpha cutouts. Recognized camso_t_grille<digits>_h_stepped.dds materials get perforation alpha and a dedicated atlas; ordinary dark paint must stay opaque. See Grille Materials.md. Masked PBR preserves alpha and averages smoothness over visible pixels."
+        ],
+        [
+          "p",
+          "For shinier/more matte requests, identify the actual material, source maps and shader path; adjust roughness/metalness/specular without losing color, normal detail or alpha. Wrong UVs, missing cutout alpha and excess smoothness need different fixes. Compare source, converted maps and native KSP rendering. Editing a screenshot is not a game material fix."
+        ],
+        [
+          "p",
+          "Visual suspension uses selected JBeam groups/anchors and native wheel travel with a lightweight cosmetic skin. Unsupported layouts remain rigid; Lizard GT rear art is a known example. Retain chassis, subframe, exhaust and unsupported suspension geometry. Do not invent missing articulation anchors, add physical joints/colliders for cosmetic animation, or remove unsupported components."
+        ],
+        [
+          "p",
+          "Installer guards include existing output, traversal/redirects, running KSP, duplicate/mismatched runtimes and incomplete packages, with scoped backup/rollback. A conversion is not an installation. External PBR mods are not installed by the converter. Supporting a new export in the converter is an explicit converter request; a current-car visual request alone is not."
+        ]
+      ]
+    ],
+    [
+      "Crew and choosing the right evidence",
+      [
+        [
+          "p",
+          "KDACrew.dll is separate from the vehicle physics DLL. KDACrew.cs owns seats/doorways; KDAInteriorShell.cs supplies inward-facing cosmetic coverage. Imported bodies have no hidden crew/command after the ModuleManager patch. A real occupied command seat provides control, portraits and native IVA. Keep an outward, clear doorway marker on the matching seat channel for EVA/boarding, with native obstruction checks."
+        ],
+        [
+          "p",
+          "The interior shell reverses selected source faces, keeps cutouts, skips windows and adds matte dark floor/firewall coverage. It has no colliders and is hidden outside IVA. It cannot invent missing cockpit art. Internal and external Kerbal visuals share the lowered seating position. Third-party first-person mod compatibility is not certified."
+        ],
+        [
+          "table",
+          [
+            [
+              "Symptom",
+              "Useful evidence"
+            ],
+            [
+              "Handling, oscillation, wheelspin or braking",
+              "Whole telemetry run; car, mode, surface, intended maneuver and key behavior near a MARK."
+            ],
+            [
+              "Quiet/clipping/broken sound",
+              "Short video/audio, rpm/load situation and KSP volume settings; telemetry if timing matters."
+            ],
+            [
+              "Wrong texture, holes, missing visual part",
+              "Screenshot, original Automation BeamNG ZIP, converter build and installed shader stack."
+            ],
+            [
+              "Conversion error",
+              "Original ZIP, complete error/session log, selected settings and converter build."
+            ],
+            [
+              "Cannot drive, board or EVA",
+              "Part/crew screenshot, module/dependency state and KSP.log around the failure."
+            ]
+          ]
+        ],
+        [
+          "p",
+          "Guide beginners through one useful test. Do not request a technical spreadsheet when setup.cfg captures much of it. Ask what the car should have done. If one car is targeted, avoid a global retune. Explain whether existing craft use the change immediately or whether regenerated models/configs are needed."
+        ]
+      ]
+    ],
+    [
+      "Telemetry collection, files and timing",
+      [
+        [
+          "p",
+          "Read KDATelemetry.cs, TelemetryCsv.cs and the run README.txt. Current schema is 4. KDAHud.cs exposes RECORD / STOP RECORDING and MARK in flight. Begin needs an active, unpacked car. Folder: <active KSP root>/KDATelemetry/<local timestamp>-<vessel name>-<short id>/. Main/test roots are independent."
+        ],
+        [
+          "p",
+          "Coach the user: choose car/mode/settings; RECORD; check REC/sample count; drive normally briefly; reproduce one issue; MARK near it; STOP RECORDING; allow the writer to finish; ZIP the entire run folder and describe intended behavior. MARK stores time and sample count, not video or a description. Do not require straight-only or Road-only runs without a diagnostic reason."
+        ],
+        [
+          "table",
+          [
+            [
+              "File",
+              "Contents"
+            ],
+            [
+              "setup.cfg",
+              "Schema/runtime SHA, vessel/mass/timestep, part configs, current module fields, wheel labels/radius and native friction fields."
+            ],
+            [
+              "vehicle.csv",
+              "Vehicle body state, keys/axes, SC outputs, aids, engine/gear/boost/aero and diagnostics for each physics sample."
+            ],
+            [
+              "wheels.csv",
+              "Available wheel rows per sample: contact, steering, slip/load/forces, drive/brake/aid/grip states."
+            ],
+            [
+              "settings.csv",
+              "Initial module fields, then changes polled at 1 Hz; core SC flight settings also appear in vehicle.csv."
+            ],
+            [
+              "events.csv",
+              "START, MARK and STOP with elapsed time and details."
+            ],
+            [
+              "summary.txt and README.txt",
+              "Final stop reason, dropped queued packets, writer errors; schema, timing and unit caveats."
+            ]
+          ]
+        ],
+        [
+          "p",
+          "Sampling occurs after SC/recovery actuation in FixedUpdate. Native contact/force state can be a step older than the command. sample is run-local; time_s is elapsed game seconds; ut is universal time; dt_ut is actual game-time delta; fixed_dt is nominal physics step. Do not assume a fixed real-world video clock."
+        ],
+        [
+          "p",
+          "Recording stops on vessel/scene changes, packing, part-count changes, sampling/writer errors or shutdown. A bounded background queue reports dropped packets, not necessarily complete missing samples. summary.txt appears after worker completion; a missing summary may mean copying too early or abrupt termination. Inspect the files before declaring corruption."
+        ]
+      ]
+    ],
+    [
+      "Telemetry fields, units and joins",
+      [
+        [
+          "p",
+          "Read actual CSV headers; older logs differ. Join vehicle.csv to wheels.csv on sample within one run, retaining wheel part_id. setup.cfg maps IDs to corners. Apply settings.csv/events.csv by time_s, allowing 1 Hz polling uncertainty. Missing native wheel readings are omitted rows, not measured zero load. Use a real CSV parser: strings may be quoted and contain commas/newlines."
+        ],
+        [
+          "p",
+          "Field semantics matter: sc_active is the observer's confirmed-slide state, not simply SC enabled. tcs_active means TCS is enabled and allowed in that mode, not proof that torque is being cut. Use per-wheel tcs_torque_scale and aid_brake_pressure to inspect intervention. With SC present, raw_steer already includes steering trim; do not add raw_steer_trim twice."
+        ],
+        [
+          "table",
+          [
+            [
+              "Group",
+              "Fields and interpretation"
+            ],
+            [
+              "Inputs / timing",
+              "sample, time_s, dt_ut, key_a/d/w/s, raw_steer/trim, raw_throttle/trim, brakes, handbrake_active. Key columns are literal A/D/W/S; remapped input must also be interpreted through raw axes."
+            ],
+            [
+              "Body state",
+              "speed_kmh, forward/lateral/vertical_mps, slip_deg, yaw_rad_s, yaw_accel_rad_s2, grounded_wheels, roll_ground_deg. Local x right, y forward, z down; reported vertical/up acceleration follows explicit source signs."
+            ],
+            [
+              "Controller",
+              "sc_mode/enabled/active, allowed_oversteer, cornering_percent/budget_g, turn_limit, recovery_limit, driver_steer, sc_correction, output_steer, filtered_slip/yaw. Normalized limits and steering outputs are not degrees."
+            ],
+            [
+              "Prediction / settling",
+              "filtered_slip_rate_deg_s, filtered_yaw_rate_rad_s2, desired_yaw, race_recovery_bias, race_turn_in_scale, race_settling_weight, drift_bias/lock, sc_throttle_scale, sc_yaw_brake. Check source units."
+            ],
+            [
+              "Wheel / contact",
+              "actual_steer_deg, max_steer_deg, command_steer, servo_steer, stock_steer_deg/input, auto_steering, response, grounded, omega_rad_s, slip_x/y, load, contact_depth, suspension_compression."
+            ],
+            [
+              "Torque / aids / grip",
+              "drive_torque, brake_torque, drive_input, brake_input, aid_brake_pressure, abs_scale, engine_drag, tcs_torque_scale, grip_slider, friction_multiplier/adherent/peak/sliding. Native force/torque units are verbatim; verify API conventions."
+            ],
+            [
+              "Engine / aero",
+              "rpm, gear, selector, requested_throttle, engine_throttle, torque_nm, boost_bar, turbo_rotor, engine_load, shifting, limiter, aero_downforce_n. torque_nm is instantaneous, not rated peak."
+            ]
+          ]
+        ],
+        [
+          "p",
+          "Mass is tonnes; aero force is N; speed is named km/h or m/s; slip is degrees; yaw is rad/s; CSV booleans use 0/1. Do not deduce corrective direction from a key alone. Compare orientation, velocity, measured yaw/slip, wheel angle and the rig convention."
+        ]
+      ]
+    ],
+    [
+      "Diagnostic reasoning and verification",
+      [
+        [
+          "h",
+          "Handling investigation"
+        ],
+        [
+          "p",
+          "Check runtime SHA/schema, summary/events, sample ranges and wheel joins first. Reconstruct settings; separate grounded driving, takeoff/landing, impacts, burnout/handbrake and mode transitions. Treat MARK as a time window. Compare key onset/release, slip/yaw and derivatives, filtered state, limits, correction, actual steering, wheel load and torque/braking, allowing native contact-state lag."
+        ],
+        [
+          "p",
+          "Large requested correction but small actual wheel angle can indicate actuation/range constraints. Opposite-side overshoot after release can involve filtering, sign prediction or settling. Sustained drift with wheelspin may involve throttle, differential or load. These are hypotheses to test, not automatic diagnoses. Lower cornering allowance can conceal a recovery issue. Use matched runs and change one factor when useful."
+        ],
+        [
+          "h",
+          "Minimum useful checks"
+        ],
+        [
+          "p",
+          "For controls, use focused pure-core/replay checks and native comparison runs where available: hold/release, tapping, countersteer and both transition directions. For travel, test sag, compression/droop and landing without changing unrelated modes. For materials, inspect source/baked maps and render the actual asset. For converter edits, validate a fresh package and disposable install/rollback paths, retaining source metadata and notices."
+        ],
+        [
+          "p",
+          "Keep KDA-only packaging and the requested demo car. Record versions/hashes and distinguish the build on disk from the DLL actually loaded during a run. Static package validation is not a driving test. Do not claim to have installed, driven, opened or heard something you did not verify."
+        ],
+        [
+          "h",
+          "Return to simple language"
+        ],
+        [
+          "p",
+          "Explain what happened, the best-supported cause, what changed or remains uncertain, and one short next test. Teach RECORD / MARK / STOP and folder selection without requiring CSV expertise. Put technical detail in this context and source evidence, not in every prompt a beginner has to paste."
+        ]
+      ]
+    ],
+    [
+      "Current runtime and converter architecture",
+      [
+        [
+          "p",
+          "Runtime 2026-10-28-kda25 and converter V2.0 / 2026-10-26-kda12 are separate products in the current release sources. Read Hybrid Audio.md, Converter.md and the garage/suspension guides for the current feature set. The tested runtime is kda25; check actual installed hashes instead of assuming an older stable copy. release-manifest.json inventories actual download bytes; release-manifest.json records package file hashes."
+        ],
+        [
+          "p",
+          "LongTravelCore/KDALongTravel implement Standard/Rally/Desert hardware, sag targets, progressive resistance, bounded damping, track settings and suspension telemetry. KDAGarageTravel and KDALongTravelVisual provide editor tuning and visual articulation. Saved rates change only when the user applies settings, a calculator or a preset. Tune / Tires controls front/rear KDAGrip independently of chassis presets."
+        ],
+        [
+          "p",
+          "KDANitrous and NitrousCore implement opt-in rechargeable bottles, shot size, held key/action input and grounded drift recharge. KDAHud and KDAHudLauncher provide driving controls and the stock flight-toolbar toggle. AfterfireStyleCore and KDAAfterfire supply revised exhaust signals and a low-volume Flame plume. KDAExhaust gives blue nitrous precedence over orange fire. Keep these cosmetic systems separate from engine torque except for explicit nitrous power."
+        ],
+        [
+          "p",
+          "KDAWorldGarage uses the KDAGarage catalog and KDAEntrance transform; assets are under GameData/KDAGarageBuilding/Garage. It owns overview entry, complete craft handoff, player session/recovery files and door-aligned driveway launch. KDAWorkshopRoom renders the separate textured editor interior. KK and Custom Pre Launch Checks are optional external dependencies, never bundled."
+        ],
+        [
+          "p",
+          "The converter makes car-only packages and never contains or replaces runtime/crew/garage assets. It verifies the installed base ABI, minimum build, exact runtime hash and crew prerequisites; preserves scoped backups and rollback; then installs only the car and craft. Five-part output remains uncrewed until a physical seat/doorway and Kerbal are assigned. Native BeamNG vehicle-mod conversion is unsupported."
+        ],
+        [
+          "p",
+          "Current source has no duplicate GameData snapshot. Runtime/crew builds stage under source/.build/runtime; model rebuilds stage under .build/assets. Build tools take explicit KSP paths for external game assemblies. Preserve current module IDs, exact saved craft identity and player data unless the requested change includes a migration. The generic placement migration tool writes a separate output and retains UUID/pose/scale."
+        ]
+      ]
+    ],
+    [
+      "Current accepted behavior and scope",
+      [
+        [
+          "p",
+          "Runtime kda25 adds ExtremeSpeedGovernor for assisted imported Race/Sport cars, fading in from 65 to 80 m/s (234-288 km/h). At full weight, driver turn-in remains within the cornering budget and automatic yaw correction is capped at half that limit. Large slip-alignment recovery and automatic yaw-brake feedback fade out; electronic axle vectoring offsets are limited to three percentage points and yaw feedback fades out. Total drive allocation is conserved. Road, Drift, ordinary-speed calibration, suspension, grip and the separate rover ECU are unchanged. This trades large-slide automatic recovery for bounded intervention at extreme speed."
+        ],
+        [
+          "p",
+          "The separate rover ECU supports Unstable and Normal only. It is an add-on aid: do not add engine conversion, Fun mode, power changes, suspension changes or grip changes. Exactly two front wheels steer while enabled; disabling restores original steering settings. Its cornering allowance is a percentage of the calculated budget. Consult Rover ECU.md and source/ecu for the authoritative implementation."
+        ],
+        [
+          "p",
+          "Do not rebuild the converter for runtime-only or documentation-only work. Converter remains V2.0 / 2026-10-26-kda12; runtime is kda25. Third-party assets retain their own terms."
+        ]
+      ]
+    ]
+  ]
+}

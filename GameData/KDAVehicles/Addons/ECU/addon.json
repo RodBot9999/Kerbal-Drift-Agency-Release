@@ -1,0 +1,20 @@
+{
+  "name": "KDA Optional Rover ECU",
+  "build": "2026-10-27-ecu7",
+  "version": "0.4.0",
+  "runtime": "KDAECU.dll",
+  "dependencies": [
+    "KDA base runtime (tested kda13 and kda15)",
+    "HarmonyKSP"
+  ],
+  "stock_runtime": "KSP 1.12.5",
+  "steering_policy": "Shared physical front-pair steering command at VPP OnUpdate; mirrored collider axes handled; rear outputs zero; native keyboard/servo restored when off",
+  "asset_revision": "Readable ECU lid: corrected U mapping; larger printed plate. Runtime unchanged.",
+  "addon_profiles": [
+    "Unstable",
+    "Normal"
+  ],
+  "addon_normal_slip_degrees": 5,
+  "scope": "Rover-only stability ECU; native propulsion, tire grip and suspension retained.",
+  "cornering_allowance": "60-160 percent; 100 uses previous default conservative baseline; applied after geometry calculation"
+}
