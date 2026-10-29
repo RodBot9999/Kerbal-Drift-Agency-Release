@@ -21,9 +21,30 @@ to play.
 
 ## Included cars
 
-- **Lizard GT** — rear-wheel-drive V8.
-- **Rabbit Rally x (finished)** — AWD rally car with a ready-made seven-part craft,
-  including its physical seat and doorway.
+| **Lizard GT — included** | **Rabbit X AWD — included** |
+| --- | --- |
+| <img src="documentation/included-lizard-gt.png" alt="Included black Lizard GT drifting on the runway" width="100%"> | <img src="documentation/included-rabbit-x-awd.png" alt="Included blue Rabbit X AWD rally car" width="100%"> |
+| Black, rear-wheel-drive V8. | Blue AWD rally car, supplied as **Rabbit Rally x (finished)**. |
+
+**Both cars are included in the download.** Use **Cars → Prebuild Car** in the
+garage for complete builds with their saved wheel, seat and doorway positions,
+then assign a Kerbal before driving.
+
+## Rover drive-by-wire ECU
+
+<img src="documentation/showcase-rover-ecu.png" alt="KDA Rover Drive-by-Wire ECU showing the labelled top and forward arrow" width="750">
+
+Add the **KDA Rover Drive-by-Wire ECU** to a stock-wheel rover for adaptive
+steering, stability and brake assistance, ABS, and pitch-under-braking protection.
+Its **Unstable** and **Normal** profiles help manage difficult rovers while
+retaining their native propulsion, tire grip and suspension.
+
+**Mount it horizontally, labelled side up, with the arrow pointing toward the
+front of the rover.** Exactly two front wheels steer while the ECU is enabled;
+turning it off restores the original steering settings.
+
+See the [Rover ECU setup and profiles guide](documentation/Rover%20ECU.md) for
+wheel grouping, controls and installation details.
 
 ## In-game screenshots
 
