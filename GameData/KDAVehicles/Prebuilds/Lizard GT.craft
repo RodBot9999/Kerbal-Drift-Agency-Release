@@ -1,0 +1,144 @@
+ship = Lizard GT - KDA
+version = 1.12.5
+type = SPH
+size = 2,2,5
+PART
+{
+part = kda-lizard-gt-body_100
+partName = Part
+persistentId = 100
+pos = 0,2,0
+rot = 0.70710678,0,0,0.70710678
+attRot = 0.70710678,0,0,0.70710678
+attPos = 0,0,0
+attPos0 = 0,0,0
+attRot0 = 0.70710678,0,0,0.70710678
+mirror = 1,1,1
+symMethod = Mirror
+attachMode = 0
+inverseStage = 0
+parent = -1
+mass = 0.939
+link = kda-race-seat_105
+link = kda-doorway-marker_106
+link = kda-lizard-gt-FL_101
+attN = FL,kda-lizard-gt-FL_101
+link = kda-lizard-gt-FR_102
+attN = FR,kda-lizard-gt-FR_102
+link = kda-lizard-gt-RL_103
+attN = RL,kda-lizard-gt-RL_103
+link = kda-lizard-gt-RR_104
+attN = RR,kda-lizard-gt-RR_104
+}
+PART
+{
+part = kda-lizard-gt-FL_101
+partName = Part
+persistentId = 101
+pos = -0.767271,1.988971,1.36492
+rot = 0,1,0,0
+attRot = 0,0.70710678,-0.70710678,0
+attPos = -0.767271,1.36492,0.011028999999999956
+attPos0 = -0.767271,1.36492,0.011028999999999956
+attRot0 = 0,0.70710678,-0.70710678,0
+mirror = 1,1,1
+symMethod = Mirror
+attachMode = 0
+inverseStage = 0
+parent = 0
+mass = 0.011
+attN = top,kda-lizard-gt-body_100
+}
+PART
+{
+part = kda-lizard-gt-FR_102
+partName = Part
+persistentId = 102
+pos = 0.767271,1.988971,1.36492
+rot = 0,0,0,1
+attRot = -0.70710678,0,0,0.70710678
+attPos = 0.767271,1.36492,0.011028999999999956
+attPos0 = 0.767271,1.36492,0.011028999999999956
+attRot0 = -0.70710678,0,0,0.70710678
+mirror = 1,1,1
+symMethod = Mirror
+attachMode = 0
+inverseStage = 0
+parent = 0
+mass = 0.011
+attN = top,kda-lizard-gt-body_100
+}
+PART
+{
+part = kda-lizard-gt-RL_103
+partName = Part
+persistentId = 103
+pos = -0.717501,2.0110289999999997,-1.35499
+rot = 0,1,0,0
+attRot = 0,0.70710678,-0.70710678,0
+attPos = -0.717501,-1.35499,-0.011028999999999956
+attPos0 = -0.717501,-1.35499,-0.011028999999999956
+attRot0 = 0,0.70710678,-0.70710678,0
+mirror = 1,1,1
+symMethod = Mirror
+attachMode = 0
+inverseStage = 0
+parent = 0
+mass = 0.011
+attN = top,kda-lizard-gt-body_100
+}
+PART
+{
+part = kda-lizard-gt-RR_104
+partName = Part
+persistentId = 104
+pos = 0.717501,2.0110289999999997,-1.35499
+rot = 0,0,0,1
+attRot = -0.70710678,0,0,0.70710678
+attPos = 0.717501,-1.35499,-0.011028999999999956
+attPos0 = 0.717501,-1.35499,-0.011028999999999956
+attRot0 = -0.70710678,0,0,0.70710678
+mirror = 1,1,1
+symMethod = Mirror
+attachMode = 0
+inverseStage = 0
+parent = 0
+mass = 0.011
+attN = top,kda-lizard-gt-body_100
+}
+PART
+{
+part = kda-race-seat_105
+partName = Part
+persistentId = 105
+pos = -0.3391174,2.06360286,-0.53911793
+rot = 0,0,0,1
+attPos = -0.3391174,-0.53911793,-0.06360286
+attPos0 = -0.3391174,-0.53911793,-0.06360286
+attRot = -0.70710678,0,0,0.70710678
+attRot0 = -0.70710678,0,0,0.70710678
+attachMode = 1
+parent = 0
+srfN = srfAttach,kda-lizard-gt-body_100
+inverseStage = 0
+mass = .018
+}
+PART
+{
+part = kda-doorway-marker_106
+partName = Part
+persistentId = 106
+pos = -0.86889714,2.28454348,-0.38005501
+rot = 0,-0.70710678,0,0.70710678
+attPos = -0.86889714,-0.38005501,-0.28454348
+attPos0 = -0.86889714,-0.38005501,-0.28454348
+attRot = -0.5,-0.5,0.5,0.5
+attRot0 = -0.5,-0.5,0.5,0.5
+attachMode = 1
+parent = 0
+srfN = srfAttach,kda-lizard-gt-body_100
+inverseStage = 0
+mass = .018
+}
+
+

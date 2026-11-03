@@ -1,0 +1,2130 @@
+[
+  {
+    "vehicle": {
+      "id": "el_corvetttellako",
+      "name": "EL Corvetttellako",
+      "drivetrain": "RWD"
+    },
+    "wheel": {
+      "corner": "FL",
+      "axle": "front",
+      "radius_m": 0.31,
+      "grip_calibration": 1.0769807090169705,
+      "drive_weight": 0.0,
+      "drive_ratio": 1.0
+    },
+    "part_fields": {
+      "name": "kda-el-corvetttellako-FL",
+      "module": "Part",
+      "scale": "1",
+      "rescaleFactor": "1",
+      "node_stack_top": "0.0, 0.0, 0.0, 1.0, 0.0, 0.0",
+      "TechRequired": "start",
+      "entryCost": "7000",
+      "cost": "760",
+      "category": "Ground",
+      "subcategory": "0",
+      "title": "EL Corvetttellako FL wheel",
+      "attachRules": "1,0,0,0,0",
+      "mass": "0.011",
+      "dragModelType": "none",
+      "maximum_drag": "0.3",
+      "minimum_drag": "0.2",
+      "angularDrag": "1",
+      "maxTemp": "1200",
+      "crashTolerance": "100",
+      "breakingForce": "120",
+      "breakingTorque": "120",
+      "bulkheadProfiles": "srf"
+    },
+    "modules": {
+      "ModuleWheelBase": {
+        "name": "ModuleWheelBase",
+        "wheelColliderTransformName": "wheelCollider",
+        "wheelTransformName": "wheelPivot",
+        "wheelType": "MOTORIZED",
+        "useNewFrictionModel": "true",
+        "autoFriction": "false",
+        "autoFrictionAvailable": "false",
+        "frictionMultiplier": "1",
+        "adherentStart": "0.4",
+        "frictionAdherent": "1.023131673566122",
+        "peakStart": "1.5",
+        "frictionPeak": "1.346225886271213",
+        "limitStart": "4.5",
+        "frictionLimit": "0.8615845672135765",
+        "FitWheelColliderToMesh": "False",
+        "radius": "0.31",
+        "center": "0,0,0",
+        "mass": "0.011",
+        "groundHeightOffset": "0",
+        "TooltipTitle": "Car Wheel",
+        "TooltipPrimaryField": "Motorized"
+      },
+      "KDASuspension": {
+        "name": "KDASuspension",
+        "suspensionVersion": "2",
+        "springRateNmm": "168.75",
+        "antiRollRate": "48.75",
+        "bumpDamping": ".8385",
+        "reboundDamping": "1.3416",
+        "fastBumpDamping": ".587",
+        "fastReboundDamping": ".9224",
+        "axleInitialized": "true",
+        "toeIn": "0",
+        "baseModuleIndex": "0",
+        "suspensionTransformName": "suspensionPivot",
+        "suspensionDistance": "0.1",
+        "targetPosition": "0.5",
+        "maximumLoad": "30",
+        "springRatio": "48",
+        "damperRatio": "1.30",
+        "useDistributedMass": "true"
+      },
+      "ModuleWheelSteering": {
+        "name": "ModuleWheelSteering",
+        "autoSteeringAdjust": "false",
+        "responseTweakable": "10",
+        "steeringEnabled": "true",
+        "baseModuleIndex": "0",
+        "caliperTransformName": "SteeringPivot",
+        "steeringRange": "40",
+        "angleTweakable": "40",
+        "steeringResponse": "2"
+      },
+      "KDAWheelMotor": {
+        "name": "KDAWheelMotor",
+        "driveWeight": "0.0",
+        "driveRatio": "1.0",
+        "motorEnabled": "false",
+        "baseModuleIndex": "0",
+        "wheelSpeedMax": "150",
+        "driveResponse": "2",
+        "idleDrain": "0"
+      },
+      "KDAWheelBrakes": {
+        "name": "KDAWheelBrakes",
+        "baseModuleIndex": "0",
+        "maxBrakeTorque": "3",
+        "brakeResponse": "1"
+      },
+      "KDAMount": {
+        "name": "KDAMount"
+      },
+      "KDAGrip": {
+        "name": "KDAGrip"
+      },
+      "KDAAxle": {
+        "name": "KDAAxle"
+      },
+      "KDATireSmoke": {
+        "name": "KDATireSmoke"
+      },
+      "ModuleTestSubject": {
+        "name": "ModuleTestSubject",
+        "environments": "15",
+        "useStaging": "False",
+        "useEvent": "True"
+      },
+      "KDAWheelSelection": {
+        "name": "KDAWheelSelection"
+      }
+    },
+    "model": "KDAVehicles/Vehicles/el_corvetttellako/Models/FL"
+  },
+  {
+    "vehicle": {
+      "id": "el_corvetttellako",
+      "name": "EL Corvetttellako",
+      "drivetrain": "RWD"
+    },
+    "wheel": {
+      "corner": "FR",
+      "axle": "front",
+      "radius_m": 0.31,
+      "grip_calibration": 1.0769807090169705,
+      "drive_weight": 0.0,
+      "drive_ratio": 1.0
+    },
+    "part_fields": {
+      "name": "kda-el-corvetttellako-FR",
+      "module": "Part",
+      "scale": "1",
+      "rescaleFactor": "1",
+      "node_stack_top": "0.0, 0.0, 0.0, 1.0, 0.0, 0.0",
+      "TechRequired": "start",
+      "entryCost": "7000",
+      "cost": "760",
+      "category": "Ground",
+      "subcategory": "0",
+      "title": "EL Corvetttellako FR wheel",
+      "attachRules": "1,0,0,0,0",
+      "mass": "0.011",
+      "dragModelType": "none",
+      "maximum_drag": "0.3",
+      "minimum_drag": "0.2",
+      "angularDrag": "1",
+      "maxTemp": "1200",
+      "crashTolerance": "100",
+      "breakingForce": "120",
+      "breakingTorque": "120",
+      "bulkheadProfiles": "srf"
+    },
+    "modules": {
+      "ModuleWheelBase": {
+        "name": "ModuleWheelBase",
+        "wheelColliderTransformName": "wheelCollider",
+        "wheelTransformName": "wheelPivot",
+        "wheelType": "MOTORIZED",
+        "useNewFrictionModel": "true",
+        "autoFriction": "false",
+        "autoFrictionAvailable": "false",
+        "frictionMultiplier": "1",
+        "adherentStart": "0.4",
+        "frictionAdherent": "1.023131673566122",
+        "peakStart": "1.5",
+        "frictionPeak": "1.346225886271213",
+        "limitStart": "4.5",
+        "frictionLimit": "0.8615845672135765",
+        "FitWheelColliderToMesh": "False",
+        "radius": "0.31",
+        "center": "0,0,0",
+        "mass": "0.011",
+        "groundHeightOffset": "0",
+        "TooltipTitle": "Car Wheel",
+        "TooltipPrimaryField": "Motorized"
+      },
+      "KDASuspension": {
+        "name": "KDASuspension",
+        "suspensionVersion": "2",
+        "springRateNmm": "168.75",
+        "antiRollRate": "48.75",
+        "bumpDamping": ".8385",
+        "reboundDamping": "1.3416",
+        "fastBumpDamping": ".587",
+        "fastReboundDamping": ".9224",
+        "axleInitialized": "true",
+        "toeIn": "0",
+        "baseModuleIndex": "0",
+        "suspensionTransformName": "suspensionPivot",
+        "suspensionDistance": "0.1",
+        "targetPosition": "0.5",
+        "maximumLoad": "30",
+        "springRatio": "48",
+        "damperRatio": "1.30",
+        "useDistributedMass": "true"
+      },
+      "ModuleWheelSteering": {
+        "name": "ModuleWheelSteering",
+        "autoSteeringAdjust": "false",
+        "responseTweakable": "10",
+        "steeringEnabled": "true",
+        "baseModuleIndex": "0",
+        "caliperTransformName": "SteeringPivot",
+        "steeringRange": "40",
+        "angleTweakable": "40",
+        "steeringResponse": "2"
+      },
+      "KDAWheelMotor": {
+        "name": "KDAWheelMotor",
+        "driveWeight": "0.0",
+        "driveRatio": "1.0",
+        "motorEnabled": "false",
+        "baseModuleIndex": "0",
+        "wheelSpeedMax": "150",
+        "driveResponse": "2",
+        "idleDrain": "0"
+      },
+      "KDAWheelBrakes": {
+        "name": "KDAWheelBrakes",
+        "baseModuleIndex": "0",
+        "maxBrakeTorque": "3",
+        "brakeResponse": "1"
+      },
+      "KDAMount": {
+        "name": "KDAMount"
+      },
+      "KDAGrip": {
+        "name": "KDAGrip"
+      },
+      "KDAAxle": {
+        "name": "KDAAxle"
+      },
+      "KDATireSmoke": {
+        "name": "KDATireSmoke"
+      },
+      "ModuleTestSubject": {
+        "name": "ModuleTestSubject",
+        "environments": "15",
+        "useStaging": "False",
+        "useEvent": "True"
+      },
+      "KDAWheelSelection": {
+        "name": "KDAWheelSelection"
+      }
+    },
+    "model": "KDAVehicles/Vehicles/el_corvetttellako/Models/FR"
+  },
+  {
+    "vehicle": {
+      "id": "el_corvetttellako",
+      "name": "EL Corvetttellako",
+      "drivetrain": "RWD"
+    },
+    "wheel": {
+      "corner": "RL",
+      "axle": "rear",
+      "radius_m": 0.33,
+      "grip_calibration": 1.1269000929647421,
+      "drive_weight": 0.5,
+      "drive_ratio": 1.0
+    },
+    "part_fields": {
+      "name": "kda-el-corvetttellako-RL",
+      "module": "Part",
+      "scale": "1",
+      "rescaleFactor": "1",
+      "node_stack_top": "0.0, 0.0, 0.0, 1.0, 0.0, 0.0",
+      "TechRequired": "start",
+      "entryCost": "7000",
+      "cost": "760",
+      "category": "Ground",
+      "subcategory": "0",
+      "title": "EL Corvetttellako RL wheel",
+      "attachRules": "1,0,0,0,0",
+      "mass": "0.011",
+      "dragModelType": "none",
+      "maximum_drag": "0.3",
+      "minimum_drag": "0.2",
+      "angularDrag": "1",
+      "maxTemp": "1200",
+      "crashTolerance": "100",
+      "breakingForce": "120",
+      "breakingTorque": "120",
+      "bulkheadProfiles": "srf"
+    },
+    "modules": {
+      "ModuleWheelBase": {
+        "name": "ModuleWheelBase",
+        "wheelColliderTransformName": "wheelCollider",
+        "wheelTransformName": "wheelPivot",
+        "wheelType": "MOTORIZED",
+        "useNewFrictionModel": "true",
+        "autoFriction": "false",
+        "autoFrictionAvailable": "false",
+        "frictionMultiplier": "1",
+        "adherentStart": "0.4",
+        "frictionAdherent": "1.070555088316505",
+        "peakStart": "1.5",
+        "frictionPeak": "1.4086251162059278",
+        "limitStart": "4.5",
+        "frictionLimit": "0.9015200743717937",
+        "FitWheelColliderToMesh": "False",
+        "radius": "0.33",
+        "center": "0,0,0",
+        "mass": "0.011",
+        "groundHeightOffset": "0",
+        "TooltipTitle": "Car Wheel",
+        "TooltipPrimaryField": "Motorized"
+      },
+      "KDASuspension": {
+        "name": "KDASuspension",
+        "suspensionVersion": "2",
+        "springRateNmm": "150",
+        "antiRollRate": "33.75",
+        "bumpDamping": ".8385",
+        "reboundDamping": "1.3416",
+        "fastBumpDamping": ".587",
+        "fastReboundDamping": ".9224",
+        "axleInitialized": "true",
+        "toeIn": ".15",
+        "baseModuleIndex": "0",
+        "suspensionTransformName": "suspensionPivot",
+        "suspensionDistance": "0.1",
+        "targetPosition": "0.5",
+        "maximumLoad": "30",
+        "springRatio": "48",
+        "damperRatio": "1.30",
+        "useDistributedMass": "true"
+      },
+      "ModuleWheelSteering": {
+        "name": "ModuleWheelSteering",
+        "autoSteeringAdjust": "false",
+        "responseTweakable": "10",
+        "steeringEnabled": "false",
+        "baseModuleIndex": "0",
+        "caliperTransformName": "SteeringPivot",
+        "steeringRange": "40",
+        "angleTweakable": "40",
+        "steeringResponse": "2"
+      },
+      "KDAWheelMotor": {
+        "name": "KDAWheelMotor",
+        "driveWeight": "0.5",
+        "driveRatio": "1.0",
+        "motorEnabled": "true",
+        "baseModuleIndex": "0",
+        "wheelSpeedMax": "150",
+        "driveResponse": "2",
+        "idleDrain": "0"
+      },
+      "KDAWheelBrakes": {
+        "name": "KDAWheelBrakes",
+        "baseModuleIndex": "0",
+        "maxBrakeTorque": "3",
+        "brakeResponse": "1"
+      },
+      "KDAMount": {
+        "name": "KDAMount"
+      },
+      "KDAGrip": {
+        "name": "KDAGrip"
+      },
+      "KDAAxle": {
+        "name": "KDAAxle"
+      },
+      "KDATireSmoke": {
+        "name": "KDATireSmoke"
+      },
+      "ModuleTestSubject": {
+        "name": "ModuleTestSubject",
+        "environments": "15",
+        "useStaging": "False",
+        "useEvent": "True"
+      },
+      "KDAWheelSelection": {
+        "name": "KDAWheelSelection"
+      }
+    },
+    "model": "KDAVehicles/Vehicles/el_corvetttellako/Models/RL"
+  },
+  {
+    "vehicle": {
+      "id": "el_corvetttellako",
+      "name": "EL Corvetttellako",
+      "drivetrain": "RWD"
+    },
+    "wheel": {
+      "corner": "RR",
+      "axle": "rear",
+      "radius_m": 0.33,
+      "grip_calibration": 1.1269000929647421,
+      "drive_weight": 0.5,
+      "drive_ratio": 1.0
+    },
+    "part_fields": {
+      "name": "kda-el-corvetttellako-RR",
+      "module": "Part",
+      "scale": "1",
+      "rescaleFactor": "1",
+      "node_stack_top": "0.0, 0.0, 0.0, 1.0, 0.0, 0.0",
+      "TechRequired": "start",
+      "entryCost": "7000",
+      "cost": "760",
+      "category": "Ground",
+      "subcategory": "0",
+      "title": "EL Corvetttellako RR wheel",
+      "attachRules": "1,0,0,0,0",
+      "mass": "0.011",
+      "dragModelType": "none",
+      "maximum_drag": "0.3",
+      "minimum_drag": "0.2",
+      "angularDrag": "1",
+      "maxTemp": "1200",
+      "crashTolerance": "100",
+      "breakingForce": "120",
+      "breakingTorque": "120",
+      "bulkheadProfiles": "srf"
+    },
+    "modules": {
+      "ModuleWheelBase": {
+        "name": "ModuleWheelBase",
+        "wheelColliderTransformName": "wheelCollider",
+        "wheelTransformName": "wheelPivot",
+        "wheelType": "MOTORIZED",
+        "useNewFrictionModel": "true",
+        "autoFriction": "false",
+        "autoFrictionAvailable": "false",
+        "frictionMultiplier": "1",
+        "adherentStart": "0.4",
+        "frictionAdherent": "1.070555088316505",
+        "peakStart": "1.5",
+        "frictionPeak": "1.4086251162059278",
+        "limitStart": "4.5",
+        "frictionLimit": "0.9015200743717937",
+        "FitWheelColliderToMesh": "False",
+        "radius": "0.33",
+        "center": "0,0,0",
+        "mass": "0.011",
+        "groundHeightOffset": "0",
+        "TooltipTitle": "Car Wheel",
+        "TooltipPrimaryField": "Motorized"
+      },
+      "KDASuspension": {
+        "name": "KDASuspension",
+        "suspensionVersion": "2",
+        "springRateNmm": "150",
+        "antiRollRate": "33.75",
+        "bumpDamping": ".8385",
+        "reboundDamping": "1.3416",
+        "fastBumpDamping": ".587",
+        "fastReboundDamping": ".9224",
+        "axleInitialized": "true",
+        "toeIn": ".15",
+        "baseModuleIndex": "0",
+        "suspensionTransformName": "suspensionPivot",
+        "suspensionDistance": "0.1",
+        "targetPosition": "0.5",
+        "maximumLoad": "30",
+        "springRatio": "48",
+        "damperRatio": "1.30",
+        "useDistributedMass": "true"
+      },
+      "ModuleWheelSteering": {
+        "name": "ModuleWheelSteering",
+        "autoSteeringAdjust": "false",
+        "responseTweakable": "10",
+        "steeringEnabled": "false",
+        "baseModuleIndex": "0",
+        "caliperTransformName": "SteeringPivot",
+        "steeringRange": "40",
+        "angleTweakable": "40",
+        "steeringResponse": "2"
+      },
+      "KDAWheelMotor": {
+        "name": "KDAWheelMotor",
+        "driveWeight": "0.5",
+        "driveRatio": "1.0",
+        "motorEnabled": "true",
+        "baseModuleIndex": "0",
+        "wheelSpeedMax": "150",
+        "driveResponse": "2",
+        "idleDrain": "0"
+      },
+      "KDAWheelBrakes": {
+        "name": "KDAWheelBrakes",
+        "baseModuleIndex": "0",
+        "maxBrakeTorque": "3",
+        "brakeResponse": "1"
+      },
+      "KDAMount": {
+        "name": "KDAMount"
+      },
+      "KDAGrip": {
+        "name": "KDAGrip"
+      },
+      "KDAAxle": {
+        "name": "KDAAxle"
+      },
+      "KDATireSmoke": {
+        "name": "KDATireSmoke"
+      },
+      "ModuleTestSubject": {
+        "name": "ModuleTestSubject",
+        "environments": "15",
+        "useStaging": "False",
+        "useEvent": "True"
+      },
+      "KDAWheelSelection": {
+        "name": "KDAWheelSelection"
+      }
+    },
+    "model": "KDAVehicles/Vehicles/el_corvetttellako/Models/RR"
+  },
+  {
+    "vehicle": {
+      "id": "leopard_safire_ksp",
+      "name": "Leopard Safire KSP",
+      "drivetrain": "AWD"
+    },
+    "wheel": {
+      "corner": "FL",
+      "axle": "front",
+      "radius_m": 0.2925,
+      "grip_calibration": 1.0103933333333335,
+      "drive_weight": 0.19999998807907,
+      "drive_ratio": 1.0
+    },
+    "part_fields": {
+      "name": "kda-leopard-safire-ksp-FL",
+      "module": "Part",
+      "scale": "1",
+      "rescaleFactor": "1",
+      "node_stack_top": "0.0, 0.0, 0.0, 1.0, 0.0, 0.0",
+      "TechRequired": "start",
+      "entryCost": "7000",
+      "cost": "760",
+      "category": "Ground",
+      "subcategory": "0",
+      "title": "Leopard Safire KSP FL wheel",
+      "attachRules": "1,0,0,0,0",
+      "mass": "0.011",
+      "dragModelType": "none",
+      "maximum_drag": "0.3",
+      "minimum_drag": "0.2",
+      "angularDrag": "1",
+      "maxTemp": "1200",
+      "crashTolerance": "100",
+      "breakingForce": "120",
+      "breakingTorque": "120",
+      "bulkheadProfiles": "srf"
+    },
+    "modules": {
+      "ModuleWheelBase": {
+        "name": "ModuleWheelBase",
+        "wheelColliderTransformName": "wheelCollider",
+        "wheelTransformName": "wheelPivot",
+        "wheelType": "MOTORIZED",
+        "useNewFrictionModel": "true",
+        "autoFriction": "false",
+        "autoFrictionAvailable": "false",
+        "frictionMultiplier": "1",
+        "adherentStart": "0.4",
+        "frictionAdherent": "0.9598736666666667",
+        "peakStart": "1.5",
+        "frictionPeak": "1.2629916666666667",
+        "limitStart": "4.5",
+        "frictionLimit": "0.8083146666666668",
+        "FitWheelColliderToMesh": "False",
+        "radius": "0.2925",
+        "center": "0,0,0",
+        "mass": "0.011",
+        "groundHeightOffset": "0",
+        "TooltipTitle": "Car Wheel",
+        "TooltipPrimaryField": "Motorized"
+      },
+      "KDASuspension": {
+        "name": "KDASuspension",
+        "suspensionVersion": "2",
+        "springRateNmm": "168.75",
+        "antiRollRate": "48.75",
+        "bumpDamping": ".8385",
+        "reboundDamping": "1.3416",
+        "fastBumpDamping": ".587",
+        "fastReboundDamping": ".9224",
+        "axleInitialized": "true",
+        "toeIn": "0",
+        "baseModuleIndex": "0",
+        "suspensionTransformName": "suspensionPivot",
+        "suspensionDistance": "0.1",
+        "targetPosition": "0.5",
+        "maximumLoad": "30",
+        "springRatio": "48",
+        "damperRatio": "1.30",
+        "useDistributedMass": "true"
+      },
+      "ModuleWheelSteering": {
+        "name": "ModuleWheelSteering",
+        "autoSteeringAdjust": "false",
+        "responseTweakable": "10",
+        "steeringEnabled": "true",
+        "baseModuleIndex": "0",
+        "caliperTransformName": "SteeringPivot",
+        "steeringRange": "40",
+        "angleTweakable": "40",
+        "steeringResponse": "2"
+      },
+      "KDAWheelMotor": {
+        "name": "KDAWheelMotor",
+        "driveWeight": "0.19999998807907",
+        "driveRatio": "1.0",
+        "motorEnabled": "true",
+        "baseModuleIndex": "0",
+        "wheelSpeedMax": "150",
+        "driveResponse": "2",
+        "idleDrain": "0"
+      },
+      "KDAWheelBrakes": {
+        "name": "KDAWheelBrakes",
+        "baseModuleIndex": "0",
+        "maxBrakeTorque": "3",
+        "brakeResponse": "1"
+      },
+      "KDAMount": {
+        "name": "KDAMount"
+      },
+      "KDAGrip": {
+        "name": "KDAGrip"
+      },
+      "KDAAxle": {
+        "name": "KDAAxle"
+      },
+      "KDATireSmoke": {
+        "name": "KDATireSmoke"
+      },
+      "ModuleTestSubject": {
+        "name": "ModuleTestSubject",
+        "environments": "15",
+        "useStaging": "False",
+        "useEvent": "True"
+      },
+      "KDAWheelSelection": {
+        "name": "KDAWheelSelection"
+      }
+    },
+    "model": "KDAVehicles/Vehicles/leopard_safire_ksp/Models/FL"
+  },
+  {
+    "vehicle": {
+      "id": "leopard_safire_ksp",
+      "name": "Leopard Safire KSP",
+      "drivetrain": "AWD"
+    },
+    "wheel": {
+      "corner": "FR",
+      "axle": "front",
+      "radius_m": 0.2925,
+      "grip_calibration": 1.0103933333333335,
+      "drive_weight": 0.19999998807907,
+      "drive_ratio": 1.0
+    },
+    "part_fields": {
+      "name": "kda-leopard-safire-ksp-FR",
+      "module": "Part",
+      "scale": "1",
+      "rescaleFactor": "1",
+      "node_stack_top": "0.0, 0.0, 0.0, 1.0, 0.0, 0.0",
+      "TechRequired": "start",
+      "entryCost": "7000",
+      "cost": "760",
+      "category": "Ground",
+      "subcategory": "0",
+      "title": "Leopard Safire KSP FR wheel",
+      "attachRules": "1,0,0,0,0",
+      "mass": "0.011",
+      "dragModelType": "none",
+      "maximum_drag": "0.3",
+      "minimum_drag": "0.2",
+      "angularDrag": "1",
+      "maxTemp": "1200",
+      "crashTolerance": "100",
+      "breakingForce": "120",
+      "breakingTorque": "120",
+      "bulkheadProfiles": "srf"
+    },
+    "modules": {
+      "ModuleWheelBase": {
+        "name": "ModuleWheelBase",
+        "wheelColliderTransformName": "wheelCollider",
+        "wheelTransformName": "wheelPivot",
+        "wheelType": "MOTORIZED",
+        "useNewFrictionModel": "true",
+        "autoFriction": "false",
+        "autoFrictionAvailable": "false",
+        "frictionMultiplier": "1",
+        "adherentStart": "0.4",
+        "frictionAdherent": "0.9598736666666667",
+        "peakStart": "1.5",
+        "frictionPeak": "1.2629916666666667",
+        "limitStart": "4.5",
+        "frictionLimit": "0.8083146666666668",
+        "FitWheelColliderToMesh": "False",
+        "radius": "0.2925",
+        "center": "0,0,0",
+        "mass": "0.011",
+        "groundHeightOffset": "0",
+        "TooltipTitle": "Car Wheel",
+        "TooltipPrimaryField": "Motorized"
+      },
+      "KDASuspension": {
+        "name": "KDASuspension",
+        "suspensionVersion": "2",
+        "springRateNmm": "168.75",
+        "antiRollRate": "48.75",
+        "bumpDamping": ".8385",
+        "reboundDamping": "1.3416",
+        "fastBumpDamping": ".587",
+        "fastReboundDamping": ".9224",
+        "axleInitialized": "true",
+        "toeIn": "0",
+        "baseModuleIndex": "0",
+        "suspensionTransformName": "suspensionPivot",
+        "suspensionDistance": "0.1",
+        "targetPosition": "0.5",
+        "maximumLoad": "30",
+        "springRatio": "48",
+        "damperRatio": "1.30",
+        "useDistributedMass": "true"
+      },
+      "ModuleWheelSteering": {
+        "name": "ModuleWheelSteering",
+        "autoSteeringAdjust": "false",
+        "responseTweakable": "10",
+        "steeringEnabled": "true",
+        "baseModuleIndex": "0",
+        "caliperTransformName": "SteeringPivot",
+        "steeringRange": "40",
+        "angleTweakable": "40",
+        "steeringResponse": "2"
+      },
+      "KDAWheelMotor": {
+        "name": "KDAWheelMotor",
+        "driveWeight": "0.19999998807907",
+        "driveRatio": "1.0",
+        "motorEnabled": "true",
+        "baseModuleIndex": "0",
+        "wheelSpeedMax": "150",
+        "driveResponse": "2",
+        "idleDrain": "0"
+      },
+      "KDAWheelBrakes": {
+        "name": "KDAWheelBrakes",
+        "baseModuleIndex": "0",
+        "maxBrakeTorque": "3",
+        "brakeResponse": "1"
+      },
+      "KDAMount": {
+        "name": "KDAMount"
+      },
+      "KDAGrip": {
+        "name": "KDAGrip"
+      },
+      "KDAAxle": {
+        "name": "KDAAxle"
+      },
+      "KDATireSmoke": {
+        "name": "KDATireSmoke"
+      },
+      "ModuleTestSubject": {
+        "name": "ModuleTestSubject",
+        "environments": "15",
+        "useStaging": "False",
+        "useEvent": "True"
+      },
+      "KDAWheelSelection": {
+        "name": "KDAWheelSelection"
+      }
+    },
+    "model": "KDAVehicles/Vehicles/leopard_safire_ksp/Models/FR"
+  },
+  {
+    "vehicle": {
+      "id": "leopard_safire_ksp",
+      "name": "Leopard Safire KSP",
+      "drivetrain": "AWD"
+    },
+    "wheel": {
+      "corner": "RL",
+      "axle": "rear",
+      "radius_m": 0.3,
+      "grip_calibration": 1.0344992896197496,
+      "drive_weight": 0.30000001192093,
+      "drive_ratio": 1.0
+    },
+    "part_fields": {
+      "name": "kda-leopard-safire-ksp-RL",
+      "module": "Part",
+      "scale": "1",
+      "rescaleFactor": "1",
+      "node_stack_top": "0.0, 0.0, 0.0, 1.0, 0.0, 0.0",
+      "TechRequired": "start",
+      "entryCost": "7000",
+      "cost": "760",
+      "category": "Ground",
+      "subcategory": "0",
+      "title": "Leopard Safire KSP RL wheel",
+      "attachRules": "1,0,0,0,0",
+      "mass": "0.011",
+      "dragModelType": "none",
+      "maximum_drag": "0.3",
+      "minimum_drag": "0.2",
+      "angularDrag": "1",
+      "maxTemp": "1200",
+      "crashTolerance": "100",
+      "breakingForce": "120",
+      "breakingTorque": "120",
+      "bulkheadProfiles": "srf"
+    },
+    "modules": {
+      "ModuleWheelBase": {
+        "name": "ModuleWheelBase",
+        "wheelColliderTransformName": "wheelCollider",
+        "wheelTransformName": "wheelPivot",
+        "wheelType": "MOTORIZED",
+        "useNewFrictionModel": "true",
+        "autoFriction": "false",
+        "autoFrictionAvailable": "false",
+        "frictionMultiplier": "1",
+        "adherentStart": "0.4",
+        "frictionAdherent": "0.9827743251387621",
+        "peakStart": "1.5",
+        "frictionPeak": "1.293124112024687",
+        "limitStart": "4.5",
+        "frictionLimit": "0.8275994316957997",
+        "FitWheelColliderToMesh": "False",
+        "radius": "0.3",
+        "center": "0,0,0",
+        "mass": "0.011",
+        "groundHeightOffset": "0",
+        "TooltipTitle": "Car Wheel",
+        "TooltipPrimaryField": "Motorized"
+      },
+      "KDASuspension": {
+        "name": "KDASuspension",
+        "suspensionVersion": "2",
+        "springRateNmm": "150",
+        "antiRollRate": "33.75",
+        "bumpDamping": ".8385",
+        "reboundDamping": "1.3416",
+        "fastBumpDamping": ".587",
+        "fastReboundDamping": ".9224",
+        "axleInitialized": "true",
+        "toeIn": ".15",
+        "baseModuleIndex": "0",
+        "suspensionTransformName": "suspensionPivot",
+        "suspensionDistance": "0.1",
+        "targetPosition": "0.5",
+        "maximumLoad": "30",
+        "springRatio": "48",
+        "damperRatio": "1.30",
+        "useDistributedMass": "true"
+      },
+      "ModuleWheelSteering": {
+        "name": "ModuleWheelSteering",
+        "autoSteeringAdjust": "false",
+        "responseTweakable": "10",
+        "steeringEnabled": "false",
+        "baseModuleIndex": "0",
+        "caliperTransformName": "SteeringPivot",
+        "steeringRange": "40",
+        "angleTweakable": "40",
+        "steeringResponse": "2"
+      },
+      "KDAWheelMotor": {
+        "name": "KDAWheelMotor",
+        "driveWeight": "0.30000001192093",
+        "driveRatio": "1.0",
+        "motorEnabled": "true",
+        "baseModuleIndex": "0",
+        "wheelSpeedMax": "150",
+        "driveResponse": "2",
+        "idleDrain": "0"
+      },
+      "KDAWheelBrakes": {
+        "name": "KDAWheelBrakes",
+        "baseModuleIndex": "0",
+        "maxBrakeTorque": "3",
+        "brakeResponse": "1"
+      },
+      "KDAMount": {
+        "name": "KDAMount"
+      },
+      "KDAGrip": {
+        "name": "KDAGrip"
+      },
+      "KDAAxle": {
+        "name": "KDAAxle"
+      },
+      "KDATireSmoke": {
+        "name": "KDATireSmoke"
+      },
+      "ModuleTestSubject": {
+        "name": "ModuleTestSubject",
+        "environments": "15",
+        "useStaging": "False",
+        "useEvent": "True"
+      },
+      "KDAWheelSelection": {
+        "name": "KDAWheelSelection"
+      }
+    },
+    "model": "KDAVehicles/Vehicles/leopard_safire_ksp/Models/RL"
+  },
+  {
+    "vehicle": {
+      "id": "leopard_safire_ksp",
+      "name": "Leopard Safire KSP",
+      "drivetrain": "AWD"
+    },
+    "wheel": {
+      "corner": "RR",
+      "axle": "rear",
+      "radius_m": 0.3,
+      "grip_calibration": 1.0344992896197496,
+      "drive_weight": 0.30000001192093,
+      "drive_ratio": 1.0
+    },
+    "part_fields": {
+      "name": "kda-leopard-safire-ksp-RR",
+      "module": "Part",
+      "scale": "1",
+      "rescaleFactor": "1",
+      "node_stack_top": "0.0, 0.0, 0.0, 1.0, 0.0, 0.0",
+      "TechRequired": "start",
+      "entryCost": "7000",
+      "cost": "760",
+      "category": "Ground",
+      "subcategory": "0",
+      "title": "Leopard Safire KSP RR wheel",
+      "attachRules": "1,0,0,0,0",
+      "mass": "0.011",
+      "dragModelType": "none",
+      "maximum_drag": "0.3",
+      "minimum_drag": "0.2",
+      "angularDrag": "1",
+      "maxTemp": "1200",
+      "crashTolerance": "100",
+      "breakingForce": "120",
+      "breakingTorque": "120",
+      "bulkheadProfiles": "srf"
+    },
+    "modules": {
+      "ModuleWheelBase": {
+        "name": "ModuleWheelBase",
+        "wheelColliderTransformName": "wheelCollider",
+        "wheelTransformName": "wheelPivot",
+        "wheelType": "MOTORIZED",
+        "useNewFrictionModel": "true",
+        "autoFriction": "false",
+        "autoFrictionAvailable": "false",
+        "frictionMultiplier": "1",
+        "adherentStart": "0.4",
+        "frictionAdherent": "0.9827743251387621",
+        "peakStart": "1.5",
+        "frictionPeak": "1.293124112024687",
+        "limitStart": "4.5",
+        "frictionLimit": "0.8275994316957997",
+        "FitWheelColliderToMesh": "False",
+        "radius": "0.3",
+        "center": "0,0,0",
+        "mass": "0.011",
+        "groundHeightOffset": "0",
+        "TooltipTitle": "Car Wheel",
+        "TooltipPrimaryField": "Motorized"
+      },
+      "KDASuspension": {
+        "name": "KDASuspension",
+        "suspensionVersion": "2",
+        "springRateNmm": "150",
+        "antiRollRate": "33.75",
+        "bumpDamping": ".8385",
+        "reboundDamping": "1.3416",
+        "fastBumpDamping": ".587",
+        "fastReboundDamping": ".9224",
+        "axleInitialized": "true",
+        "toeIn": ".15",
+        "baseModuleIndex": "0",
+        "suspensionTransformName": "suspensionPivot",
+        "suspensionDistance": "0.1",
+        "targetPosition": "0.5",
+        "maximumLoad": "30",
+        "springRatio": "48",
+        "damperRatio": "1.30",
+        "useDistributedMass": "true"
+      },
+      "ModuleWheelSteering": {
+        "name": "ModuleWheelSteering",
+        "autoSteeringAdjust": "false",
+        "responseTweakable": "10",
+        "steeringEnabled": "false",
+        "baseModuleIndex": "0",
+        "caliperTransformName": "SteeringPivot",
+        "steeringRange": "40",
+        "angleTweakable": "40",
+        "steeringResponse": "2"
+      },
+      "KDAWheelMotor": {
+        "name": "KDAWheelMotor",
+        "driveWeight": "0.30000001192093",
+        "driveRatio": "1.0",
+        "motorEnabled": "true",
+        "baseModuleIndex": "0",
+        "wheelSpeedMax": "150",
+        "driveResponse": "2",
+        "idleDrain": "0"
+      },
+      "KDAWheelBrakes": {
+        "name": "KDAWheelBrakes",
+        "baseModuleIndex": "0",
+        "maxBrakeTorque": "3",
+        "brakeResponse": "1"
+      },
+      "KDAMount": {
+        "name": "KDAMount"
+      },
+      "KDAGrip": {
+        "name": "KDAGrip"
+      },
+      "KDAAxle": {
+        "name": "KDAAxle"
+      },
+      "KDATireSmoke": {
+        "name": "KDATireSmoke"
+      },
+      "ModuleTestSubject": {
+        "name": "ModuleTestSubject",
+        "environments": "15",
+        "useStaging": "False",
+        "useEvent": "True"
+      },
+      "KDAWheelSelection": {
+        "name": "KDAWheelSelection"
+      }
+    },
+    "model": "KDAVehicles/Vehicles/leopard_safire_ksp/Models/RR"
+  },
+  {
+    "vehicle": {
+      "id": "lizard_gt",
+      "name": "Lizard GT",
+      "drivetrain": "RWD"
+    },
+    "wheel": {
+      "corner": "FL",
+      "axle": "front",
+      "radius_m": 0.305,
+      "grip_calibration": 1.578134756831161,
+      "drive_weight": 0.0,
+      "drive_ratio": 1.0
+    },
+    "part_fields": {
+      "name": "kda-lizard-gt-FL",
+      "module": "Part",
+      "scale": "1",
+      "rescaleFactor": "1",
+      "node_stack_top": "0.0, 0.0, 0.0, 1.0, 0.0, 0.0",
+      "TechRequired": "start",
+      "entryCost": "7000",
+      "cost": "760",
+      "category": "Ground",
+      "subcategory": "0",
+      "title": "Lizard GT FL wheel",
+      "attachRules": "1,0,0,0,0",
+      "mass": "0.011",
+      "dragModelType": "none",
+      "maximum_drag": "0.3",
+      "minimum_drag": "0.2",
+      "angularDrag": "1",
+      "maxTemp": "1200",
+      "crashTolerance": "100",
+      "breakingForce": "120",
+      "breakingTorque": "120",
+      "bulkheadProfiles": "srf"
+    },
+    "modules": {
+      "ModuleWheelBase": {
+        "name": "ModuleWheelBase",
+        "wheelColliderTransformName": "wheelCollider",
+        "wheelTransformName": "wheelPivot",
+        "wheelType": "MOTORIZED",
+        "useNewFrictionModel": "true",
+        "autoFriction": "false",
+        "autoFrictionAvailable": "false",
+        "frictionMultiplier": "1",
+        "adherentStart": "0.4",
+        "frictionAdherent": "1.4992280189896028",
+        "peakStart": "1.5",
+        "frictionPeak": "1.9726684460389512",
+        "limitStart": "4.5",
+        "frictionLimit": "1.2625078054649288",
+        "FitWheelColliderToMesh": "False",
+        "radius": "0.305",
+        "center": "0,0,0",
+        "mass": "0.011",
+        "groundHeightOffset": "0",
+        "TooltipTitle": "Car Wheel",
+        "TooltipPrimaryField": "Motorized"
+      },
+      "KDASuspension": {
+        "name": "KDASuspension",
+        "suspensionVersion": "2",
+        "springRateNmm": "168.75",
+        "antiRollRate": "48.75",
+        "bumpDamping": ".8385",
+        "reboundDamping": "1.3416",
+        "fastBumpDamping": ".587",
+        "fastReboundDamping": ".9224",
+        "axleInitialized": "true",
+        "toeIn": "0",
+        "baseModuleIndex": "0",
+        "suspensionTransformName": "suspensionPivot",
+        "suspensionDistance": "0.1",
+        "targetPosition": "0.5",
+        "maximumLoad": "30",
+        "springRatio": "48",
+        "damperRatio": "1.30",
+        "useDistributedMass": "true"
+      },
+      "ModuleWheelSteering": {
+        "name": "ModuleWheelSteering",
+        "autoSteeringAdjust": "false",
+        "responseTweakable": "10",
+        "steeringEnabled": "true",
+        "baseModuleIndex": "0",
+        "caliperTransformName": "SteeringPivot",
+        "steeringRange": "40",
+        "angleTweakable": "40",
+        "steeringResponse": "2"
+      },
+      "KDAWheelMotor": {
+        "name": "KDAWheelMotor",
+        "driveWeight": "0.0",
+        "driveRatio": "1.0",
+        "motorEnabled": "false",
+        "baseModuleIndex": "0",
+        "wheelSpeedMax": "150",
+        "driveResponse": "2",
+        "idleDrain": "0"
+      },
+      "KDAWheelBrakes": {
+        "name": "KDAWheelBrakes",
+        "baseModuleIndex": "0",
+        "maxBrakeTorque": "3",
+        "brakeResponse": "1"
+      },
+      "KDAMount": {
+        "name": "KDAMount"
+      },
+      "KDAGrip": {
+        "name": "KDAGrip"
+      },
+      "KDAAxle": {
+        "name": "KDAAxle"
+      },
+      "KDATireSmoke": {
+        "name": "KDATireSmoke"
+      },
+      "ModuleTestSubject": {
+        "name": "ModuleTestSubject",
+        "environments": "15",
+        "useStaging": "False",
+        "useEvent": "True"
+      },
+      "KDAWheelSelection": {
+        "name": "KDAWheelSelection"
+      }
+    },
+    "model": "KDAVehicles/Vehicles/lizard_gt/Models/FL"
+  },
+  {
+    "vehicle": {
+      "id": "lizard_gt",
+      "name": "Lizard GT",
+      "drivetrain": "RWD"
+    },
+    "wheel": {
+      "corner": "FR",
+      "axle": "front",
+      "radius_m": 0.305,
+      "grip_calibration": 1.578134756831161,
+      "drive_weight": 0.0,
+      "drive_ratio": 1.0
+    },
+    "part_fields": {
+      "name": "kda-lizard-gt-FR",
+      "module": "Part",
+      "scale": "1",
+      "rescaleFactor": "1",
+      "node_stack_top": "0.0, 0.0, 0.0, 1.0, 0.0, 0.0",
+      "TechRequired": "start",
+      "entryCost": "7000",
+      "cost": "760",
+      "category": "Ground",
+      "subcategory": "0",
+      "title": "Lizard GT FR wheel",
+      "attachRules": "1,0,0,0,0",
+      "mass": "0.011",
+      "dragModelType": "none",
+      "maximum_drag": "0.3",
+      "minimum_drag": "0.2",
+      "angularDrag": "1",
+      "maxTemp": "1200",
+      "crashTolerance": "100",
+      "breakingForce": "120",
+      "breakingTorque": "120",
+      "bulkheadProfiles": "srf"
+    },
+    "modules": {
+      "ModuleWheelBase": {
+        "name": "ModuleWheelBase",
+        "wheelColliderTransformName": "wheelCollider",
+        "wheelTransformName": "wheelPivot",
+        "wheelType": "MOTORIZED",
+        "useNewFrictionModel": "true",
+        "autoFriction": "false",
+        "autoFrictionAvailable": "false",
+        "frictionMultiplier": "1",
+        "adherentStart": "0.4",
+        "frictionAdherent": "1.4992280189896028",
+        "peakStart": "1.5",
+        "frictionPeak": "1.9726684460389512",
+        "limitStart": "4.5",
+        "frictionLimit": "1.2625078054649288",
+        "FitWheelColliderToMesh": "False",
+        "radius": "0.305",
+        "center": "0,0,0",
+        "mass": "0.011",
+        "groundHeightOffset": "0",
+        "TooltipTitle": "Car Wheel",
+        "TooltipPrimaryField": "Motorized"
+      },
+      "KDASuspension": {
+        "name": "KDASuspension",
+        "suspensionVersion": "2",
+        "springRateNmm": "168.75",
+        "antiRollRate": "48.75",
+        "bumpDamping": ".8385",
+        "reboundDamping": "1.3416",
+        "fastBumpDamping": ".587",
+        "fastReboundDamping": ".9224",
+        "axleInitialized": "true",
+        "toeIn": "0",
+        "baseModuleIndex": "0",
+        "suspensionTransformName": "suspensionPivot",
+        "suspensionDistance": "0.1",
+        "targetPosition": "0.5",
+        "maximumLoad": "30",
+        "springRatio": "48",
+        "damperRatio": "1.30",
+        "useDistributedMass": "true"
+      },
+      "ModuleWheelSteering": {
+        "name": "ModuleWheelSteering",
+        "autoSteeringAdjust": "false",
+        "responseTweakable": "10",
+        "steeringEnabled": "true",
+        "baseModuleIndex": "0",
+        "caliperTransformName": "SteeringPivot",
+        "steeringRange": "40",
+        "angleTweakable": "40",
+        "steeringResponse": "2"
+      },
+      "KDAWheelMotor": {
+        "name": "KDAWheelMotor",
+        "driveWeight": "0.0",
+        "driveRatio": "1.0",
+        "motorEnabled": "false",
+        "baseModuleIndex": "0",
+        "wheelSpeedMax": "150",
+        "driveResponse": "2",
+        "idleDrain": "0"
+      },
+      "KDAWheelBrakes": {
+        "name": "KDAWheelBrakes",
+        "baseModuleIndex": "0",
+        "maxBrakeTorque": "3",
+        "brakeResponse": "1"
+      },
+      "KDAMount": {
+        "name": "KDAMount"
+      },
+      "KDAGrip": {
+        "name": "KDAGrip"
+      },
+      "KDAAxle": {
+        "name": "KDAAxle"
+      },
+      "KDATireSmoke": {
+        "name": "KDATireSmoke"
+      },
+      "ModuleTestSubject": {
+        "name": "ModuleTestSubject",
+        "environments": "15",
+        "useStaging": "False",
+        "useEvent": "True"
+      },
+      "KDAWheelSelection": {
+        "name": "KDAWheelSelection"
+      }
+    },
+    "model": "KDAVehicles/Vehicles/lizard_gt/Models/FR"
+  },
+  {
+    "vehicle": {
+      "id": "lizard_gt",
+      "name": "Lizard GT",
+      "drivetrain": "RWD"
+    },
+    "wheel": {
+      "corner": "RL",
+      "axle": "rear",
+      "radius_m": 0.33,
+      "grip_calibration": 1.6,
+      "drive_weight": 0.5,
+      "drive_ratio": 1.0
+    },
+    "part_fields": {
+      "name": "kda-lizard-gt-RL",
+      "module": "Part",
+      "scale": "1",
+      "rescaleFactor": "1",
+      "node_stack_top": "0.0, 0.0, 0.0, 1.0, 0.0, 0.0",
+      "TechRequired": "start",
+      "entryCost": "7000",
+      "cost": "760",
+      "category": "Ground",
+      "subcategory": "0",
+      "title": "Lizard GT RL wheel",
+      "attachRules": "1,0,0,0,0",
+      "mass": "0.011",
+      "dragModelType": "none",
+      "maximum_drag": "0.3",
+      "minimum_drag": "0.2",
+      "angularDrag": "1",
+      "maxTemp": "1200",
+      "crashTolerance": "100",
+      "breakingForce": "120",
+      "breakingTorque": "120",
+      "bulkheadProfiles": "srf"
+    },
+    "modules": {
+      "ModuleWheelBase": {
+        "name": "ModuleWheelBase",
+        "wheelColliderTransformName": "wheelCollider",
+        "wheelTransformName": "wheelPivot",
+        "wheelType": "MOTORIZED",
+        "useNewFrictionModel": "true",
+        "autoFriction": "false",
+        "autoFrictionAvailable": "false",
+        "frictionMultiplier": "1",
+        "adherentStart": "0.4",
+        "frictionAdherent": "1.52",
+        "peakStart": "1.5",
+        "frictionPeak": "2.0",
+        "limitStart": "4.5",
+        "frictionLimit": "1.2800000000000002",
+        "FitWheelColliderToMesh": "False",
+        "radius": "0.33",
+        "center": "0,0,0",
+        "mass": "0.011",
+        "groundHeightOffset": "0",
+        "TooltipTitle": "Car Wheel",
+        "TooltipPrimaryField": "Motorized"
+      },
+      "KDASuspension": {
+        "name": "KDASuspension",
+        "suspensionVersion": "2",
+        "springRateNmm": "150",
+        "antiRollRate": "33.75",
+        "bumpDamping": ".8385",
+        "reboundDamping": "1.3416",
+        "fastBumpDamping": ".587",
+        "fastReboundDamping": ".9224",
+        "axleInitialized": "true",
+        "toeIn": ".15",
+        "baseModuleIndex": "0",
+        "suspensionTransformName": "suspensionPivot",
+        "suspensionDistance": "0.1",
+        "targetPosition": "0.5",
+        "maximumLoad": "30",
+        "springRatio": "48",
+        "damperRatio": "1.30",
+        "useDistributedMass": "true"
+      },
+      "ModuleWheelSteering": {
+        "name": "ModuleWheelSteering",
+        "autoSteeringAdjust": "false",
+        "responseTweakable": "10",
+        "steeringEnabled": "false",
+        "baseModuleIndex": "0",
+        "caliperTransformName": "SteeringPivot",
+        "steeringRange": "40",
+        "angleTweakable": "40",
+        "steeringResponse": "2"
+      },
+      "KDAWheelMotor": {
+        "name": "KDAWheelMotor",
+        "driveWeight": "0.5",
+        "driveRatio": "1.0",
+        "motorEnabled": "true",
+        "baseModuleIndex": "0",
+        "wheelSpeedMax": "150",
+        "driveResponse": "2",
+        "idleDrain": "0"
+      },
+      "KDAWheelBrakes": {
+        "name": "KDAWheelBrakes",
+        "baseModuleIndex": "0",
+        "maxBrakeTorque": "3",
+        "brakeResponse": "1"
+      },
+      "KDAMount": {
+        "name": "KDAMount"
+      },
+      "KDAGrip": {
+        "name": "KDAGrip"
+      },
+      "KDAAxle": {
+        "name": "KDAAxle"
+      },
+      "KDATireSmoke": {
+        "name": "KDATireSmoke"
+      },
+      "ModuleTestSubject": {
+        "name": "ModuleTestSubject",
+        "environments": "15",
+        "useStaging": "False",
+        "useEvent": "True"
+      },
+      "KDAWheelSelection": {
+        "name": "KDAWheelSelection"
+      }
+    },
+    "model": "KDAVehicles/Vehicles/lizard_gt/Models/RL"
+  },
+  {
+    "vehicle": {
+      "id": "lizard_gt",
+      "name": "Lizard GT",
+      "drivetrain": "RWD"
+    },
+    "wheel": {
+      "corner": "RR",
+      "axle": "rear",
+      "radius_m": 0.33,
+      "grip_calibration": 1.6,
+      "drive_weight": 0.5,
+      "drive_ratio": 1.0
+    },
+    "part_fields": {
+      "name": "kda-lizard-gt-RR",
+      "module": "Part",
+      "scale": "1",
+      "rescaleFactor": "1",
+      "node_stack_top": "0.0, 0.0, 0.0, 1.0, 0.0, 0.0",
+      "TechRequired": "start",
+      "entryCost": "7000",
+      "cost": "760",
+      "category": "Ground",
+      "subcategory": "0",
+      "title": "Lizard GT RR wheel",
+      "attachRules": "1,0,0,0,0",
+      "mass": "0.011",
+      "dragModelType": "none",
+      "maximum_drag": "0.3",
+      "minimum_drag": "0.2",
+      "angularDrag": "1",
+      "maxTemp": "1200",
+      "crashTolerance": "100",
+      "breakingForce": "120",
+      "breakingTorque": "120",
+      "bulkheadProfiles": "srf"
+    },
+    "modules": {
+      "ModuleWheelBase": {
+        "name": "ModuleWheelBase",
+        "wheelColliderTransformName": "wheelCollider",
+        "wheelTransformName": "wheelPivot",
+        "wheelType": "MOTORIZED",
+        "useNewFrictionModel": "true",
+        "autoFriction": "false",
+        "autoFrictionAvailable": "false",
+        "frictionMultiplier": "1",
+        "adherentStart": "0.4",
+        "frictionAdherent": "1.52",
+        "peakStart": "1.5",
+        "frictionPeak": "2.0",
+        "limitStart": "4.5",
+        "frictionLimit": "1.2800000000000002",
+        "FitWheelColliderToMesh": "False",
+        "radius": "0.33",
+        "center": "0,0,0",
+        "mass": "0.011",
+        "groundHeightOffset": "0",
+        "TooltipTitle": "Car Wheel",
+        "TooltipPrimaryField": "Motorized"
+      },
+      "KDASuspension": {
+        "name": "KDASuspension",
+        "suspensionVersion": "2",
+        "springRateNmm": "150",
+        "antiRollRate": "33.75",
+        "bumpDamping": ".8385",
+        "reboundDamping": "1.3416",
+        "fastBumpDamping": ".587",
+        "fastReboundDamping": ".9224",
+        "axleInitialized": "true",
+        "toeIn": ".15",
+        "baseModuleIndex": "0",
+        "suspensionTransformName": "suspensionPivot",
+        "suspensionDistance": "0.1",
+        "targetPosition": "0.5",
+        "maximumLoad": "30",
+        "springRatio": "48",
+        "damperRatio": "1.30",
+        "useDistributedMass": "true"
+      },
+      "ModuleWheelSteering": {
+        "name": "ModuleWheelSteering",
+        "autoSteeringAdjust": "false",
+        "responseTweakable": "10",
+        "steeringEnabled": "false",
+        "baseModuleIndex": "0",
+        "caliperTransformName": "SteeringPivot",
+        "steeringRange": "40",
+        "angleTweakable": "40",
+        "steeringResponse": "2"
+      },
+      "KDAWheelMotor": {
+        "name": "KDAWheelMotor",
+        "driveWeight": "0.5",
+        "driveRatio": "1.0",
+        "motorEnabled": "true",
+        "baseModuleIndex": "0",
+        "wheelSpeedMax": "150",
+        "driveResponse": "2",
+        "idleDrain": "0"
+      },
+      "KDAWheelBrakes": {
+        "name": "KDAWheelBrakes",
+        "baseModuleIndex": "0",
+        "maxBrakeTorque": "3",
+        "brakeResponse": "1"
+      },
+      "KDAMount": {
+        "name": "KDAMount"
+      },
+      "KDAGrip": {
+        "name": "KDAGrip"
+      },
+      "KDAAxle": {
+        "name": "KDAAxle"
+      },
+      "KDATireSmoke": {
+        "name": "KDATireSmoke"
+      },
+      "ModuleTestSubject": {
+        "name": "ModuleTestSubject",
+        "environments": "15",
+        "useStaging": "False",
+        "useEvent": "True"
+      },
+      "KDAWheelSelection": {
+        "name": "KDAWheelSelection"
+      }
+    },
+    "model": "KDAVehicles/Vehicles/lizard_gt/Models/RR"
+  },
+  {
+    "vehicle": {
+      "id": "mitata_mk2_na",
+      "name": "mitata mk2 na",
+      "drivetrain": "RWD"
+    },
+    "wheel": {
+      "corner": "FL",
+      "axle": "front",
+      "radius_m": 0.34,
+      "grip_calibration": 1.2506773627726,
+      "drive_weight": 0.0,
+      "drive_ratio": 1.0
+    },
+    "part_fields": {
+      "name": "kda-mitata-mk2-na-FL",
+      "module": "Part",
+      "scale": "1",
+      "rescaleFactor": "1",
+      "node_stack_top": "0.0, 0.0, 0.0, 1.0, 0.0, 0.0",
+      "TechRequired": "start",
+      "entryCost": "7000",
+      "cost": "760",
+      "category": "Ground",
+      "subcategory": "0",
+      "title": "mitata mk2 na FL wheel",
+      "attachRules": "1,0,0,0,0",
+      "mass": "0.011",
+      "dragModelType": "none",
+      "maximum_drag": "0.3",
+      "minimum_drag": "0.2",
+      "angularDrag": "1",
+      "maxTemp": "1200",
+      "crashTolerance": "100",
+      "breakingForce": "120",
+      "breakingTorque": "120",
+      "bulkheadProfiles": "srf"
+    },
+    "modules": {
+      "ModuleWheelBase": {
+        "name": "ModuleWheelBase",
+        "wheelColliderTransformName": "wheelCollider",
+        "wheelTransformName": "wheelPivot",
+        "wheelType": "MOTORIZED",
+        "useNewFrictionModel": "true",
+        "autoFriction": "false",
+        "autoFrictionAvailable": "false",
+        "frictionMultiplier": "1",
+        "adherentStart": "0.4",
+        "frictionAdherent": "1.18814349463397",
+        "peakStart": "1.5",
+        "frictionPeak": "1.56334670346575",
+        "limitStart": "4.5",
+        "frictionLimit": "1.00054189021808",
+        "FitWheelColliderToMesh": "False",
+        "radius": "0.34",
+        "center": "0,0,0",
+        "mass": "0.011",
+        "groundHeightOffset": "0",
+        "TooltipTitle": "Car Wheel",
+        "TooltipPrimaryField": "Motorized"
+      },
+      "KDASuspension": {
+        "name": "KDASuspension",
+        "suspensionVersion": "2",
+        "springRateNmm": "168.75",
+        "antiRollRate": "48.75",
+        "bumpDamping": ".8385",
+        "reboundDamping": "1.3416",
+        "fastBumpDamping": ".587",
+        "fastReboundDamping": ".9224",
+        "axleInitialized": "true",
+        "toeIn": "0",
+        "baseModuleIndex": "0",
+        "suspensionTransformName": "suspensionPivot",
+        "suspensionDistance": "0.1",
+        "targetPosition": "0.5",
+        "maximumLoad": "30",
+        "springRatio": "48",
+        "damperRatio": "1.30",
+        "useDistributedMass": "true"
+      },
+      "ModuleWheelSteering": {
+        "name": "ModuleWheelSteering",
+        "autoSteeringAdjust": "false",
+        "responseTweakable": "10",
+        "steeringEnabled": "true",
+        "baseModuleIndex": "0",
+        "caliperTransformName": "SteeringPivot",
+        "steeringRange": "40",
+        "angleTweakable": "40",
+        "steeringResponse": "2"
+      },
+      "KDAWheelMotor": {
+        "name": "KDAWheelMotor",
+        "driveWeight": "0.0",
+        "driveRatio": "1.0",
+        "motorEnabled": "false",
+        "baseModuleIndex": "0",
+        "wheelSpeedMax": "150",
+        "driveResponse": "2",
+        "idleDrain": "0"
+      },
+      "KDAWheelBrakes": {
+        "name": "KDAWheelBrakes",
+        "baseModuleIndex": "0",
+        "maxBrakeTorque": "3",
+        "brakeResponse": "1"
+      },
+      "KDAMount": {
+        "name": "KDAMount"
+      },
+      "KDAGrip": {
+        "name": "KDAGrip"
+      },
+      "KDAAxle": {
+        "name": "KDAAxle"
+      },
+      "KDATireSmoke": {
+        "name": "KDATireSmoke"
+      },
+      "ModuleTestSubject": {
+        "name": "ModuleTestSubject",
+        "environments": "15",
+        "useStaging": "False",
+        "useEvent": "True"
+      },
+      "KDAWheelSelection": {
+        "name": "KDAWheelSelection"
+      }
+    },
+    "model": "KDAVehicles/Vehicles/mitata_mk2_na/Models/FL"
+  },
+  {
+    "vehicle": {
+      "id": "mitata_mk2_na",
+      "name": "mitata mk2 na",
+      "drivetrain": "RWD"
+    },
+    "wheel": {
+      "corner": "FR",
+      "axle": "front",
+      "radius_m": 0.34,
+      "grip_calibration": 1.2506773627726,
+      "drive_weight": 0.0,
+      "drive_ratio": 1.0
+    },
+    "part_fields": {
+      "name": "kda-mitata-mk2-na-FR",
+      "module": "Part",
+      "scale": "1",
+      "rescaleFactor": "1",
+      "node_stack_top": "0.0, 0.0, 0.0, 1.0, 0.0, 0.0",
+      "TechRequired": "start",
+      "entryCost": "7000",
+      "cost": "760",
+      "category": "Ground",
+      "subcategory": "0",
+      "title": "mitata mk2 na FR wheel",
+      "attachRules": "1,0,0,0,0",
+      "mass": "0.011",
+      "dragModelType": "none",
+      "maximum_drag": "0.3",
+      "minimum_drag": "0.2",
+      "angularDrag": "1",
+      "maxTemp": "1200",
+      "crashTolerance": "100",
+      "breakingForce": "120",
+      "breakingTorque": "120",
+      "bulkheadProfiles": "srf"
+    },
+    "modules": {
+      "ModuleWheelBase": {
+        "name": "ModuleWheelBase",
+        "wheelColliderTransformName": "wheelCollider",
+        "wheelTransformName": "wheelPivot",
+        "wheelType": "MOTORIZED",
+        "useNewFrictionModel": "true",
+        "autoFriction": "false",
+        "autoFrictionAvailable": "false",
+        "frictionMultiplier": "1",
+        "adherentStart": "0.4",
+        "frictionAdherent": "1.18814349463397",
+        "peakStart": "1.5",
+        "frictionPeak": "1.56334670346575",
+        "limitStart": "4.5",
+        "frictionLimit": "1.00054189021808",
+        "FitWheelColliderToMesh": "False",
+        "radius": "0.34",
+        "center": "0,0,0",
+        "mass": "0.011",
+        "groundHeightOffset": "0",
+        "TooltipTitle": "Car Wheel",
+        "TooltipPrimaryField": "Motorized"
+      },
+      "KDASuspension": {
+        "name": "KDASuspension",
+        "suspensionVersion": "2",
+        "springRateNmm": "168.75",
+        "antiRollRate": "48.75",
+        "bumpDamping": ".8385",
+        "reboundDamping": "1.3416",
+        "fastBumpDamping": ".587",
+        "fastReboundDamping": ".9224",
+        "axleInitialized": "true",
+        "toeIn": "0",
+        "baseModuleIndex": "0",
+        "suspensionTransformName": "suspensionPivot",
+        "suspensionDistance": "0.1",
+        "targetPosition": "0.5",
+        "maximumLoad": "30",
+        "springRatio": "48",
+        "damperRatio": "1.30",
+        "useDistributedMass": "true"
+      },
+      "ModuleWheelSteering": {
+        "name": "ModuleWheelSteering",
+        "autoSteeringAdjust": "false",
+        "responseTweakable": "10",
+        "steeringEnabled": "true",
+        "baseModuleIndex": "0",
+        "caliperTransformName": "SteeringPivot",
+        "steeringRange": "40",
+        "angleTweakable": "40",
+        "steeringResponse": "2"
+      },
+      "KDAWheelMotor": {
+        "name": "KDAWheelMotor",
+        "driveWeight": "0.0",
+        "driveRatio": "1.0",
+        "motorEnabled": "false",
+        "baseModuleIndex": "0",
+        "wheelSpeedMax": "150",
+        "driveResponse": "2",
+        "idleDrain": "0"
+      },
+      "KDAWheelBrakes": {
+        "name": "KDAWheelBrakes",
+        "baseModuleIndex": "0",
+        "maxBrakeTorque": "3",
+        "brakeResponse": "1"
+      },
+      "KDAMount": {
+        "name": "KDAMount"
+      },
+      "KDAGrip": {
+        "name": "KDAGrip"
+      },
+      "KDAAxle": {
+        "name": "KDAAxle"
+      },
+      "KDATireSmoke": {
+        "name": "KDATireSmoke"
+      },
+      "ModuleTestSubject": {
+        "name": "ModuleTestSubject",
+        "environments": "15",
+        "useStaging": "False",
+        "useEvent": "True"
+      },
+      "KDAWheelSelection": {
+        "name": "KDAWheelSelection"
+      }
+    },
+    "model": "KDAVehicles/Vehicles/mitata_mk2_na/Models/FR"
+  },
+  {
+    "vehicle": {
+      "id": "mitata_mk2_na",
+      "name": "mitata mk2 na",
+      "drivetrain": "RWD"
+    },
+    "wheel": {
+      "corner": "RL",
+      "axle": "rear",
+      "radius_m": 0.365,
+      "grip_calibration": 1.3018879385999103,
+      "drive_weight": 0.5,
+      "drive_ratio": 1.0
+    },
+    "part_fields": {
+      "name": "kda-mitata-mk2-na-RL",
+      "module": "Part",
+      "scale": "1",
+      "rescaleFactor": "1",
+      "node_stack_top": "0.0, 0.0, 0.0, 1.0, 0.0, 0.0",
+      "TechRequired": "start",
+      "entryCost": "7000",
+      "cost": "760",
+      "category": "Ground",
+      "subcategory": "0",
+      "title": "mitata mk2 na RL wheel",
+      "attachRules": "1,0,0,0,0",
+      "mass": "0.011",
+      "dragModelType": "none",
+      "maximum_drag": "0.3",
+      "minimum_drag": "0.2",
+      "angularDrag": "1",
+      "maxTemp": "1200",
+      "crashTolerance": "100",
+      "breakingForce": "120",
+      "breakingTorque": "120",
+      "bulkheadProfiles": "srf"
+    },
+    "modules": {
+      "ModuleWheelBase": {
+        "name": "ModuleWheelBase",
+        "wheelColliderTransformName": "wheelCollider",
+        "wheelTransformName": "wheelPivot",
+        "wheelType": "MOTORIZED",
+        "useNewFrictionModel": "true",
+        "autoFriction": "false",
+        "autoFrictionAvailable": "false",
+        "frictionMultiplier": "1",
+        "adherentStart": "0.4",
+        "frictionAdherent": "1.2367935416699147",
+        "peakStart": "1.5",
+        "frictionPeak": "1.6273599232498879",
+        "limitStart": "4.5",
+        "frictionLimit": "1.0415103508799282",
+        "FitWheelColliderToMesh": "False",
+        "radius": "0.365",
+        "center": "0,0,0",
+        "mass": "0.011",
+        "groundHeightOffset": "0",
+        "TooltipTitle": "Car Wheel",
+        "TooltipPrimaryField": "Motorized"
+      },
+      "KDASuspension": {
+        "name": "KDASuspension",
+        "suspensionVersion": "2",
+        "springRateNmm": "150",
+        "antiRollRate": "33.75",
+        "bumpDamping": ".8385",
+        "reboundDamping": "1.3416",
+        "fastBumpDamping": ".587",
+        "fastReboundDamping": ".9224",
+        "axleInitialized": "true",
+        "toeIn": ".15",
+        "baseModuleIndex": "0",
+        "suspensionTransformName": "suspensionPivot",
+        "suspensionDistance": "0.1",
+        "targetPosition": "0.5",
+        "maximumLoad": "30",
+        "springRatio": "48",
+        "damperRatio": "1.30",
+        "useDistributedMass": "true"
+      },
+      "ModuleWheelSteering": {
+        "name": "ModuleWheelSteering",
+        "autoSteeringAdjust": "false",
+        "responseTweakable": "10",
+        "steeringEnabled": "false",
+        "baseModuleIndex": "0",
+        "caliperTransformName": "SteeringPivot",
+        "steeringRange": "40",
+        "angleTweakable": "40",
+        "steeringResponse": "2"
+      },
+      "KDAWheelMotor": {
+        "name": "KDAWheelMotor",
+        "driveWeight": "0.5",
+        "driveRatio": "1.0",
+        "motorEnabled": "true",
+        "baseModuleIndex": "0",
+        "wheelSpeedMax": "150",
+        "driveResponse": "2",
+        "idleDrain": "0"
+      },
+      "KDAWheelBrakes": {
+        "name": "KDAWheelBrakes",
+        "baseModuleIndex": "0",
+        "maxBrakeTorque": "3",
+        "brakeResponse": "1"
+      },
+      "KDAMount": {
+        "name": "KDAMount"
+      },
+      "KDAGrip": {
+        "name": "KDAGrip"
+      },
+      "KDAAxle": {
+        "name": "KDAAxle"
+      },
+      "KDATireSmoke": {
+        "name": "KDATireSmoke"
+      },
+      "ModuleTestSubject": {
+        "name": "ModuleTestSubject",
+        "environments": "15",
+        "useStaging": "False",
+        "useEvent": "True"
+      },
+      "KDAWheelSelection": {
+        "name": "KDAWheelSelection"
+      }
+    },
+    "model": "KDAVehicles/Vehicles/mitata_mk2_na/Models/RL"
+  },
+  {
+    "vehicle": {
+      "id": "mitata_mk2_na",
+      "name": "mitata mk2 na",
+      "drivetrain": "RWD"
+    },
+    "wheel": {
+      "corner": "RR",
+      "axle": "rear",
+      "radius_m": 0.365,
+      "grip_calibration": 1.3018879385999103,
+      "drive_weight": 0.5,
+      "drive_ratio": 1.0
+    },
+    "part_fields": {
+      "name": "kda-mitata-mk2-na-RR",
+      "module": "Part",
+      "scale": "1",
+      "rescaleFactor": "1",
+      "node_stack_top": "0.0, 0.0, 0.0, 1.0, 0.0, 0.0",
+      "TechRequired": "start",
+      "entryCost": "7000",
+      "cost": "760",
+      "category": "Ground",
+      "subcategory": "0",
+      "title": "mitata mk2 na RR wheel",
+      "attachRules": "1,0,0,0,0",
+      "mass": "0.011",
+      "dragModelType": "none",
+      "maximum_drag": "0.3",
+      "minimum_drag": "0.2",
+      "angularDrag": "1",
+      "maxTemp": "1200",
+      "crashTolerance": "100",
+      "breakingForce": "120",
+      "breakingTorque": "120",
+      "bulkheadProfiles": "srf"
+    },
+    "modules": {
+      "ModuleWheelBase": {
+        "name": "ModuleWheelBase",
+        "wheelColliderTransformName": "wheelCollider",
+        "wheelTransformName": "wheelPivot",
+        "wheelType": "MOTORIZED",
+        "useNewFrictionModel": "true",
+        "autoFriction": "false",
+        "autoFrictionAvailable": "false",
+        "frictionMultiplier": "1",
+        "adherentStart": "0.4",
+        "frictionAdherent": "1.2367935416699147",
+        "peakStart": "1.5",
+        "frictionPeak": "1.6273599232498879",
+        "limitStart": "4.5",
+        "frictionLimit": "1.0415103508799282",
+        "FitWheelColliderToMesh": "False",
+        "radius": "0.365",
+        "center": "0,0,0",
+        "mass": "0.011",
+        "groundHeightOffset": "0",
+        "TooltipTitle": "Car Wheel",
+        "TooltipPrimaryField": "Motorized"
+      },
+      "KDASuspension": {
+        "name": "KDASuspension",
+        "suspensionVersion": "2",
+        "springRateNmm": "150",
+        "antiRollRate": "33.75",
+        "bumpDamping": ".8385",
+        "reboundDamping": "1.3416",
+        "fastBumpDamping": ".587",
+        "fastReboundDamping": ".9224",
+        "axleInitialized": "true",
+        "toeIn": ".15",
+        "baseModuleIndex": "0",
+        "suspensionTransformName": "suspensionPivot",
+        "suspensionDistance": "0.1",
+        "targetPosition": "0.5",
+        "maximumLoad": "30",
+        "springRatio": "48",
+        "damperRatio": "1.30",
+        "useDistributedMass": "true"
+      },
+      "ModuleWheelSteering": {
+        "name": "ModuleWheelSteering",
+        "autoSteeringAdjust": "false",
+        "responseTweakable": "10",
+        "steeringEnabled": "false",
+        "baseModuleIndex": "0",
+        "caliperTransformName": "SteeringPivot",
+        "steeringRange": "40",
+        "angleTweakable": "40",
+        "steeringResponse": "2"
+      },
+      "KDAWheelMotor": {
+        "name": "KDAWheelMotor",
+        "driveWeight": "0.5",
+        "driveRatio": "1.0",
+        "motorEnabled": "true",
+        "baseModuleIndex": "0",
+        "wheelSpeedMax": "150",
+        "driveResponse": "2",
+        "idleDrain": "0"
+      },
+      "KDAWheelBrakes": {
+        "name": "KDAWheelBrakes",
+        "baseModuleIndex": "0",
+        "maxBrakeTorque": "3",
+        "brakeResponse": "1"
+      },
+      "KDAMount": {
+        "name": "KDAMount"
+      },
+      "KDAGrip": {
+        "name": "KDAGrip"
+      },
+      "KDAAxle": {
+        "name": "KDAAxle"
+      },
+      "KDATireSmoke": {
+        "name": "KDATireSmoke"
+      },
+      "ModuleTestSubject": {
+        "name": "ModuleTestSubject",
+        "environments": "15",
+        "useStaging": "False",
+        "useEvent": "True"
+      },
+      "KDAWheelSelection": {
+        "name": "KDAWheelSelection"
+      }
+    },
+    "model": "KDAVehicles/Vehicles/mitata_mk2_na/Models/RR"
+  }
+]

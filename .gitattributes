@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.dll binary
+*.exe binary
+*.mu binary
+*.png binary
+*.wav binary
+*.pdf binary
+*.shab binary

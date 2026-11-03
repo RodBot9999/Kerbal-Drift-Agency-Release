@@ -1,0 +1,4482 @@
+{
+  "parts": {
+    "Camso_differential_front_70470": {
+      "information": {
+        "name": "Rally x Electric Front Differential",
+        "value": 500
+      },
+      "slots": [
+        [
+          "type",
+          "default",
+          "description"
+        ],
+        [
+          "Camso_halfshafts_front",
+          "Camso_halfshafts_front",
+          "Front Halfshafts"
+        ],
+        [
+          "Camso_finaldrive_front",
+          "Camso_finaldrive_front_4.52",
+          "Front Final Drive",
+          {
+            "coreSlot": true
+          }
+        ]
+      ],
+      "powertrain": [
+        [
+          "type",
+          "name",
+          "inputName",
+          "inputIndex"
+        ],
+        [
+          "differential",
+          "frontDiff",
+          "frontDriveShaft",
+          1,
+          {
+            "diffType": "torqueVectoring",
+            "uiName": "Front Differential",
+            "defaultVirtualInertia": 0.25,
+            "friction": 9.0642642898096
+          }
+        ]
+      ]
+    },
+    "Camso_differential_rear_70470": {
+      "information": {
+        "name": "Rally x Electric Rear Differential",
+        "value": 500
+      },
+      "slots": [
+        [
+          "type",
+          "default",
+          "description"
+        ],
+        [
+          "Camso_halfshafts_rear",
+          "Camso_halfshafts_rear",
+          "Rear Halfshafts"
+        ],
+        [
+          "Camso_finaldrive_rear",
+          "Camso_finaldrive_rear_4.52",
+          "Rear Final Drive",
+          {
+            "coreSlot": true
+          }
+        ]
+      ],
+      "powertrain": [
+        [
+          "type",
+          "name",
+          "inputName",
+          "inputIndex"
+        ],
+        [
+          "differential",
+          "rearDiff",
+          "rearDriveShaft",
+          1,
+          {
+            "diffType": "torqueVectoring",
+            "uiName": "Rear Differential",
+            "defaultVirtualInertia": 0.25,
+            "friction": 9.0642642898096
+          }
+        ]
+      ]
+    },
+    "Camso_DSE_70470": {
+      "information": {
+        "name": "Rally x Electronic Stability & Traction Control",
+        "value": 250
+      },
+      "slots": [
+        [
+          "type",
+          "default",
+          "description"
+        ],
+        [
+          "Camso_DriveModes_70470",
+          "Camso_DriveModes_70470",
+          "Drive Modes"
+        ],
+        [
+          "Camso_TC_70470",
+          "Camso_TC_70470",
+          "Traction Control"
+        ],
+        [
+          "Camso_ESC_70470",
+          "Camso_ESC_70470",
+          "Stability Control"
+        ]
+      ]
+    },
+    "Camso_finaldrive_front_4.52": {
+      "information": {
+        "name": "4.52 Front Final Drive",
+        "value": 150
+      }
+    },
+    "Camso_finaldrive_rear_4.52": {
+      "information": {
+        "name": "4.52 Rear Final Drive",
+        "value": 150
+      }
+    },
+    "Camso_Trim_70470": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Rally x",
+        "value": 3000000
+      },
+      "variables": [
+        [
+          "name",
+          "type",
+          "unit",
+          "category",
+          "default",
+          "min",
+          "max",
+          "title",
+          "description"
+        ],
+        [
+          "$cabinFilterCoef",
+          "range",
+          "",
+          "Camera Positions",
+          0.55,
+          0,
+          1,
+          "Interior Sound Deadening",
+          "Adjusts how much sound deadening there is in the interior",
+          {
+            "subCategory": "Driver Camera",
+            "stepDis": 1,
+            "minDis": 0,
+            "maxDis": 100
+          }
+        ]
+      ],
+      "slots": [
+        [
+          "type",
+          "default",
+          "description"
+        ],
+        [
+          "camso_tuning_parameters",
+          "",
+          "Advanced Tuning Parameters"
+        ],
+        [
+          "Camso_Chassis",
+          "Camso_Chassis_70470",
+          "Chassis Mesh"
+        ],
+        [
+          "Camso_DSE",
+          "Camso_DSE_70470",
+          "Electronic Assists"
+        ],
+        [
+          "Camso_ABS",
+          "Camso_ABS_70470",
+          "Anti-Lock Braking System"
+        ],
+        [
+          "Camso_Engine",
+          "Camso_Engine_cb344",
+          "Engine",
+          {
+            "nodeMove": {
+              "x": "$=$EngineOffsetX or 0",
+              "y": "$=$EngineOffsetY or 0",
+              "z": "$=$EngineOffsetZ or 0"
+            }
+          }
+        ],
+        [
+          "Camso_FuelTank",
+          "Camso_FuelTank_70470",
+          "Fuel Tank"
+        ],
+        [
+          "linelock",
+          "",
+          "Brake Line Lock"
+        ],
+        [
+          "digidash_screen_logic",
+          "digidash_screen_logic_bng",
+          "Screen"
+        ],
+        [
+          "Camso_suspension_F",
+          "Camso_doublewishbone_F_70470",
+          "Front Suspension",
+          {
+            "nodeOffset": {
+              "x": "$=-0.102689 + ($frontSuspensionOffsetX or 0)",
+              "y": "$=-1.09956 + ($frontSuspensionOffsetY or 0)",
+              "z": "$=0.692206 + ($frontSuspensionOffsetZ or 0)"
+            }
+          }
+        ],
+        [
+          "Camso_suspension_R",
+          "Camso_doublewishbone_R_70470",
+          "Rear Suspension",
+          {
+            "nodeOffset": {
+              "x": "$=-0.129553 + ($rearSuspensionOffsetX or 0)",
+              "y": "$=1.10044 + ($rearSuspensionOffsetY or 0)",
+              "z": "$=0.690231 + ($rearSuspensionOffsetZ or 0)"
+            }
+          }
+        ],
+        [
+          "camso_downforce_front",
+          "downforce_front_xperimental",
+          "Front Downforce",
+          {
+            "nodeOffset": {
+              "x": 0,
+              "y": -1.09956,
+              "z": 1.19122
+            }
+          }
+        ],
+        [
+          "camso_downforce_rear",
+          "downforce_rear_xperimental",
+          "Rear Downforce",
+          {
+            "nodeOffset": {
+              "x": 0,
+              "y": 1.10044,
+              "z": 1.19122
+            }
+          }
+        ],
+        [
+          "camso_drag_model",
+          "aero_xperimental",
+          "Drag Model",
+          {
+            "nodeOffset": {
+              "x": 0,
+              "y": 0.000441313,
+              "z": 0.691219
+            }
+          }
+        ],
+        [
+          "soundscape_horn",
+          "soundscape_horn_6",
+          "Horn"
+        ],
+        [
+          "Camso_tpms",
+          "",
+          "Tire Pressure Management System"
+        ]
+      ],
+      "dragModel": {
+        "vehicleArea": "$=0.438*($frontalAreaAdjust or 1)",
+        "dragNodes:": [
+          "dmref",
+          "dmy",
+          "dmx",
+          "dmz"
+        ],
+        "dragModX:": 1.25,
+        "dragModZ:": 1.5
+      },
+      "downforceModel": {
+        "downforceTargetFront": "$=896.782+(($downforceAdjust_F or 0)*9.80665)",
+        "downforceTargetRear": "$=491.194+(($downforceAdjust_R or 0)*9.80665)",
+        "targetSpeedKMH": "$=$downforceTargetSpeed or 200",
+        "targetAirDensity": 1.2041,
+        "constantForceFront": "$=$constantDownforce_F or 0",
+        "constantForceRear": "$=$constantDownforce_R or 0"
+      },
+      "downforceNodeGroups": [
+        [
+          "ref:",
+          "up:",
+          "isFront"
+        ],
+        [
+          "dfref",
+          "dfz",
+          true
+        ],
+        [
+          "drref",
+          "drz",
+          false
+        ]
+      ],
+      "nodes": [
+        [
+          "id",
+          "posX",
+          "posY",
+          "posZ"
+        ]
+      ]
+    },
+    "Camso_wheels_front_70470": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Rally x 265/35/15 Radial Rally Magnesium Front Wheels"
+      },
+      "nodes": [
+        [
+          "id",
+          "posX",
+          "posY",
+          "posZ"
+        ]
+      ],
+      "variables": [
+        [
+          "name",
+          "type",
+          "unit",
+          "category",
+          "default",
+          "min",
+          "max",
+          "title",
+          "description"
+        ],
+        [
+          "$frontPSI",
+          "range",
+          "PSI",
+          "Tyres",
+          26.9,
+          5,
+          100,
+          "Front Tyre Pressure",
+          "Initial Tyre Pressure",
+          {
+            "stepDis": 0.5
+          }
+        ],
+        [
+          "$rimStiffnessMult_F",
+          "range",
+          "",
+          "Vehicle Advanced Settings",
+          1,
+          0.1,
+          3,
+          "Front Rim Stiffness",
+          "Lower this value if rims become unstable at speed. Raise it if there is unwanted flex in the wheels",
+          {
+            "subCategory": "Wheels",
+            "stepDis": 1,
+            "minDis": 10,
+            "maxDis": 300
+          }
+        ],
+        [
+          "$tireStiffnessMult_F",
+          "range",
+          "",
+          "Vehicle Advanced Settings",
+          1,
+          0.1,
+          3,
+          "Front Tire Stiffness",
+          "Lower this value if tires become unstable at speed. Raise it if there is unwanted flex in the tires",
+          {
+            "subCategory": "Wheels",
+            "stepDis": 1,
+            "minDis": 10,
+            "maxDis": 300
+          }
+        ]
+      ],
+      "pressureWheels": [
+        [
+          "name",
+          "hubGroup",
+          "group",
+          "node1:",
+          "node2:",
+          "nodeS",
+          "nodeArm:",
+          "wheelDir"
+        ],
+        {
+          "disableMeshBreaking": false,
+          "disableHubMeshBreaking": false
+        },
+        {
+          "hasTire": true
+        },
+        {
+          "enableTireReinfBeams": false
+        },
+        {
+          "enableTireLbeams": true
+        },
+        {
+          "enableTireSideReinfBeams": false
+        },
+        {
+          "enableTreadReinfBeams": true
+        },
+        {
+          "enableTirePeripheryReinfBeams": true
+        },
+        {
+          "triangleCollision": false
+        },
+        {
+          "radius": 0.28
+        },
+        {
+          "hubRadius": 0.2159
+        },
+        {
+          "wheelOffset": 0
+        },
+        {
+          "hubWidth": 0.265
+        },
+        {
+          "tireWidth": 0.265
+        },
+        {
+          "numRays": 16.0
+        },
+        {
+          "hubTreadBeamSpring": "$=446305.250000 * ($rimStiffnessMult_F or 1)",
+          "hubTreadBeamDamp": "$=21.690271 * ($rimStiffnessMult_F or 1)"
+        },
+        {
+          "hubPeripheryBeamSpring": "$=680938.312500 * ($rimStiffnessMult_F or 1)",
+          "hubPeripheryBeamDamp": "$=26.791861 * ($rimStiffnessMult_F or 1)"
+        },
+        {
+          "hubSideBeamSpring": "$=606366.250000 * ($rimStiffnessMult_F or 1)",
+          "hubSideBeamDamp": "$=16.843510 * ($rimStiffnessMult_F or 1)"
+        },
+        {
+          "hubNodeWeight": 0.421656
+        },
+        {
+          "hubNodeMaterial": "|NM_METAL"
+        },
+        {
+          "hubFrictionCoef": 0.5
+        },
+        {
+          "wheelSideBeamSpringExpansion": "$=384144.250000 * ($tireStiffnessMult_F or 1)",
+          "wheelSideBeamDampExpansion": "$=25.762751 * ($tireStiffnessMult_F or 1)"
+        },
+        {
+          "wheelSideBeamSpring": "$=0.000000 * ($tireStiffnessMult_F or 1) * $frontPSI",
+          "wheelSideBeamDamp": "$=25.762751 * ($tireStiffnessMult_F or 1)"
+        },
+        {
+          "wheelSideTransitionZone": 0.158781,
+          "wheelSideBeamPrecompression": 0.98
+        },
+        {
+          "wheelTreadBeamSpring": "$=129356.828125 * ($tireStiffnessMult_F or 1)",
+          "wheelTreadBeamDamp": "$=44.849850 * ($tireStiffnessMult_F or 1)"
+        },
+        {
+          "wheelTreadBeamPrecompression": 0.99
+        },
+        {
+          "wheelTreadBeamDampCutoffHz": 500.0
+        },
+        {
+          "wheelTreadReinfBeamSpring": "$=105210.218750 * ($tireStiffnessMult_F or 1)",
+          "wheelTreadReinfBeamDamp": "$=60.671753 * ($tireStiffnessMult_F or 1)"
+        },
+        {
+          "wheelTreadReinfBeamPrecompression": 0.99
+        },
+        {
+          "wheelTreadReinfBeamDampCutoffHz": 500.0
+        },
+        {
+          "wheelPeripheryBeamSpring": "$=65974.742188 * ($tireStiffnessMult_F or 1)",
+          "wheelPeripheryBeamDamp": "$=48.044804 * ($tireStiffnessMult_F or 1)"
+        },
+        {
+          "wheelPeripheryBeamPrecompression": 0.99
+        },
+        {
+          "wheelPeripheryBeamDampCutoffHz": 500.0
+        },
+        {
+          "wheelPeripheryReinfBeamSpring": "$=61576.425781 * ($tireStiffnessMult_F or 1)",
+          "wheelPeripheryReinfBeamDamp": "$=46.415691 * ($tireStiffnessMult_F or 1)"
+        },
+        {
+          "wheelPeripheryReinfBeamPrecompression": 0.99
+        },
+        {
+          "wheelPeripheryReinfBeamDampCutoffHz": 500.0
+        },
+        {
+          "wheelReinfBeamSpring": "$=15241.062500 * ($tireStiffnessMult_F or 1)",
+          "wheelReinfBeamDamp": "$=164.211151 * ($tireStiffnessMult_F or 1)"
+        },
+        {
+          "wheelReinfBeamPrecompression": 0.99
+        },
+        {
+          "wheelReinfBeamDampCutoffHz": 500.0
+        },
+        {
+          "nodeWeight": 0.172779
+        },
+        {
+          "nodeMaterial": "|NM_RUBBER"
+        },
+        {
+          "pressurePSI": "$frontPSI"
+        },
+        {
+          "dragCoef": 1
+        },
+        {
+          "frictionCoef": 1.0
+        },
+        {
+          "slidingFrictionCoef": "$=1.180000 *0.98"
+        },
+        {
+          "treadCoef": 1.0
+        },
+        {
+          "stribeckExponent": 2.025
+        },
+        {
+          "stribeckVelMult": 2.2
+        },
+        {
+          "noLoadCoef": 1.40409
+        },
+        {
+          "loadSensitivitySlope": "$=0.000149 * 1"
+        },
+        {
+          "fullLoadCoef": 0.129676
+        },
+        {
+          "softnessCoef": 0.4
+        },
+        {
+          "hubBeamDeform": 57638.960938,
+          "hubBeamStrength": 65310.335938
+        },
+        {
+          "wheelSideBeamDeform": 20733.439453,
+          "wheelSideBeamStrength": 25916.798828
+        },
+        {
+          "wheelReinfBeamDeform": 103667.195312,
+          "wheelReinfBeamStrength": 103667.195312
+        },
+        {
+          "wheelTreadBeamDeform": 10366.719727,
+          "wheelTreadBeamStrength": 13476.735352
+        },
+        {
+          "wheelTreadReinfBeamDeform": 10366.719727,
+          "wheelTreadReinfBeamStrength": 13476.735352
+        },
+        {
+          "wheelPeripheryBeamDeform": 51833.597656,
+          "wheelPeripheryBeamStrength": 51833.597656
+        },
+        {
+          "brakeTorque": 0
+        },
+        {
+          "parkingTorque": 0
+        },
+        {
+          "enableBrakeThermals": false
+        },
+        {
+          "brakeDiameter": false
+        },
+        {
+          "brakeMass": false
+        },
+        {
+          "brakeType": false
+        },
+        {
+          "rotorMaterial": false
+        },
+        {
+          "brakeVentingCoef": false
+        }
+      ]
+    },
+    "Camso_wheels_rear_70470": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Rally x 285/30/15 Radial Rally Magnesium Rear Wheels"
+      },
+      "nodes": [
+        [
+          "id",
+          "posX",
+          "posY",
+          "posZ"
+        ]
+      ],
+      "variables": [
+        [
+          "name",
+          "type",
+          "unit",
+          "category",
+          "default",
+          "min",
+          "max",
+          "title",
+          "description"
+        ],
+        [
+          "$rearPSI",
+          "range",
+          "PSI",
+          "Tyres",
+          21.6,
+          5,
+          100,
+          "Rear Tyre Pressure",
+          "Initial Tyre Pressure",
+          {
+            "stepDis": 0.5
+          }
+        ],
+        [
+          "$rimStiffnessMult_R",
+          "range",
+          "",
+          "Vehicle Advanced Settings",
+          1,
+          0.1,
+          3,
+          "Rear Rim Stiffness",
+          "Lower this value if rims become unstable at speed. Raise it if there is unwanted flex in the wheels",
+          {
+            "subCategory": "Wheels",
+            "stepDis": 1,
+            "minDis": 10,
+            "maxDis": 300
+          }
+        ],
+        [
+          "$tireStiffnessMult_R",
+          "range",
+          "",
+          "Vehicle Advanced Settings",
+          1,
+          0.1,
+          3,
+          "Rear Tire Stiffness",
+          "Lower this value if tires become unstable at speed. Raise it if there is unwanted flex in the tires",
+          {
+            "subCategory": "Wheels",
+            "stepDis": 1,
+            "minDis": 10,
+            "maxDis": 300
+          }
+        ]
+      ],
+      "pressureWheels": [
+        [
+          "name",
+          "hubGroup",
+          "group",
+          "node1:",
+          "node2:",
+          "nodeS",
+          "nodeArm:",
+          "wheelDir"
+        ],
+        {
+          "disableMeshBreaking": false,
+          "disableHubMeshBreaking": false
+        },
+        {
+          "hasTire": true
+        },
+        {
+          "enableTireReinfBeams": false
+        },
+        {
+          "enableTireLbeams": true
+        },
+        {
+          "enableTireSideReinfBeams": false
+        },
+        {
+          "enableTreadReinfBeams": true
+        },
+        {
+          "enableTirePeripheryReinfBeams": true
+        },
+        {
+          "triangleCollision": false
+        },
+        {
+          "radius": 0.28
+        },
+        {
+          "hubRadius": 0.2159
+        },
+        {
+          "wheelOffset": 0
+        },
+        {
+          "hubWidth": 0.285
+        },
+        {
+          "tireWidth": 0.285
+        },
+        {
+          "numRays": 16.0
+        },
+        {
+          "hubTreadBeamSpring": "$=357780.687500 * ($rimStiffnessMult_R or 1)",
+          "hubTreadBeamDamp": "$=17.438255 * ($rimStiffnessMult_R or 1)"
+        },
+        {
+          "hubPeripheryBeamSpring": "$=549263.937500 * ($rimStiffnessMult_R or 1)",
+          "hubPeripheryBeamDamp": "$=21.606535 * ($rimStiffnessMult_R or 1)"
+        },
+        {
+          "hubSideBeamSpring": "$=600812.875000 * ($rimStiffnessMult_R or 1)",
+          "hubSideBeamDamp": "$=16.690100 * ($rimStiffnessMult_R or 1)"
+        },
+        {
+          "hubNodeWeight": 0.339977
+        },
+        {
+          "hubNodeMaterial": "|NM_METAL"
+        },
+        {
+          "hubFrictionCoef": 0.5
+        },
+        {
+          "wheelSideBeamSpringExpansion": "$=405771.843750 * ($tireStiffnessMult_R or 1)",
+          "wheelSideBeamDampExpansion": "$=27.213211 * ($tireStiffnessMult_R or 1)"
+        },
+        {
+          "wheelSideBeamSpring": "$=0.000000 * ($tireStiffnessMult_R or 1) * $rearPSI",
+          "wheelSideBeamDamp": "$=27.213211 * ($tireStiffnessMult_R or 1)"
+        },
+        {
+          "wheelSideTransitionZone": 0.16347,
+          "wheelSideBeamPrecompression": 0.98
+        },
+        {
+          "wheelTreadBeamSpring": "$=138625.625000 * ($tireStiffnessMult_R or 1)",
+          "wheelTreadBeamDamp": "$=47.717960 * ($tireStiffnessMult_R or 1)"
+        },
+        {
+          "wheelTreadBeamPrecompression": 0.99
+        },
+        {
+          "wheelTreadBeamDampCutoffHz": 500.0
+        },
+        {
+          "wheelTreadReinfBeamSpring": "$=112748.843750 * ($tireStiffnessMult_R or 1)",
+          "wheelTreadReinfBeamDamp": "$=64.551659 * ($tireStiffnessMult_R or 1)"
+        },
+        {
+          "wheelTreadReinfBeamPrecompression": 0.99
+        },
+        {
+          "wheelTreadReinfBeamDampCutoffHz": 500.0
+        },
+        {
+          "wheelPeripheryBeamSpring": "$=69945.390625 * ($tireStiffnessMult_R or 1)",
+          "wheelPeripheryBeamDamp": "$=50.842972 * ($tireStiffnessMult_R or 1)"
+        },
+        {
+          "wheelPeripheryBeamPrecompression": 0.99
+        },
+        {
+          "wheelPeripheryBeamDampCutoffHz": 500.0
+        },
+        {
+          "wheelPeripheryReinfBeamSpring": "$=65282.367188 * ($tireStiffnessMult_R or 1)",
+          "wheelPeripheryReinfBeamDamp": "$=49.118977 * ($tireStiffnessMult_R or 1)"
+        },
+        {
+          "wheelPeripheryReinfBeamPrecompression": 0.99
+        },
+        {
+          "wheelPeripheryReinfBeamDampCutoffHz": 500.0
+        },
+        {
+          "wheelReinfBeamSpring": "$=16574.576172 * ($tireStiffnessMult_R or 1)",
+          "wheelReinfBeamDamp": "$=175.998932 * ($tireStiffnessMult_R or 1)"
+        },
+        {
+          "wheelReinfBeamPrecompression": 0.99
+        },
+        {
+          "wheelReinfBeamDampCutoffHz": 500.0
+        },
+        {
+          "nodeWeight": 0.182506
+        },
+        {
+          "nodeMaterial": "|NM_RUBBER"
+        },
+        {
+          "pressurePSI": "$rearPSI"
+        },
+        {
+          "dragCoef": 1
+        },
+        {
+          "frictionCoef": 1.0
+        },
+        {
+          "slidingFrictionCoef": "$=1.180000 *1.05"
+        },
+        {
+          "treadCoef": 1.0
+        },
+        {
+          "stribeckExponent": 2.025
+        },
+        {
+          "stribeckVelMult": 2.2
+        },
+        {
+          "noLoadCoef": 1.403331
+        },
+        {
+          "loadSensitivitySlope": "$=0.000110*0.9"
+        },
+        {
+          "fullLoadCoef": 0.12963
+        },
+        {
+          "softnessCoef": 0.4
+        },
+        {
+          "hubBeamDeform": 60884.078125,
+          "hubBeamStrength": 68987.351562
+        },
+        {
+          "wheelSideBeamDeform": 21900.748047,
+          "wheelSideBeamStrength": 27375.933594
+        },
+        {
+          "wheelReinfBeamDeform": 109503.734375,
+          "wheelReinfBeamStrength": 109503.734375
+        },
+        {
+          "wheelTreadBeamDeform": 10950.374023,
+          "wheelTreadBeamStrength": 14235.486328
+        },
+        {
+          "wheelTreadReinfBeamDeform": 10950.374023,
+          "wheelTreadReinfBeamStrength": 14235.486328
+        },
+        {
+          "wheelPeripheryBeamDeform": 54751.867188,
+          "wheelPeripheryBeamStrength": 54751.867188
+        },
+        {
+          "brakeTorque": 0
+        },
+        {
+          "parkingTorque": 0
+        },
+        {
+          "enableBrakeThermals": false
+        },
+        {
+          "brakeDiameter": false
+        },
+        {
+          "brakeMass": false
+        },
+        {
+          "brakeType": false
+        },
+        {
+          "rotorMaterial": false
+        },
+        {
+          "brakeVentingCoef": false
+        }
+      ]
+    },
+    "Camso_ElectricMotor_F_70470": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Rally x Front Electric Motor",
+        "value": 4000
+      },
+      "powertrain": [
+        [
+          "type",
+          "name",
+          "inputName",
+          "inputIndex"
+        ],
+        [
+          "electricMotor",
+          "frontMotor",
+          "dummy",
+          0
+        ],
+        [
+          "shaft",
+          "frontDriveShaft",
+          "frontMotor",
+          1,
+          {
+            "gearRatio": 0.75
+          }
+        ]
+      ]
+    },
+    "Camso_ElectricMotor_R_70470": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Rally x Rear Electric Motor",
+        "value": 4000
+      },
+      "powertrain": [
+        [
+          "type",
+          "name",
+          "inputName",
+          "inputIndex"
+        ],
+        [
+          "electricMotor",
+          "rearMotor",
+          "dummy",
+          0
+        ],
+        [
+          "shaft",
+          "rearDriveShaft",
+          "rearMotor",
+          1,
+          {
+            "gearRatio": 0.75
+          }
+        ]
+      ]
+    },
+    "Camso_Engine_cb344": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Rally X1",
+        "value": 6000
+      },
+      "slots": [
+        [
+          "type",
+          "default",
+          "description"
+        ],
+        [
+          "camso_tuning_parameters_engine",
+          "",
+          "Advanced Engine Parameters"
+        ],
+        [
+          "Camso_Intake_cb344",
+          "Camso_Intake_cb344",
+          "Intake",
+          {
+            "coreSlot": true
+          }
+        ],
+        [
+          "Camso_BalancingMass",
+          "Camso_BalancingMass",
+          "Engine Balancing",
+          {
+            "coreSlot": true
+          }
+        ],
+        [
+          "Camso_Nitrous",
+          "",
+          "Nitrous Injection"
+        ],
+        [
+          "Camso_EngineManagement_cb344",
+          "Camso_EngineManagement_cb344",
+          "Engine Management",
+          {
+            "coreSlot": true
+          }
+        ],
+        [
+          "Camso_engine_structure",
+          "Camso_engine_structure_70470",
+          "Engine Structure",
+          {
+            "coreSlot": true
+          }
+        ],
+        [
+          "Camso_EngineInternals_cb344",
+          "Camso_EngineInternals_cb344",
+          "Engine Internals",
+          {
+            "coreSlot": true
+          }
+        ],
+        [
+          "Camso_Turbo_cb344",
+          "Camso_Turbo_cb344",
+          "Turbocharger"
+        ],
+        [
+          "Camso_Supercharger_cb344",
+          "Camso_Supercharger_cb344",
+          "Supercharger"
+        ],
+        [
+          "Camso_Transmission",
+          "Camso_Transmission_70470",
+          "Transmission"
+        ]
+      ],
+      "powertrain": [
+        [
+          "type",
+          "name",
+          "inputName",
+          "inputIndex"
+        ],
+        [
+          "camsoEngine",
+          "mainEngine",
+          "dummy",
+          0
+        ]
+      ],
+      "mainEngine": {
+        "torque": [
+          [
+            "throttle",
+            "rpm",
+            "torque",
+            "FuelUsed",
+            "Pressure"
+          ],
+          [
+            100,
+            0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            100,
+            100,
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            100,
+            200,
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            100,
+            200,
+            67.92,
+            0.38,
+            1.0
+          ],
+          [
+            100,
+            300,
+            101.89,
+            0.57,
+            1.0
+          ],
+          [
+            100,
+            400,
+            135.85,
+            0.76,
+            1.0
+          ],
+          [
+            100,
+            500,
+            169.81,
+            0.95,
+            1.2
+          ],
+          [
+            100,
+            600,
+            184.73,
+            1.39,
+            1.3
+          ],
+          [
+            100,
+            700,
+            203.07,
+            1.74,
+            1.42
+          ],
+          [
+            100,
+            800,
+            219.14,
+            2.23,
+            1.54
+          ],
+          [
+            100,
+            900,
+            236.7,
+            2.75,
+            1.66
+          ],
+          [
+            100,
+            1000,
+            254.06,
+            3.29,
+            1.78
+          ],
+          [
+            100,
+            1100,
+            272.07,
+            3.89,
+            1.9
+          ],
+          [
+            100,
+            1200,
+            290.29,
+            4.55,
+            2.03
+          ],
+          [
+            100,
+            1300,
+            310.26,
+            5.28,
+            2.17
+          ],
+          [
+            100,
+            1400,
+            330.69,
+            6.07,
+            2.32
+          ],
+          [
+            100,
+            1500,
+            350.91,
+            6.92,
+            2.46
+          ],
+          [
+            100,
+            1600,
+            371.2,
+            7.84,
+            2.6
+          ],
+          [
+            100,
+            1700,
+            420.23,
+            9.53,
+            2.98
+          ],
+          [
+            100,
+            1800,
+            469.32,
+            10.92,
+            3.36
+          ],
+          [
+            100,
+            1900,
+            506.66,
+            12.65,
+            3.68
+          ],
+          [
+            100,
+            2000,
+            508.16,
+            13.39,
+            3.68
+          ],
+          [
+            100,
+            2100,
+            511.82,
+            14.51,
+            3.68
+          ],
+          [
+            100,
+            2200,
+            515.5,
+            15.16,
+            3.68
+          ],
+          [
+            100,
+            2300,
+            518.08,
+            15.82,
+            3.68
+          ],
+          [
+            100,
+            2400,
+            521.19,
+            16.45,
+            3.68
+          ],
+          [
+            100,
+            2500,
+            525.29,
+            17.09,
+            3.68
+          ],
+          [
+            100,
+            2600,
+            529.4,
+            17.77,
+            3.68
+          ],
+          [
+            100,
+            2700,
+            533.79,
+            18.45,
+            3.68
+          ],
+          [
+            100,
+            2800,
+            538.31,
+            19.15,
+            3.68
+          ],
+          [
+            100,
+            2900,
+            544.11,
+            19.86,
+            3.68
+          ],
+          [
+            100,
+            3000,
+            550.46,
+            20.55,
+            3.68
+          ],
+          [
+            100,
+            3100,
+            556.76,
+            21.34,
+            3.68
+          ],
+          [
+            100,
+            3200,
+            563.25,
+            22.13,
+            3.68
+          ],
+          [
+            100,
+            3300,
+            572.05,
+            22.97,
+            3.68
+          ],
+          [
+            100,
+            3400,
+            588.28,
+            23.98,
+            3.7
+          ],
+          [
+            100,
+            3500,
+            594.17,
+            24.84,
+            3.7
+          ],
+          [
+            100,
+            3600,
+            598.27,
+            25.87,
+            3.7
+          ],
+          [
+            100,
+            3700,
+            600.31,
+            26.77,
+            3.7
+          ],
+          [
+            100,
+            3800,
+            601.5,
+            27.59,
+            3.7
+          ],
+          [
+            100,
+            3900,
+            602.45,
+            28.37,
+            3.7
+          ],
+          [
+            100,
+            4000,
+            604.57,
+            29.17,
+            3.7
+          ],
+          [
+            100,
+            4100,
+            607.12,
+            30.05,
+            3.7
+          ],
+          [
+            100,
+            4200,
+            609.47,
+            30.95,
+            3.7
+          ],
+          [
+            100,
+            4300,
+            611.6,
+            31.85,
+            3.7
+          ],
+          [
+            100,
+            4400,
+            613.52,
+            32.75,
+            3.7
+          ],
+          [
+            100,
+            4500,
+            615.12,
+            33.65,
+            3.7
+          ],
+          [
+            100,
+            4600,
+            616.9,
+            34.54,
+            3.7
+          ],
+          [
+            100,
+            4700,
+            618.28,
+            35.46,
+            3.7
+          ],
+          [
+            100,
+            4800,
+            619.5,
+            36.36,
+            3.7
+          ],
+          [
+            100,
+            4900,
+            621.22,
+            37.29,
+            3.7
+          ],
+          [
+            100,
+            5000,
+            623.19,
+            38.27,
+            3.7
+          ],
+          [
+            100,
+            5100,
+            625.08,
+            39.28,
+            3.7
+          ],
+          [
+            100,
+            5200,
+            626.54,
+            40.31,
+            3.7
+          ],
+          [
+            100,
+            5300,
+            627.29,
+            41.29,
+            3.7
+          ],
+          [
+            100,
+            5400,
+            626.72,
+            42.22,
+            3.7
+          ],
+          [
+            100,
+            5500,
+            625.42,
+            43.04,
+            3.7
+          ],
+          [
+            100,
+            5600,
+            623.97,
+            43.79,
+            3.7
+          ],
+          [
+            100,
+            5700,
+            622.18,
+            44.54,
+            3.7
+          ],
+          [
+            100,
+            5800,
+            620.52,
+            45.27,
+            3.7
+          ],
+          [
+            100,
+            5900,
+            618.74,
+            46.03,
+            3.7
+          ],
+          [
+            100,
+            6000,
+            617.08,
+            46.83,
+            3.7
+          ],
+          [
+            100,
+            6100,
+            614.79,
+            47.65,
+            3.7
+          ],
+          [
+            100,
+            6200,
+            611.84,
+            48.42,
+            3.7
+          ],
+          [
+            100,
+            6300,
+            607.51,
+            49.11,
+            3.7
+          ],
+          [
+            100,
+            6400,
+            603.64,
+            49.67,
+            3.7
+          ],
+          [
+            100,
+            6500,
+            598.19,
+            50.21,
+            3.7
+          ],
+          [
+            100,
+            6600,
+            592.6,
+            50.6,
+            3.7
+          ],
+          [
+            100,
+            6700,
+            587.23,
+            50.94,
+            3.7
+          ],
+          [
+            100,
+            6800,
+            582.15,
+            51.27,
+            3.7
+          ],
+          [
+            100,
+            6900,
+            576.23,
+            51.61,
+            3.7
+          ],
+          [
+            100,
+            7000,
+            571.12,
+            51.93,
+            3.7
+          ],
+          [
+            100,
+            7100,
+            565.19,
+            52.27,
+            3.7
+          ],
+          [
+            100,
+            7200,
+            560.29,
+            52.61,
+            3.7
+          ],
+          [
+            100,
+            7300,
+            554.09,
+            52.99,
+            3.7
+          ],
+          [
+            100,
+            7400,
+            549.04,
+            53.34,
+            3.7
+          ],
+          [
+            100,
+            7500,
+            543.59,
+            53.69,
+            3.7
+          ],
+          [
+            100,
+            7600,
+            537.03,
+            54.0,
+            3.7
+          ],
+          [
+            100,
+            7700,
+            533.02,
+            54.16,
+            3.7
+          ],
+          [
+            100,
+            7800,
+            525.19,
+            54.4,
+            3.7
+          ],
+          [
+            100,
+            7900,
+            522.33,
+            54.45,
+            3.7
+          ],
+          [
+            100,
+            8000,
+            515.49,
+            54.68,
+            3.7
+          ]
+        ],
+        "frictionTorque": [
+          [
+            "rpm",
+            "torque"
+          ],
+          [
+            500,
+            12.41
+          ],
+          [
+            600,
+            12.36
+          ],
+          [
+            700,
+            12.33
+          ],
+          [
+            800,
+            12.32
+          ],
+          [
+            900,
+            12.34
+          ],
+          [
+            1000,
+            12.37
+          ],
+          [
+            1100,
+            12.41
+          ],
+          [
+            1200,
+            12.45
+          ],
+          [
+            1300,
+            12.54
+          ],
+          [
+            1400,
+            12.68
+          ],
+          [
+            1500,
+            12.83
+          ],
+          [
+            1600,
+            12.99
+          ],
+          [
+            1700,
+            13.15
+          ],
+          [
+            1800,
+            13.32
+          ],
+          [
+            1900,
+            13.49
+          ],
+          [
+            2000,
+            13.66
+          ],
+          [
+            2100,
+            13.84
+          ],
+          [
+            2200,
+            14.02
+          ],
+          [
+            2300,
+            14.21
+          ],
+          [
+            2400,
+            14.39
+          ],
+          [
+            2500,
+            14.58
+          ],
+          [
+            2600,
+            14.78
+          ],
+          [
+            2700,
+            14.98
+          ],
+          [
+            2800,
+            15.18
+          ],
+          [
+            2900,
+            15.38
+          ],
+          [
+            3000,
+            15.58
+          ],
+          [
+            3100,
+            15.79
+          ],
+          [
+            3200,
+            16.0
+          ],
+          [
+            3300,
+            16.21
+          ],
+          [
+            3400,
+            16.42
+          ],
+          [
+            3500,
+            16.64
+          ],
+          [
+            3600,
+            16.85
+          ],
+          [
+            3700,
+            17.07
+          ],
+          [
+            3800,
+            17.29
+          ],
+          [
+            3900,
+            17.52
+          ],
+          [
+            4000,
+            17.74
+          ],
+          [
+            4100,
+            17.97
+          ],
+          [
+            4200,
+            18.2
+          ],
+          [
+            4300,
+            18.43
+          ],
+          [
+            4400,
+            18.66
+          ],
+          [
+            4500,
+            18.89
+          ],
+          [
+            4600,
+            19.12
+          ],
+          [
+            4700,
+            19.36
+          ],
+          [
+            4800,
+            19.6
+          ],
+          [
+            4900,
+            19.84
+          ],
+          [
+            5000,
+            20.08
+          ],
+          [
+            5100,
+            20.32
+          ],
+          [
+            5200,
+            20.56
+          ],
+          [
+            5300,
+            20.81
+          ],
+          [
+            5400,
+            21.06
+          ],
+          [
+            5500,
+            21.3
+          ],
+          [
+            5600,
+            21.55
+          ],
+          [
+            5700,
+            21.8
+          ],
+          [
+            5800,
+            22.05
+          ],
+          [
+            5900,
+            22.31
+          ],
+          [
+            6000,
+            22.56
+          ],
+          [
+            6100,
+            22.82
+          ],
+          [
+            6200,
+            23.07
+          ],
+          [
+            6300,
+            23.33
+          ],
+          [
+            6400,
+            23.59
+          ],
+          [
+            6500,
+            23.85
+          ],
+          [
+            6600,
+            24.11
+          ],
+          [
+            6700,
+            24.37
+          ],
+          [
+            6800,
+            24.64
+          ],
+          [
+            6900,
+            24.9
+          ],
+          [
+            7000,
+            25.17
+          ],
+          [
+            7100,
+            25.43
+          ],
+          [
+            7200,
+            25.7
+          ],
+          [
+            7300,
+            25.97
+          ],
+          [
+            7400,
+            26.24
+          ],
+          [
+            7500,
+            26.51
+          ],
+          [
+            7600,
+            26.78
+          ],
+          [
+            7700,
+            27.06
+          ],
+          [
+            7800,
+            27.33
+          ],
+          [
+            7900,
+            27.6
+          ],
+          [
+            8000,
+            27.88
+          ]
+        ],
+        "idleRPM": 1300,
+        "maxRPM": 12000,
+        "inertia": 0.02,
+        "friction": 12.407533424529,
+        "dynamicFriction": 0.01846931382599,
+        "instantAfterFireSound": "event:>Vehicle>Afterfire>i4_01>single",
+        "starterSample": "event:>Engine>Starter>i4_1996_eng"
+      }
+    },
+    "Camso_Transmission_70470": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Rally x 6-Speed Sequential Transmission",
+        "value": 1100
+      },
+      "slots": [
+        [
+          "type",
+          "default",
+          "description"
+        ],
+        [
+          "Camso_TransferCase",
+          "Camso_TransferCase_AWD_70470",
+          "Drive Type"
+        ]
+      ],
+      "variables": [
+        [
+          "name",
+          "type",
+          "unit",
+          "category",
+          "default",
+          "min",
+          "max",
+          "title",
+          "description"
+        ],
+        [
+          "$whineMult",
+          "range",
+          "",
+          "Gearing",
+          1,
+          0,
+          5,
+          "Whine Volume",
+          "Gearbox whine volume multiplier",
+          {
+            "subCategory": "Transmission",
+            "stepDis": 1,
+            "minDis": 0,
+            "maxDis": 500
+          }
+        ],
+        [
+          "$gear_R_70470",
+          "range",
+          ":1",
+          "Gearing",
+          2.3,
+          0.1,
+          17,
+          "Gear R",
+          "Gear ratio",
+          {
+            "subCategory": "Transmission",
+            "stepDis": 0.01
+          }
+        ],
+        [
+          "$gear_1_70470",
+          "range",
+          ":1",
+          "Gearing",
+          2.19,
+          0.1,
+          17,
+          "Gear 1",
+          "Gear ratio",
+          {
+            "subCategory": "Transmission",
+            "stepDis": 0.01
+          }
+        ],
+        [
+          "$gear_2_70470",
+          "range",
+          ":1",
+          "Gearing",
+          1.6,
+          0.1,
+          17,
+          "Gear 2",
+          "Gear ratio",
+          {
+            "subCategory": "Transmission",
+            "stepDis": 0.01
+          }
+        ],
+        [
+          "$gear_3_70470",
+          "range",
+          ":1",
+          "Gearing",
+          1.19,
+          0.1,
+          17,
+          "Gear 3",
+          "Gear ratio",
+          {
+            "subCategory": "Transmission",
+            "stepDis": 0.01
+          }
+        ],
+        [
+          "$gear_4_70470",
+          "range",
+          ":1",
+          "Gearing",
+          0.92,
+          0.1,
+          17,
+          "Gear 4",
+          "Gear ratio",
+          {
+            "subCategory": "Transmission",
+            "stepDis": 0.01
+          }
+        ],
+        [
+          "$gear_5_70470",
+          "range",
+          ":1",
+          "Gearing",
+          0.75,
+          0.1,
+          17,
+          "Gear 5",
+          "Gear ratio",
+          {
+            "subCategory": "Transmission",
+            "stepDis": 0.01
+          }
+        ],
+        [
+          "$gear_6_70470",
+          "range",
+          ":1",
+          "Gearing",
+          0.62,
+          0.1,
+          17,
+          "Gear 6",
+          "Gear ratio",
+          {
+            "subCategory": "Transmission",
+            "stepDis": 0.01
+          }
+        ]
+      ],
+      "gearbox": {
+        "gearRatios": [
+          "$=-$gear_R_70470",
+          0,
+          "$gear_1_70470",
+          "$gear_2_70470",
+          "$gear_3_70470",
+          "$gear_4_70470",
+          "$gear_5_70470",
+          "$gear_6_70470"
+        ],
+        "friction": 21.135029939273,
+        "gearboxNode:": [
+          "engine0"
+        ],
+        "gearWhineCoefsInput": [
+          "$=$whineMult * 0.60",
+          0,
+          "$=$whineMult * 0.32",
+          "$=$whineMult * 0.32",
+          "$=$whineMult * 0.32",
+          "$=$whineMult * 0.32",
+          "$=$whineMult * 0.32",
+          "$=$whineMult * 0.32"
+        ],
+        "gearWhineCoefsOutput": [
+          0,
+          0,
+          "$=$whineMult * 0.6",
+          "$=$whineMult * 0.6",
+          "$=$whineMult * 0.6",
+          "$=$whineMult * 0.6",
+          "$=$whineMult * 0.6",
+          "$=$whineMult * 0.6"
+        ],
+        "gearWhineInputEvent": "event:>Vehicle>Transmission>straight_01>twine_in_race",
+        "gearWhineOutputEvent": "event:>Vehicle>Transmission>straight_01>twine_out_race"
+      },
+      "powertrain": [
+        [
+          "type",
+          "name",
+          "inputName",
+          "inputIndex"
+        ],
+        [
+          "frictionClutch",
+          "clutch",
+          "mainEngine",
+          1
+        ],
+        [
+          "sequentialGearbox",
+          "gearbox",
+          "clutch",
+          1
+        ]
+      ]
+    },
+    "Camso_SpeedLimiter_off": {
+      "information": {
+        "name": "None",
+        "value": 2500
+      }
+    },
+    "Camso_engine_structure_70470": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Rally x Engine Structure",
+        "value": 1
+      },
+      "slots": [
+        [
+          "type",
+          "default",
+          "description"
+        ],
+        [
+          "Camso_engine_mesh",
+          "Camso_engine_mesh_70470",
+          "Engine Mesh",
+          {
+            "nodeMove": {
+              "x": "$=($EngineOffsetX or 0)+($EngineOffsetXVis or 0)",
+              "y": "$=($EngineOffsetY or 0)+($EngineOffsetYVis or 0)",
+              "z": "$=($EngineOffsetZ or 0)+($EngineOffsetZVis or 0)"
+            }
+          }
+        ],
+        [
+          "Camso_exhaust",
+          "Camso_exhaust_70470",
+          "Exhaust",
+          {
+            "nodeMove": {
+              "x": "$=($EngineOffsetX or 0)+($ExhaustOffsetX or 0)",
+              "y": "$=($EngineOffsetY or 0)+($ExhaustOffsetY or 0)",
+              "z": "$=($EngineOffsetZ or 0)+($ExhaustOffsetZ or 0)"
+            }
+          }
+        ]
+      ],
+      "nodes": [
+        [
+          "id",
+          "posX",
+          "posY",
+          "posZ"
+        ]
+      ]
+    },
+    "Camso_halfshafts_front": {
+      "information": {
+        "name": "Front Halfshafts",
+        "value": 100
+      },
+      "powertrain": [
+        [
+          "type",
+          "name",
+          "inputName",
+          "inputIndex"
+        ],
+        [
+          "shaft",
+          "halfshaftFL",
+          "frontDiff",
+          1,
+          {
+            "breakTriggerBeam": "axle_FL",
+            "uiName": "Front Left Halfshaft",
+            "friction": 1
+          }
+        ],
+        [
+          "shaft",
+          "halfshaftFR",
+          "frontDiff",
+          2,
+          {
+            "breakTriggerBeam": "axle_FR",
+            "uiName": "Front Right Halfshaft",
+            "friction": 1
+          }
+        ]
+      ]
+    },
+    "Camso_halfshafts_rear": {
+      "information": {
+        "name": "Rear Halfshafts",
+        "value": 100
+      },
+      "powertrain": [
+        [
+          "type",
+          "name",
+          "inputName",
+          "inputIndex"
+        ],
+        [
+          "shaft",
+          "halfshaftRL",
+          "rearDiff",
+          1,
+          {
+            "breakTriggerBeam": "axle_RL",
+            "uiName": "Rear Left Halfshaft",
+            "friction": 1
+          }
+        ],
+        [
+          "shaft",
+          "halfshaftRR",
+          "rearDiff",
+          2,
+          {
+            "breakTriggerBeam": "axle_RR",
+            "uiName": "Rear Right Halfshaft",
+            "friction": 1
+          }
+        ]
+      ]
+    },
+    "Camso_DriveModes_70470": {
+      "slots": [
+        [
+          "type",
+          "default",
+          "description"
+        ],
+        [
+          "Camso_DriveModes_default_70470",
+          "Camso_DriveModes_default_comfort_70470",
+          "Default Mode",
+          {
+            "coreSlot": true
+          }
+        ],
+        [
+          "Camso_DriveModes_offroad_70470",
+          "",
+          "Offroad Mode"
+        ],
+        [
+          "Camso_DriveModes_off2wd_70470",
+          "",
+          "2WD ESC & TC Off Mode"
+        ],
+        [
+          "Camso_DriveModes_mod",
+          "",
+          "Additional Mode"
+        ]
+      ],
+      "information": {
+        "value": 250,
+        "name": "Rally x Drive Modes",
+        "authors": "Camshaft Software"
+      }
+    },
+    "Camso_TC_70470": {
+      "information": {
+        "authors": "Diamondback",
+        "name": "Rally x Traction Control",
+        "value": 250
+      }
+    },
+    "Camso_ESC_70470": {
+      "information": {
+        "authors": "Diamondback",
+        "name": "Rally x Stability Control",
+        "value": 250
+      }
+    },
+    "Camso_Chassis_70470": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Rally x Chassis Mesh",
+        "value": 1
+      }
+    },
+    "Camso_ABS_70470": {
+      "information": {
+        "authors": "BeamNG",
+        "name": "Rally x Anti-Lock Braking System",
+        "value": 600
+      },
+      "pressureWheels": [
+        [
+          "name",
+          "hubGroup",
+          "group",
+          "node1:",
+          "node2:",
+          "nodeS",
+          "nodeArm:",
+          "wheelDir"
+        ],
+        {
+          "enableABS": true
+        },
+        {
+          "absHz": 50
+        }
+      ]
+    },
+    "Camso_FuelTank_70470": {
+      "information": {
+        "name": "Rally x Ethanol Fuel Tank",
+        "value": 250
+      },
+      "variables": [
+        [
+          "name",
+          "type",
+          "unit",
+          "category",
+          "default",
+          "min",
+          "max",
+          "title",
+          "description"
+        ],
+        [
+          "$fuel",
+          "range",
+          "L",
+          "Engine",
+          40,
+          0,
+          40,
+          "Fuel Volume",
+          "Initial Fuel Volume",
+          {
+            "stepDis": 0.5
+          }
+        ]
+      ],
+      "nodes": []
+    },
+    "Camso_doublewishbone_F_70470": {
+      "information": {
+        "authors": "BeamNG",
+        "name": "Rally x Double Wishbone Front Suspension",
+        "value": 150
+      },
+      "variables": [
+        [
+          "name",
+          "type",
+          "unit",
+          "category",
+          "default",
+          "min",
+          "max",
+          "title",
+          "description"
+        ],
+        [
+          "$RideHeightOffsetFront",
+          "range",
+          "+m",
+          "Suspension",
+          0,
+          -0.5,
+          0.5,
+          "Front Ride Height Offset",
+          "Front suspension ride height offset",
+          {
+            "stepDis": 0.001,
+            "subCategory": "Springs"
+          }
+        ],
+        [
+          "$CamberFront",
+          "range",
+          "",
+          "Suspension",
+          0.996,
+          0.9,
+          1.092,
+          "Front Camber",
+          "Front wheel camber",
+          {
+            "stepDis": 0.001,
+            "subCategory": "Alignment",
+            "minDis": 90,
+            "maxDis": 109.2
+          }
+        ],
+        [
+          "$trackOffset_F",
+          "range",
+          "+m",
+          "Suspension",
+          0,
+          -0.5,
+          0.5,
+          "Front Wheel Offset",
+          "Spacing of rear wheels",
+          {
+            "stepDis": 0.001,
+            "subCategory": "Spacing"
+          }
+        ],
+        [
+          "$brakeOffset_F",
+          "range",
+          "+m",
+          "Suspension",
+          0,
+          -0.5,
+          0.5,
+          "Front Brake Offset",
+          "Visual front brake offset",
+          {
+            "stepDis": 0.001,
+            "subCategory": "Spacing"
+          }
+        ],
+        [
+          "$hubStiffnessMult_F",
+          "range",
+          "",
+          "Vehicle Advanced Settings",
+          1,
+          0.1,
+          3,
+          "Front Hub Stiffness",
+          "Lower this value if wheels break off. Raise it if there is unwanted flex in the hubs",
+          {
+            "subCategory": "Wheel Hubs",
+            "stepDis": 1,
+            "minDis": 10,
+            "maxDis": 300
+          }
+        ],
+        [
+          "$SuspensionSubframeStiffnessMult_F",
+          "range",
+          "",
+          "Vehicle Advanced Settings",
+          1,
+          0.1,
+          3,
+          "Front Subframe Stiffness",
+          "Lower this value if the front of the car is vibrating.",
+          {
+            "subCategory": "Suspension",
+            "stepDis": 1,
+            "minDis": 10,
+            "maxDis": 200
+          }
+        ]
+      ],
+      "slots": [
+        [
+          "type",
+          "default",
+          "description"
+        ],
+        [
+          "camso_hubs_front_70470",
+          "camso_hubs_front_70470",
+          "Front Hubs"
+        ],
+        [
+          "Camso_suspensionmesh_F",
+          "Camso_suspensionmesh_F_70470",
+          "Suspension Mesh",
+          {
+            "nodeOffset": {
+              "x": "$=$frontSuspensionOffsetX or 0",
+              "y": "$=$frontSuspensionOffsetY or 0",
+              "z": "$=$frontSuspensionOffsetZ or 0"
+            }
+          }
+        ],
+        [
+          "Camso_brake_F",
+          "Camso_brake_F_70470",
+          "Front Brakes",
+          {
+            "nodeOffset": {
+              "x": "$=($frontSuspensionOffsetX or 0)+($brakeOffset_F or 0)",
+              "y": "$=$frontSuspensionOffsetY or 0",
+              "z": "$=$frontSuspensionOffsetZ or 0"
+            }
+          }
+        ],
+        [
+          "Camso_wheeldata_F_doublewishbone",
+          "Camso_wheeldata_F_doublewishbone_70470",
+          "Front Spindles",
+          {
+            "coreSlot": true
+          }
+        ],
+        [
+          "Camso_coilover_F_doublewishbone",
+          "Camso_coilover_F_doublewishbone_70470",
+          "Front Coilovers"
+        ],
+        [
+          "Camso_swaybar_F_doublewishbone",
+          "Camso_swaybar_F_doublewishbone_70470",
+          "Front Sway Bar"
+        ],
+        [
+          "Camso_steering_doublewishbone",
+          "Camso_steering_doublewishbone_70470",
+          "Steering"
+        ],
+        [
+          "Camso_differential_front",
+          "Camso_differential_front_70470",
+          "Front Differential"
+        ]
+      ],
+      "nodes": [
+        [
+          "id",
+          "posX",
+          "posY",
+          "posZ"
+        ]
+      ],
+      "pressureWheels": [
+        [
+          "name",
+          "hubGroup",
+          "group",
+          "node1:",
+          "node2:",
+          "nodeS",
+          "nodeArm:",
+          "wheelDir"
+        ],
+        {
+          "brakeTorque": 0
+        },
+        {
+          "parkingTorque": 0
+        },
+        {
+          "enableBrakeThermals": false
+        },
+        {
+          "brakeDiameter": false
+        },
+        {
+          "brakeMass": false
+        },
+        {
+          "brakeType": false
+        },
+        {
+          "rotorMaterial": false
+        },
+        {
+          "brakeVentingCoef": false
+        }
+      ]
+    },
+    "Camso_doublewishbone_R_70470": {
+      "information": {
+        "authors": "BeamNG",
+        "name": "Rally x Double Wishbone Rear Suspension",
+        "value": 150
+      },
+      "variables": [
+        [
+          "name",
+          "type",
+          "unit",
+          "category",
+          "default",
+          "min",
+          "max",
+          "title",
+          "description"
+        ],
+        [
+          "$toe_R",
+          "range",
+          "",
+          "Suspension",
+          1,
+          0.995,
+          1.005,
+          "Rear Toe Adjust",
+          "Adjusts the wheel toe-in angle",
+          {
+            "subCategory": "Alignment"
+          }
+        ],
+        [
+          "$RideHeightOffsetRear",
+          "range",
+          "+m",
+          "Suspension",
+          0,
+          -0.5,
+          0.5,
+          "Rear Ride Height Offset",
+          "Rear suspension ride height offset",
+          {
+            "stepDis": 0.001,
+            "subCategory": "Springs"
+          }
+        ],
+        [
+          "$CamberRear",
+          "range",
+          "",
+          "Suspension",
+          0.996,
+          0.9,
+          1.092,
+          "Rear Camber",
+          "Rear wheel camber",
+          {
+            "stepDis": 0.001,
+            "subCategory": "Alignment",
+            "minDis": 90,
+            "maxDis": 109.2
+          }
+        ],
+        [
+          "$trackOffset_R",
+          "range",
+          "+m",
+          "Suspension",
+          0,
+          -0.5,
+          0.5,
+          "Rear Wheel Offset",
+          "Spacing of rear wheels",
+          {
+            "stepDis": 0.001,
+            "subCategory": "Spacing"
+          }
+        ],
+        [
+          "$brakeOffset_R",
+          "range",
+          "+m",
+          "Suspension",
+          0,
+          -0.5,
+          0.5,
+          "Rear Brake Offset",
+          "Visual rear brake offset",
+          {
+            "stepDis": 0.001,
+            "subCategory": "Spacing"
+          }
+        ],
+        [
+          "$hubStiffnessMult_R",
+          "range",
+          "",
+          "Vehicle Advanced Settings",
+          1,
+          0.1,
+          3,
+          "Rear Hub Stiffness",
+          "Lower this value if wheels break off. Raise it if there is unwanted flex in the hubs",
+          {
+            "subCategory": "Wheel Hubs",
+            "stepDis": 1,
+            "minDis": 10,
+            "maxDis": 300
+          }
+        ]
+      ],
+      "slots": [
+        [
+          "type",
+          "default",
+          "description"
+        ],
+        [
+          "camso_hubs_rear_70470",
+          "camso_hubs_rear_70470",
+          "Rear Hubs"
+        ],
+        [
+          "Camso_suspensionmesh_R",
+          "Camso_suspensionmesh_R_70470",
+          "Suspension Mesh",
+          {
+            "nodeOffset": {
+              "x": "$=$rearSuspensionOffsetX or 0",
+              "y": "$=$rearSuspensionOffsetY or 0",
+              "z": "$=$rearSuspensionOffsetZ or 0"
+            }
+          }
+        ],
+        [
+          "Camso_brake_R",
+          "Camso_brake_R_70470",
+          "Rear Brakes",
+          {
+            "nodeOffset": {
+              "x": "$=($rearSuspensionOffsetX or 0)+($brakeOffset_R or 0)",
+              "y": "$=$rearSuspensionOffsetY or 0",
+              "z": "$=$rearSuspensionOffsetZ or 0"
+            }
+          }
+        ],
+        [
+          "Camso_wheeldata_R_doublewishbone",
+          "Camso_wheeldata_R_doublewishbone_70470",
+          "Rear Spindles",
+          {
+            "coreSlot": true
+          }
+        ],
+        [
+          "Camso_coilover_R_doublewishbone",
+          "Camso_coilover_R_doublewishbone_70470",
+          "Rear Coilovers"
+        ],
+        [
+          "Camso_swaybar_R_doublewishbone",
+          "Camso_swaybar_R_doublewishbone_70470",
+          "Rear Sway Bar"
+        ],
+        [
+          "Camso_differential_rear",
+          "Camso_differential_rear_70470",
+          "Rear Differential"
+        ]
+      ],
+      "nodes": [
+        [
+          "id",
+          "posX",
+          "posY",
+          "posZ"
+        ]
+      ],
+      "pressureWheels": [
+        [
+          "name",
+          "hubGroup",
+          "group",
+          "node1:",
+          "node2:",
+          "nodeS",
+          "nodeArm:",
+          "wheelDir"
+        ],
+        {
+          "brakeTorque": 0
+        },
+        {
+          "parkingTorque": 0
+        },
+        {
+          "enableBrakeThermals": false
+        },
+        {
+          "brakeDiameter": false
+        },
+        {
+          "brakeMass": false
+        },
+        {
+          "brakeType": false
+        },
+        {
+          "rotorMaterial": false
+        },
+        {
+          "brakeVentingCoef": false
+        }
+      ]
+    },
+    "downforce_front_xperimental": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Experimental Front Downforce",
+        "value": 1
+      },
+      "nodes": [
+        [
+          "id",
+          "posX",
+          "posY",
+          "posZ"
+        ]
+      ]
+    },
+    "downforce_rear_xperimental": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Experimental Rear Downforce",
+        "value": 1
+      },
+      "nodes": [
+        [
+          "id",
+          "posX",
+          "posY",
+          "posZ"
+        ]
+      ]
+    },
+    "aero_xperimental": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Experimental Drag Model",
+        "value": 1
+      },
+      "nodes": [
+        [
+          "id",
+          "posX",
+          "posY",
+          "posZ"
+        ]
+      ]
+    },
+    "Camso_Intake_cb344": {
+      "information": {
+        "name": "Stock Intake",
+        "value": 250
+      }
+    },
+    "Camso_BalancingMass": {
+      "information": {
+        "name": "Stock Balancing",
+        "value": 50
+      }
+    },
+    "Camso_EngineManagement_cb344": {
+      "information": {
+        "name": "Stock Engine Management",
+        "value": 600
+      },
+      "slots": [
+        [
+          "type",
+          "default",
+          "description"
+        ],
+        [
+          "Camso_SpeedLimiter",
+          "Camso_SpeedLimiter_off",
+          "Speed Limiter",
+          {
+            "coreSlot": true
+          }
+        ]
+      ],
+      "mainEngine": {
+        "revLimiterRPM": 8000
+      }
+    },
+    "Camso_EngineInternals_cb344": {
+      "information": {
+        "name": "Stock Internals",
+        "value": 200
+      }
+    },
+    "Camso_Turbo_cb344": {
+      "information": {
+        "name": "Stock Turbocharger",
+        "value": 2000
+      },
+      "variables": [
+        [
+          "name",
+          "type",
+          "unit",
+          "category",
+          "default",
+          "min",
+          "max",
+          "title",
+          "description"
+        ],
+        [
+          "$wastegateLimit",
+          "range",
+          "PSI",
+          "Engine",
+          56.322327000468,
+          0,
+          56.322327000468,
+          "Boost Limit",
+          "Turbocharger wastegate pressure limit",
+          {
+            "stepDis": 0.01
+          }
+        ]
+      ],
+      "turbocharger": {
+        "bovSoundFileName": "event:>Vehicle>Forced_Induction>Turbo_05>turbo_bov_tuned",
+        "hissLoopEvent": "event:>Vehicle>Forced_Induction>Turbo_05>turbo_hiss_tuned",
+        "whineLoopEvent": "event:>Vehicle>Forced_Induction>Turbo_05>turbo_spin_tuned",
+        "bovSoundVolumeCoef": 0.4,
+        "hissVolumePerPSI": 0.015,
+        "whineVolumePer10kRPM": 0.006,
+        "whinePitchPer10kRPM": 0.054,
+        "turboSizeCoef": 0.56249995529652,
+        "wastegateStart": "$=$wastegateLimit*0.9",
+        "wastegateLimit": "$wastegateLimit",
+        "maxExhaustPower": 40000,
+        "backPressureCoef": 0.0001,
+        "pressureRatePSI": 30,
+        "frictionCoef": 16,
+        "inertia": 4,
+        "damageThresholdTemperature": 900,
+        "pressurePSI": [
+          [
+            0,
+            -3.5
+          ],
+          [
+            25000,
+            84.483491
+          ],
+          [
+            50000,
+            84.483491
+          ],
+          [
+            75000,
+            84.483491
+          ],
+          [
+            100000,
+            84.483491
+          ],
+          [
+            125000,
+            84.483491
+          ],
+          [
+            150000,
+            84.483491
+          ],
+          [
+            175000,
+            84.483491
+          ],
+          [
+            200000,
+            84.483491
+          ],
+          [
+            225000,
+            84.483491
+          ],
+          [
+            250000,
+            84.483491
+          ]
+        ],
+        "engineDef": [
+          [
+            500,
+            0.324208,
+            0.324208
+          ],
+          [
+            600,
+            0.351293,
+            0.351293
+          ],
+          [
+            700,
+            0.384335,
+            0.384335
+          ],
+          [
+            800,
+            0.416039,
+            0.416039
+          ],
+          [
+            900,
+            0.448977,
+            0.448977
+          ],
+          [
+            1000,
+            0.481058,
+            0.481058
+          ],
+          [
+            1100,
+            0.514191,
+            0.514191
+          ],
+          [
+            1200,
+            0.548608,
+            0.548608
+          ],
+          [
+            1300,
+            0.586638,
+            0.586638
+          ],
+          [
+            1400,
+            0.625818,
+            0.625818
+          ],
+          [
+            1500,
+            0.664849,
+            0.664849
+          ],
+          [
+            1600,
+            0.704125,
+            0.704125
+          ],
+          [
+            1700,
+            0.804613,
+            0.804613
+          ],
+          [
+            1800,
+            0.908794,
+            0.908794
+          ],
+          [
+            1900,
+            0.99452,
+            0.99452
+          ],
+          [
+            2000,
+            0.99452,
+            0.99452
+          ],
+          [
+            2100,
+            0.99452,
+            0.99452
+          ],
+          [
+            2200,
+            0.99452,
+            0.99452
+          ],
+          [
+            2300,
+            0.99452,
+            0.99452
+          ],
+          [
+            2400,
+            0.99452,
+            0.99452
+          ],
+          [
+            2500,
+            0.99452,
+            0.99452
+          ],
+          [
+            2600,
+            0.99452,
+            0.99452
+          ],
+          [
+            2700,
+            0.99452,
+            0.99452
+          ],
+          [
+            2800,
+            0.99452,
+            0.99452
+          ],
+          [
+            2900,
+            0.99452,
+            0.99452
+          ],
+          [
+            3000,
+            0.99452,
+            0.99452
+          ],
+          [
+            3100,
+            0.99452,
+            0.99452
+          ],
+          [
+            3200,
+            0.99452,
+            0.99452
+          ],
+          [
+            3300,
+            0.99452,
+            0.99452
+          ],
+          [
+            3400,
+            1.0,
+            1.0
+          ],
+          [
+            3500,
+            1.0,
+            1.0
+          ],
+          [
+            3600,
+            1.0,
+            1.0
+          ],
+          [
+            3700,
+            1.0,
+            1.0
+          ],
+          [
+            3800,
+            1.0,
+            1.0
+          ],
+          [
+            3900,
+            1.0,
+            1.0
+          ],
+          [
+            4000,
+            1.0,
+            1.0
+          ],
+          [
+            4100,
+            1.0,
+            1.0
+          ],
+          [
+            4200,
+            1.0,
+            1.0
+          ],
+          [
+            4300,
+            1.0,
+            1.0
+          ],
+          [
+            4400,
+            1.0,
+            1.0
+          ],
+          [
+            4500,
+            1.0,
+            1.0
+          ],
+          [
+            4600,
+            1.0,
+            1.0
+          ],
+          [
+            4700,
+            1.0,
+            1.0
+          ],
+          [
+            4800,
+            1.0,
+            1.0
+          ],
+          [
+            4900,
+            1.0,
+            1.0
+          ],
+          [
+            5000,
+            1.0,
+            1.0
+          ],
+          [
+            5100,
+            1.0,
+            1.0
+          ],
+          [
+            5200,
+            1.0,
+            1.0
+          ],
+          [
+            5300,
+            1.0,
+            1.0
+          ],
+          [
+            5400,
+            1.0,
+            1.0
+          ],
+          [
+            5500,
+            1.0,
+            1.0
+          ],
+          [
+            5600,
+            1.0,
+            1.0
+          ],
+          [
+            5700,
+            1.0,
+            1.0
+          ],
+          [
+            5800,
+            1.0,
+            1.0
+          ],
+          [
+            5900,
+            1.0,
+            1.0
+          ],
+          [
+            6000,
+            1.0,
+            1.0
+          ],
+          [
+            6100,
+            1.0,
+            1.0
+          ],
+          [
+            6200,
+            1.0,
+            1.0
+          ],
+          [
+            6300,
+            1.0,
+            1.0
+          ],
+          [
+            6400,
+            1.0,
+            1.0
+          ],
+          [
+            6500,
+            1.0,
+            1.0
+          ],
+          [
+            6600,
+            1.0,
+            1.0
+          ],
+          [
+            6700,
+            1.0,
+            1.0
+          ],
+          [
+            6800,
+            1.0,
+            1.0
+          ],
+          [
+            6900,
+            1.0,
+            1.0
+          ],
+          [
+            7000,
+            1.0,
+            1.0
+          ],
+          [
+            7100,
+            1.0,
+            1.0
+          ],
+          [
+            7200,
+            1.0,
+            1.0
+          ],
+          [
+            7300,
+            1.0,
+            1.0
+          ],
+          [
+            7400,
+            1.0,
+            1.0
+          ],
+          [
+            7500,
+            1.0,
+            1.0
+          ],
+          [
+            7600,
+            1.0,
+            1.0
+          ],
+          [
+            7700,
+            1.0,
+            1.0
+          ],
+          [
+            7800,
+            1.0,
+            1.0
+          ],
+          [
+            7900,
+            1.0,
+            1.0
+          ],
+          [
+            8000,
+            1.0,
+            1.0
+          ]
+        ]
+      },
+      "mainEngine": {}
+    },
+    "Camso_Supercharger_cb344": {
+      "information": {
+        "authors": "BeamNG",
+        "name": "Camso Supercharger",
+        "value": 5000
+      },
+      "supercharger": {
+        "gearRatio": 1.9,
+        "clutchEngageRPM": 0,
+        "clutchDisengageRPM": 3400.0,
+        "type": "roots",
+        "lobes": 2,
+        "twistedLobes": false,
+        "whineLoopEvent": "event:>Vehicle>Forced_Induction>Supercharger_03>supercharger",
+        "whineVolumePerPSI": 0.13,
+        "whinePitchPer10kRPM": 0.5,
+        "whineVolumePer10kRPM": 0.21,
+        "maxPressure": 38.13
+      },
+      "mainEngine": {}
+    },
+    "Camso_TransferCase_AWD_70470": {
+      "information": {
+        "name": "Rally x All Wheel Drive",
+        "value": 1000
+      },
+      "slots": [
+        [
+          "type",
+          "default",
+          "description"
+        ],
+        [
+          "Camso_differential_center",
+          "Camso_differential_center_70470",
+          "Center Coupling",
+          {
+            "coreSlot": true
+          }
+        ]
+      ]
+    },
+    "Camso_engine_mesh_70470": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Rally x Engine Mesh",
+        "value": 1
+      }
+    },
+    "Camso_exhaust_70470": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Rally x Exhaust",
+        "value": 1
+      },
+      "slots": [
+        [
+          "type",
+          "default",
+          "description"
+        ],
+        [
+          "Camso_exhaust_mesh",
+          "Camso_exhaust_mesh_70470",
+          "Exhaust Mesh",
+          {
+            "nodeMove": {
+              "x": "$=($EngineOffsetX or 0)+($EngineOffsetXVis or 0)+($ExhaustOffsetX or 0)+($ExhaustOffsetXVis or 0)",
+              "y": "$=($EngineOffsetY or 0)+($EngineOffsetYVis or 0)+($ExhaustOffsetY or 0)+($ExhaustOffsetYVis or 0)",
+              "z": "$=($EngineOffsetZ or 0)+($EngineOffsetZ or 0)+($ExhaustOffsetZVis or 0)+($ExhaustOffsetZVis or 0)"
+            }
+          }
+        ]
+      ],
+      "nodes": [
+        [
+          "id",
+          "posX",
+          "posY",
+          "posZ"
+        ]
+      ]
+    },
+    "Camso_DriveModes_default_comfort_70470": {
+      "information": {
+        "value": 500,
+        "name": "Comfort Mode",
+        "authors": "Camshaft Software"
+      }
+    },
+    "camso_hubs_front_70470": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Automation Exported Wheels",
+        "value": 100
+      },
+      "slots": [
+        [
+          "type",
+          "default",
+          "description"
+        ],
+        [
+          "Camso_wheels_front",
+          "Camso_wheels_front_70470",
+          "Front Wheels",
+          {
+            "nodeOffset": {
+              "x": "$=($frontSuspensionOffsetX or 0) + ($trackOffset_F or 0)",
+              "y": "$=($frontSuspensionOffsetY or 0)",
+              "z": "$=($frontSuspensionOffsetZ or 0)"
+            }
+          }
+        ],
+        [
+          "Camso_hub_bearings_front",
+          "Camso_hub_bearings_front",
+          "Front Hub Bearings",
+          {
+            "coreSlot": true
+          }
+        ]
+      ]
+    },
+    "Camso_suspensionmesh_F_70470": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Rally x Front Suspension Meshes"
+      }
+    },
+    "Camso_brake_F_70470": {
+      "information": {
+        "authors": "BeamNG",
+        "name": "Rally x Front Brakes",
+        "value": 200
+      },
+      "variables": [
+        [
+          "name",
+          "type",
+          "unit",
+          "category",
+          "default",
+          "min",
+          "max",
+          "title",
+          "description"
+        ],
+        [
+          "$BrakePowerFront",
+          "range",
+          "",
+          "Suspension",
+          1,
+          0.5,
+          1.5,
+          "Front Brake Power",
+          "",
+          {
+            "stepDis": 1,
+            "subCategory": "Brakes",
+            "minDis": 50,
+            "maxDis": 150
+          }
+        ]
+      ],
+      "slots": [
+        [
+          "type",
+          "default",
+          "description"
+        ],
+        [
+          "Camso_brakemeshes_front",
+          "Camso_brakemeshes_front_70470",
+          "Front Brake Meshes"
+        ]
+      ],
+      "pressureWheels": [
+        [
+          "name",
+          "hubGroup",
+          "group",
+          "node1:",
+          "node2:",
+          "nodeS",
+          "nodeArm:",
+          "wheelDir"
+        ],
+        {
+          "brakeTorque": "$=3262.436035*$BrakePowerFront*0.800000"
+        },
+        {
+          "brakeInputSplit": 1
+        },
+        {
+          "brakeSplitCoef": 1
+        },
+        {
+          "parkingTorque": 0
+        },
+        {
+          "brakeSpring": 33.271141
+        },
+        {
+          "enableBrakeThermals": true
+        },
+        {
+          "brakeDiameter": 0.33
+        },
+        {
+          "brakeMass": 4.653126
+        },
+        {
+          "brakeType": "vented-disc"
+        },
+        {
+          "rotorMaterial": "steel"
+        },
+        {
+          "padMaterial": "full-race"
+        },
+        {
+          "brakeVentingCoef": 1.1
+        },
+        {
+          "absSlipRatioTarget": 0.22
+        }
+      ]
+    },
+    "Camso_wheeldata_F_doublewishbone_70470": {
+      "information": {
+        "authors": "BeamNG",
+        "name": "Rally x Front Spindles",
+        "value": 0
+      },
+      "pressureWheels": [
+        [
+          "name",
+          "hubGroup",
+          "group",
+          "node1:",
+          "node2:",
+          "nodeS",
+          "nodeArm:",
+          "wheelDir"
+        ],
+        {
+          "selfCollision": false
+        },
+        {
+          "collision": true
+        },
+        {
+          "hubcapBreakGroup": "hubcap_FR"
+        },
+        {
+          "hubcapGroup": "hubcap_FR"
+        },
+        {
+          "axleBeams": [
+            "axle_FR"
+          ]
+        },
+        [
+          "FR",
+          "wheel_FR",
+          "tire_FR",
+          "fw1rr",
+          "fw1r",
+          9999,
+          "fh5r",
+          1,
+          {
+            "torqueCoupling:": "fh3r",
+            "torqueArm:": "fh5r",
+            "torqueArm2:": "fw1rr",
+            "steerAxisUp:": "fh2r",
+            "steerAxisDown:": "fh1r"
+          }
+        ],
+        {
+          "hubcapBreakGroup": "hubcap_FL"
+        },
+        {
+          "hubcapGroup": "hubcap_FL"
+        },
+        {
+          "axleBeams": [
+            "axle_FL"
+          ]
+        },
+        [
+          "FL",
+          "wheel_FL",
+          "tire_FL",
+          "fw1ll",
+          "fw1l",
+          9999,
+          "fh5l",
+          -1,
+          {
+            "torqueCoupling:": "fh3l",
+            "torqueArm:": "fh5l",
+            "torqueArm2:": "fw1ll",
+            "steerAxisUp:": "fh2l",
+            "steerAxisDown:": "fh1l"
+          }
+        ],
+        {
+          "selfCollision": true
+        },
+        {
+          "axleBeams": []
+        },
+        {
+          "disableMeshBreaking": false,
+          "disableTriangleBreaking": false
+        },
+        {
+          "hubcapBreakGroup": ""
+        },
+        {
+          "hubcapGroup": ""
+        },
+        {
+          "enableHubcaps": false
+        }
+      ]
+    },
+    "Camso_coilover_F_doublewishbone_70470": {
+      "information": {
+        "authors": "BeamNG",
+        "name": "Rally x Active Front Coilovers",
+        "value": 200
+      }
+    },
+    "Camso_swaybar_F_doublewishbone_70470": {
+      "information": {
+        "authors": "BeamNG",
+        "name": "Rally x Front Sway Bar",
+        "value": 250
+      }
+    },
+    "Camso_steering_doublewishbone_70470": {
+      "information": {
+        "authors": "BeamNG",
+        "name": "Rally x Rack and Pinion Steering",
+        "value": 110
+      },
+      "slots": [
+        [
+          "type",
+          "default",
+          "description"
+        ],
+        [
+          "Camso_power_steering",
+          "",
+          "Power Steering"
+        ]
+      ],
+      "variables": [
+        [
+          "name",
+          "type",
+          "unit",
+          "category",
+          "default",
+          "min",
+          "max",
+          "title",
+          "description"
+        ],
+        [
+          "$toe_F",
+          "range",
+          "",
+          "Suspension",
+          1,
+          0.995,
+          1.005,
+          "Front Toe Adjust",
+          "Adjusts the wheel toe-in angle",
+          {
+            "subCategory": "Alignment"
+          }
+        ],
+        [
+          "$ffbTune",
+          "range",
+          "",
+          "Force Feedback",
+          1,
+          0,
+          2,
+          "Strength Multiplier",
+          "Fine tune the force feedback strength for this vehicle",
+          {
+            "minDis": 0,
+            "maxDis": 200
+          }
+        ],
+        [
+          "$maxSteeringMult",
+          "range",
+          "",
+          "Suspension",
+          1,
+          0.5,
+          1.5,
+          "Maximum steering angle multiplier",
+          "Adjusts the max steering angle",
+          {
+            "subCategory": "Alignment",
+            "minDis": 50,
+            "maxDis": 150,
+            "stepDis": 0.01
+          }
+        ],
+        [
+          "$steer_center_F",
+          "range",
+          "",
+          "Suspension",
+          0,
+          -0.002,
+          0.002,
+          "Steering L/R Trim",
+          "Fine tunes the centerpoint of the steering",
+          {
+            "subCategory": "Alignment"
+          }
+        ],
+        [
+          "$steeringWheelLock",
+          "range",
+          "Deg",
+          "Suspension",
+          450.0,
+          225,
+          900,
+          "Steering Wheel Lock",
+          "Adjusts the steering ratio",
+          {
+            "subCategory": "Alignment",
+            "minDis": 225,
+            "maxDis": 900,
+            "stepDis": 5
+          }
+        ]
+      ],
+      "nodes": [
+        [
+          "id",
+          "posX",
+          "posY",
+          "posZ"
+        ]
+      ]
+    },
+    "camso_hubs_rear_70470": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Automation Exported Wheels",
+        "value": 100
+      },
+      "slots": [
+        [
+          "type",
+          "default",
+          "description"
+        ],
+        [
+          "Camso_wheels_rear",
+          "Camso_wheels_rear_70470",
+          "Rear Wheels",
+          {
+            "nodeOffset": {
+              "x": "$=($rearSuspensionOffsetX or 0) + ($trackOffset_R or 0)",
+              "y": "$=($rearSuspensionOffsetY or 0)",
+              "z": "$=($rearSuspensionOffsetZ or 0)"
+            }
+          }
+        ],
+        [
+          "Camso_hub_bearings_rear",
+          "Camso_hub_bearings_rear",
+          "Rear Hub Bearings",
+          {
+            "coreSlot": true
+          }
+        ]
+      ]
+    },
+    "Camso_suspensionmesh_R_70470": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Rally x Rear Suspension Meshes"
+      }
+    },
+    "Camso_brake_R_70470": {
+      "information": {
+        "authors": "BeamNG",
+        "name": "Rally x Rear Brakes",
+        "value": 200
+      },
+      "variables": [
+        [
+          "name",
+          "type",
+          "unit",
+          "category",
+          "default",
+          "min",
+          "max",
+          "title",
+          "description"
+        ],
+        [
+          "$BrakePowerRear",
+          "range",
+          "",
+          "Suspension",
+          1,
+          0.5,
+          1.5,
+          "Rear Brake Power",
+          "",
+          {
+            "stepDis": 1,
+            "subCategory": "Brakes",
+            "minDis": 50,
+            "maxDis": 150
+          }
+        ]
+      ],
+      "slots": [
+        [
+          "type",
+          "default",
+          "description"
+        ],
+        [
+          "Camso_brakemeshes_rear",
+          "Camso_brakemeshes_rear_70470",
+          "Rear Brake Meshes"
+        ]
+      ],
+      "pressureWheels": [
+        [
+          "name",
+          "hubGroup",
+          "group",
+          "node1:",
+          "node2:",
+          "nodeS",
+          "nodeArm:",
+          "wheelDir"
+        ],
+        {
+          "brakeTorque": "$=1710.882202*$BrakePowerRear *0.800000"
+        },
+        {
+          "brakeInputSplit": 0.5
+        },
+        {
+          "brakeSplitCoef": 0.5
+        },
+        {
+          "parkingTorque": "$=3421.764404*$BrakePowerRear"
+        },
+        {
+          "brakeSpring": 32.969784
+        },
+        {
+          "enableBrakeThermals": true
+        },
+        {
+          "brakeDiameter": 0.1815
+        },
+        {
+          "brakeMass": 1.407571
+        },
+        {
+          "brakeType": "vented-disc"
+        },
+        {
+          "rotorMaterial": "steel"
+        },
+        {
+          "padMaterial": "full-race"
+        },
+        {
+          "brakeVentingCoef": 1.1
+        },
+        {
+          "absSlipRatioTarget": 0.18
+        }
+      ]
+    },
+    "Camso_wheeldata_R_doublewishbone_70470": {
+      "information": {
+        "authors": "BeamNG",
+        "name": "Rally x Rear Spindles",
+        "value": 0
+      },
+      "pressureWheels": [
+        [
+          "name",
+          "hubGroup",
+          "group",
+          "node1:",
+          "node2:",
+          "nodeS",
+          "nodeArm:",
+          "wheelDir"
+        ],
+        {
+          "selfCollision": false
+        },
+        {
+          "collision": true
+        },
+        {
+          "hubcapBreakGroup": "hubcap_RR"
+        },
+        {
+          "hubcapGroup": "hubcap_RR"
+        },
+        {
+          "axleBeams": [
+            "axle_RR"
+          ]
+        },
+        [
+          "RR",
+          "wheel_RR",
+          "tire_RR",
+          "rw1rr",
+          "rw1r",
+          9999,
+          "rh5r",
+          1,
+          {
+            "torqueCoupling:": "rx1r",
+            "torqueArm:": "rx2r",
+            "torqueArm2:": "rx2l"
+          }
+        ],
+        {
+          "hubcapBreakGroup": "hubcap_RL"
+        },
+        {
+          "hubcapGroup": "hubcap_RL"
+        },
+        {
+          "axleBeams": [
+            "axle_RL"
+          ]
+        },
+        [
+          "RL",
+          "wheel_RL",
+          "tire_RL",
+          "rw1ll",
+          "rw1l",
+          9999,
+          "rh5l",
+          -1,
+          {
+            "torqueCoupling:": "rx1l",
+            "torqueArm:": "rx2l",
+            "torqueArm2:": "rx2r"
+          }
+        ],
+        {
+          "selfCollision": true
+        },
+        {
+          "axleBeams": []
+        },
+        {
+          "disableMeshBreaking": false,
+          "disableTriangleBreaking": false
+        },
+        {
+          "hubcapBreakGroup": ""
+        },
+        {
+          "hubcapGroup": ""
+        },
+        {
+          "enableHubcaps": false
+        }
+      ]
+    },
+    "Camso_coilover_R_doublewishbone_70470": {
+      "information": {
+        "authors": "BeamNG",
+        "name": "Rally x Active Rear Coilovers",
+        "value": 200
+      }
+    },
+    "Camso_swaybar_R_doublewishbone_70470": {
+      "information": {
+        "authors": "BeamNG",
+        "name": "Rally x Rear Sway Bar",
+        "value": 250
+      }
+    },
+    "Camso_differential_center_70470": {
+      "information": {
+        "name": "Rally x Advanced Center Differential",
+        "value": 300
+      },
+      "slots": [
+        [
+          "type",
+          "default",
+          "description"
+        ],
+        [
+          "Camso_driveshaft_front",
+          "Camso_driveshaft_front",
+          "Front Driveshaft"
+        ],
+        [
+          "Camso_driveshaft_rear",
+          "Camso_driveshaft_rear",
+          "Rear Driveshaft"
+        ]
+      ],
+      "variables": [
+        [
+          "name",
+          "type",
+          "unit",
+          "category",
+          "default",
+          "min",
+          "max",
+          "title",
+          "description"
+        ],
+        [
+          "$torquesplit",
+          "range",
+          "",
+          "Gearing",
+          0.5,
+          0,
+          1,
+          "Torque Split",
+          "Power to Rear",
+          {
+            "subCategory": "Transfer Case",
+            "stepDis": 0.01,
+            "minDis": 0,
+            "maxDis": 100
+          }
+        ]
+      ],
+      "powertrain": [
+        [
+          "type",
+          "name",
+          "inputName",
+          "inputIndex"
+        ],
+        [
+          "differential",
+          "transferCase",
+          "gearbox",
+          1,
+          {
+            "diffType": "lsd",
+            "lsdLockCoef": 0.4,
+            "lsdRevLockCoef": 0.4,
+            "lsdPreload": 10.0,
+            "uiName": "Center Differential",
+            "defaultVirtualInertia": 0.25,
+            "friction": 9.0642642898096
+          }
+        ]
+      ]
+    },
+    "Camso_exhaust_mesh_70470": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Rally x Exhaust Mesh",
+        "value": 1
+      }
+    },
+    "Camso_hub_bearings_front": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Front Hub Bearings",
+        "value": 100
+      },
+      "powertrain": [
+        [
+          "type",
+          "name",
+          "inputName",
+          "inputIndex"
+        ],
+        [
+          "shaft",
+          "wheelaxleFL",
+          "halfshaftFL",
+          1,
+          {
+            "connectedWheel": "FL",
+            "friction": 0
+          }
+        ],
+        [
+          "shaft",
+          "wheelaxleFR",
+          "halfshaftFR",
+          1,
+          {
+            "connectedWheel": "FR",
+            "friction": 0
+          }
+        ]
+      ]
+    },
+    "Camso_brakemeshes_front_70470": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Rally x Front Brake Meshes"
+      }
+    },
+    "Camso_hub_bearings_rear": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Rear Hub Bearings",
+        "value": 100
+      },
+      "powertrain": [
+        [
+          "type",
+          "name",
+          "inputName",
+          "inputIndex"
+        ],
+        [
+          "shaft",
+          "wheelaxleRL",
+          "halfshaftRL",
+          1,
+          {
+            "connectedWheel": "RL",
+            "friction": 0
+          }
+        ],
+        [
+          "shaft",
+          "wheelaxleRR",
+          "halfshaftRR",
+          1,
+          {
+            "connectedWheel": "RR",
+            "friction": 0
+          }
+        ]
+      ]
+    },
+    "Camso_brakemeshes_rear_70470": {
+      "information": {
+        "authors": "Camshaft Software",
+        "name": "Rally x Rear Brake Meshes"
+      }
+    },
+    "Camso_driveshaft_front": {
+      "information": {
+        "name": "Front Driveshaft",
+        "value": 150
+      },
+      "powertrain": [
+        [
+          "type",
+          "name",
+          "inputName",
+          "inputIndex"
+        ],
+        [
+          "shaft",
+          "frontDriveShaft",
+          "transferCase",
+          2,
+          {
+            "friction": 1
+          }
+        ]
+      ]
+    },
+    "Camso_driveshaft_rear": {
+      "information": {
+        "name": "Rear Driveshaft",
+        "value": 150
+      },
+      "powertrain": [
+        [
+          "type",
+          "name",
+          "inputName",
+          "inputIndex"
+        ],
+        [
+          "shaft",
+          "rearDriveShaft",
+          "transferCase",
+          1,
+          {
+            "friction": 1
+          }
+        ]
+      ]
+    }
+  },
+  "pc": {
+    "vars": {
+      "$torquesplit": 0.5,
+      "$finaldrive_f": 4.52,
+      "$finaldrive_r": 4.52
+    },
+    "format": 2,
+    "parts": {
+      "Camso_differential_front": "Camso_differential_front_70470",
+      "Camso_differential_rear": "Camso_differential_rear_70470",
+      "Camso_DSE": "Camso_DSE_70470",
+      "Camso_finaldrive_front": "Camso_finaldrive_front_4.52",
+      "Camso_finaldrive_rear": "Camso_finaldrive_rear_4.52",
+      "Camso_Trim": "Camso_Trim_70470",
+      "Camso_wheels_front": "Camso_wheels_front_70470",
+      "Camso_wheels_rear": "Camso_wheels_rear_70470",
+      "Camso_ElectricMotor_F": "Camso_ElectricMotor_F_70470",
+      "Camso_ElectricMotor_R": "Camso_ElectricMotor_R_70470",
+      "Camso_Engine": "Camso_Engine_cb344",
+      "Camso_Transmission": "Camso_Transmission_70470",
+      "Camso_SpeedLimiter": "Camso_SpeedLimiter_off",
+      "Camso_engine_structure": "Camso_engine_structure_70470"
+    }
+  },
+  "meta": {
+    "Configuration": "Rally x",
+    "Description": "",
+    "Config Type": "Factory",
+    "Weight": 913,
+    "Power": 548,
+    "Torque": 606,
+    "PowerPeakRPM": 7900,
+    "TorquePeakRPM": 5300,
+    "Weight/Power": 1.66393,
+    "0-100 km/h": 2.2,
+    "Top Speed": 83.3,
+    "Years": {
+      "min": 2000,
+      "max": 2000
+    },
+    "Drivetrain": "AWD",
+    "Transmission": "Sequential",
+    "Propulsion": "ICE",
+    "Fuel Type": "Ethanol",
+    "Induction Type": "TwinCharged",
+    "Value": 83179,
+    "defaultPaintName1": "Default1",
+    "defaultPaintName2": "Default2"
+  },
+  "seed": {
+    "source": {},
+    "engine": {},
+    "gearbox": {
+      "final_drive": 4.52
+    },
+    "drivetrain": "AWD",
+    "warnings": [],
+    "wheels": [
+      {
+        "corner": "FL",
+        "axle": "front",
+        "position_beamng_m": [
+          0.622496,
+          -1.09956,
+          0.692206
+        ],
+        "radius_m": 0.28,
+        "width_m": 0.265
+      },
+      {
+        "corner": "FR",
+        "axle": "front",
+        "position_beamng_m": [
+          -0.622496,
+          -1.09956,
+          0.692206
+        ],
+        "radius_m": 0.28,
+        "width_m": 0.265
+      },
+      {
+        "corner": "RL",
+        "axle": "rear",
+        "position_beamng_m": [
+          0.622499,
+          1.10044,
+          0.690231
+        ],
+        "radius_m": 0.28,
+        "width_m": 0.285
+      },
+      {
+        "corner": "RR",
+        "axle": "rear",
+        "position_beamng_m": [
+          -0.622499,
+          1.10044,
+          0.690231
+        ],
+        "radius_m": 0.28,
+        "width_m": 0.285
+      }
+    ]
+  }
+}

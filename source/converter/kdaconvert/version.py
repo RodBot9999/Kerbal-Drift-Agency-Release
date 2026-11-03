@@ -1,0 +1,4 @@
+VERSION = '2.0'
+BUILD = '2026-10-26-kda12'
+FRAMEWORK_ABI = 'kda-standalone-1'
+MIN_FRAMEWORK_BUILD = '2026-10-26-kda14'

@@ -1,0 +1,54 @@
+{
+  "distribution": "external downloads; no third-party KSP mods bundled",
+  "ksp_version": "1.12.5",
+  "dependencies": [
+    {
+      "name": "ModuleManager",
+      "tested_version": "4.2.3",
+      "download": "https://github.com/sarbian/ModuleManager/releases/tag/v4.2.3",
+      "requirement": "required",
+      "purpose": "Applies KDA crew and part configuration patches.",
+      "install_location": "GameData/ModuleManager.4.2.3.dll"
+    },
+    {
+      "name": "HarmonyKSP",
+      "tested_version": "2.2.1.0",
+      "download": "https://github.com/KSPModdingLibs/HarmonyKSP/releases/tag/2.2.1.0",
+      "requirement": "required",
+      "purpose": "Scoped KDA seat and seated-crew mass patches; also required by Shabby.",
+      "install_location": "GameData/000_Harmony"
+    },
+    {
+      "name": "Shabby",
+      "tested_version": "0.4.2",
+      "download": "https://github.com/KSPModdingLibs/Shabby/releases/tag/0.4.2",
+      "requirement": "required for PBR",
+      "purpose": "Loads the shaders and applies KDA material definitions.",
+      "install_location": "GameData/Shabby"
+    },
+    {
+      "name": "Resurfaced",
+      "tested_version": "1.2",
+      "download": "https://github.com/Tantares/Resurfaced/releases",
+      "requirement": "required for PBR",
+      "purpose": "Provides the PBR shaders used by converted vehicle materials.",
+      "install_location": "GameData/Resurfaced"
+    },
+    {
+      "name": "Kerbal Konstructs",
+      "tested_version": "1.12.3.0",
+      "download": "https://github.com/KSP-RO/Kerbal-Konstructs/releases",
+      "requirement": "optional; world garage building only",
+      "purpose": "Places the KDA garage exterior and provides its launch site.",
+      "install_location": "GameData/KerbalKonstructs"
+    },
+    {
+      "name": "Custom Pre Launch Checks",
+      "tested_version": "1.8.1.1",
+      "download": "https://github.com/KSP-RO/CustomPreLaunchChecks/releases/tag/1.8.1.1",
+      "requirement": "required by Kerbal Konstructs",
+      "purpose": "Pre-launch checks used by Kerbal Konstructs.",
+      "install_location": "GameData/CustomPreLaunchChecks"
+    }
+  ]
+}

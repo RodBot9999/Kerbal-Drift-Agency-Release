@@ -1,0 +1,14 @@
+Corresponding source for Kerbal Drift Agency 1.0.3
+
+Matching complete source, available at no charge from the same release:
+https://github.com/RodBot9999/Kerbal-Drift-Agency-Release/releases/download/v1.0.3/KDA-kda25-complete-source.zip
+
+Browse the matching tagged source:
+https://github.com/RodBot9999/Kerbal-Drift-Agency-Release/tree/v1.0.3
+
+The archive contains the runtime, ECU, converter, vendored MU writer,
+requirements and build instructions. Start with source/README.md.
+The converter EXE is GPL-3.0-only; original runtime code is MIT.
+Assets and other components retain the separate terms in LICENSE.md,
+ASSET-LICENSES.md, CREDITS.md and LICENSES/.
+Source code is not required to play or run the converter.

@@ -1,0 +1,30 @@
+{
+  "design": "KDA Circuit",
+  "original_geometry": true,
+  "source": "analytic KDA surfaces and cushions",
+  "downloaded_geometry_or_textures_used": false,
+  "triangles": 2596,
+  "bounds_min_m": [
+    -0.22858257591724396,
+    -0.02339235134422779,
+    -0.24421454966068268
+  ],
+  "bounds_max_m": [
+    0.22885271906852722,
+    0.7167928814888,
+    0.33298343420028687
+  ],
+  "size_m": [
+    0.4574352949857712,
+    0.7401852328330278,
+    0.5771979838609695
+  ],
+  "crew_local_position_m": [
+    0.0,
+    0.045,
+    0.035
+  ],
+  "same_attachment_origin": true,
+  "true_shoulder_harness_openings": 2,
+  "texture_size_px": 512
+}

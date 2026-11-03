@@ -1,0 +1,16 @@
+newmtl fabric
+Kd 0.18 0.2 0.22
+map_Kd seat_fabric.png
+
+newmtl teal
+Kd 0.08 0.72 0.65
+
+newmtl shell
+Kd 0.1 0.115 0.13
+
+newmtl metal
+Kd 0.24 0.27 0.3
+
+newmtl badge
+Kd 1 1 1
+map_Kd kda_seat_badge.png
